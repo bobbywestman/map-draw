@@ -10,9 +10,9 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var colorPicker: ColorPickerView!
-
     @IBOutlet weak var map: MKMapView!
+
+    @IBOutlet weak var colorPicker: ColorPickerView!
 
     @IBOutlet weak var boxButton: UIButton!
 
@@ -20,53 +20,65 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var pinButton: UIButton!
 
-    @IBOutlet weak var searchButton: UIButton!
-
     @IBOutlet weak var mapToggleButton: UIButton!
 
     @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+
+    @IBOutlet weak var searchResultsTableView: UITableView!
+
+    let completer = MKLocalSearchCompleter()
+
+    var searchResults = [MKLocalSearchCompletion]() {
+        didSet {
+            guard searchResults.count > 0 else {
+                searchResultsTableView.isHidden = true
+                searchBar.resignFirstResponder
+                searchBar.endEditing(true)
+                return
+            }
+            searchResultsTableView.isHidden = false
+            searchResultsTableView.reloadData()
+        }
+    }
 }
 
 extension ViewController {
     override func viewDidLoad() {
         colorPicker.elementSize = 5
         colorPicker.delegate = self
-        
+
         map.mapType = .satelliteFlyover
-    }
-}
+        // TODO: set map center initially at current location
 
-extension ViewController: ColorPickerDelegate {
-    func colorDidChange(color: UIColor) {
-        boxButton.tintColor = color
-        lineButton.tintColor = color
-        pinButton.tintColor = color
+        searchBar.delegate = self
 
-        print(color)
+        completer.delegate = self
+        // TODO: set completer.region based on current location?
+        // Specifying a region does not guarantee that the results will all be inside the region. It is merely a hint to the search engine.
+
+        searchResultsTableView.dataSource = self
+        searchResultsTableView.delegate = self
+        searchResultsTableView.isHidden = true
     }
 }
 
 extension ViewController {
     @IBAction func boxButtonClick(_ sender: Any) {
-        print("box")
+        
     }
 }
 
 extension ViewController {
     @IBAction func lineButtonClick(_ sender: Any) {
-        print("line")
+        
     }
 }
 
 extension ViewController {
     @IBAction func pinButtonClick(_ sender: Any) {
-        print("pin")
-    }
-}
-
-extension ViewController {
-    @IBAction func searchButtonClick(_ sender: Any) {
-        print("search")
+        
     }
 }
 
@@ -78,6 +90,6 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func saveButtonClick(_ sender: Any) {
-        print("save")
+        
     }
 }

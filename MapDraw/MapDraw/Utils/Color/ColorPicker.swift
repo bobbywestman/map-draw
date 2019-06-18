@@ -5,7 +5,7 @@
 //  Created by Bobby Westman on 6/17/19.
 //  Copyright © 2019 Bobby Westman. All rights reserved.
 //
-// File source:
+// Source:
 // https://stackoverflow.com/questions/27208386/simple-swift-color-picker-popover-ios
 import UIKit
 
