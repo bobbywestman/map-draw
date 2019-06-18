@@ -68,9 +68,9 @@
 		C534CD9622B8673400DD3890 /* MapDraw */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDB322B8A27D00DD3890 /* VC */,
 				C534CDAC22B899E700DD3890 /* Utils */,
 				C534CD9722B8673400DD3890 /* AppDelegate.swift */,
-				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9E22B8673500DD3890 /* Assets.xcassets */,
 				C534CDA022B8673500DD3890 /* LaunchScreen.storyboard */,
 				C534CDA322B8673500DD3890 /* Info.plist */,
@@ -89,7 +89,6 @@
 		C534CDAC22B899E700DD3890 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDB322B8A27D00DD3890 /* VC */,
 				C534CDB022B89B7700DD3890 /* Map */,
 				C534CDAD22B899F900DD3890 /* Text */,
 				C534CDA922B8707800DD3890 /* Color */,
@@ -116,6 +115,7 @@
 		C534CDB322B8A27D00DD3890 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
 				C534CDB722B8A32600DD3890 /* ViewController+MapKit.swift */,
 				C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */,
