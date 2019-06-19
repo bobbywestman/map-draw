@@ -23,10 +23,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapToggleButton: UIButton!
 
     @IBOutlet weak var saveButton: UIButton!
-    
+
     @IBOutlet weak var searchBar: UISearchBar!
 
     @IBOutlet weak var searchResultsTableView: UITableView!
+
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
 
     let completer = MKLocalSearchCompleter()
 
@@ -40,6 +42,14 @@ class ViewController: UIViewController {
             }
             searchResultsTableView.isHidden = false
             searchResultsTableView.reloadData()
+            
+            tableViewHeight.constant = 200
+            searchResultsTableView.layoutIfNeeded()
+            var height: CGFloat = 0.0
+            for cell in searchResultsTableView.visibleCells {
+                height += cell.frame.height
+            }
+            tableViewHeight.constant = min(200, height)
         }
     }
 }
@@ -49,7 +59,7 @@ extension ViewController {
         colorPicker.elementSize = 5
         colorPicker.delegate = self
 
-        map.mapType = .satelliteFlyover
+        map.mapType = .hybridFlyover
         // TODO: set map center initially at current location
 
         searchBar.delegate = self
@@ -61,6 +71,14 @@ extension ViewController {
         searchResultsTableView.dataSource = self
         searchResultsTableView.delegate = self
         searchResultsTableView.isHidden = true
+
+//        searchResultsTableView.tableFooterView = UIView(frame: .zero)
+    }
+}
+
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.endEditing(true)
     }
 }
 
@@ -84,7 +102,10 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func mapToggleButtonClick(_ sender: Any) {
-        map.mapType = (map.mapType == .satelliteFlyover) ? .hybrid : .satelliteFlyover
+        map.mapType = (map.mapType == .satelliteFlyover) ? .hybridFlyover : .satelliteFlyover
+
+        let text =  (mapToggleButton.titleLabel?.text == "Show Map Info") ? "Hide Map Info" : "Show Map Info"
+        mapToggleButton.setTitle(text, for: .normal)
     }
 }
 
