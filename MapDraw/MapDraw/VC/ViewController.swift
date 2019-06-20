@@ -10,28 +10,32 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
+    // MARK: Map
+
     @IBOutlet weak var map: MKMapView!
-
-    @IBOutlet weak var colorPicker: ColorPickerView!
-
-    @IBOutlet weak var boxButton: UIButton!
-
-    @IBOutlet weak var lineButton: UIButton!
-
-    @IBOutlet weak var pinButton: UIButton!
-
     @IBOutlet weak var mapToggleButton: UIButton!
+
+    // MARK: Screenshot
 
     @IBOutlet weak var saveButton: UIButton!
 
+    // MARK: Drawing
+    
+    @IBOutlet weak var canvas: Canvas!
+    @IBOutlet weak var boxButton: UIButton!
+    @IBOutlet weak var lineButton: UIButton!
+    @IBOutlet weak var pinButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var redoButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var colorPicker: ColorPickerView!
+    
+    // MARK: Search
+
     @IBOutlet weak var searchBar: UISearchBar!
-
     @IBOutlet weak var searchResultsTableView: UITableView!
-
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
-
     let completer = MKLocalSearchCompleter()
-
     var searchResults = [MKLocalSearchCompletion]() {
         didSet {
             guard searchResults.count > 0 else {
@@ -72,71 +76,13 @@ extension ViewController {
         searchResultsTableView.delegate = self
         searchResultsTableView.isHidden = true
 
-//        searchResultsTableView.tableFooterView = UIView(frame: .zero)
+        let tapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.tapDetected(tapRecognizer:)))
+        canvas.addGestureRecognizer(tapRecognizer)
     }
 }
 
 extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchBar.endEditing(true)
-    }
-}
-
-extension ViewController {
-    @IBAction func boxButtonClick(_ sender: Any) {
-        
-    }
-}
-
-extension ViewController {
-    @IBAction func lineButtonClick(_ sender: Any) {
-        
-    }
-}
-
-extension ViewController {
-    @IBAction func pinButtonClick(_ sender: Any) {
-        
-    }
-}
-
-extension ViewController {
-    @IBAction func mapToggleButtonClick(_ sender: Any) {
-        map.mapType = (map.mapType == .satelliteFlyover) ? .hybridFlyover : .satelliteFlyover
-
-        let text =  (mapToggleButton.titleLabel?.text == "Show Map Info") ? "Hide Map Info" : "Show Map Info"
-        mapToggleButton.setTitle(text, for: .normal)
-    }
-}
-
-extension ViewController {
-    @IBAction func saveButtonClick(_ sender: Any) {
-        let screenshot = ScreenshotHelper.screenshot(of: view, in: map.frame)
-
-        let screenshotView = UIImageView(image: screenshot)
-        screenshotView.translatesAutoresizingMaskIntoConstraints = false
-
-        let alert = UIAlertController(title: "Save Screenshot", message: "\n\n\n\n\n\n\n\n", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Save", style: .default) { (action:UIAlertAction!) in
-            ScreenshotHelper.saveImageToCameraRoll(screenshot)
-        })
-        alert.view.addSubview(screenshotView)
-
-        // TODO: revisit this.. possibly create a custom alert vc
-        // calculate height
-        let height = CGFloat(125)
-        // calculate aspect ratio of map
-        let ratio = map.frame.width / map.frame.height
-        // calculate width
-        let width = ratio * height
-
-        NSLayoutConstraint.activate([
-            screenshotView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor),
-            screenshotView.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor),
-            screenshotView.heightAnchor.constraint(equalToConstant: height),
-            screenshotView.widthAnchor.constraint(equalToConstant: width),
-        ])
-        self.present(alert, animated: true, completion: nil)
     }
 }

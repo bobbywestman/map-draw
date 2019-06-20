@@ -11,7 +11,7 @@ import MapKit
 
 class MapHelper {
     static func updateMap(_ map: MKMapView, location: CLLocationCoordinate2D) {
-        // TODO: handle zoom
-        map.centerCoordinate = location
+        let camera = MKMapCamera(lookingAtCenter: location, fromEyeCoordinate: location, eyeAltitude: 1)
+        map.setCamera(camera, animated: true)
     }
 }

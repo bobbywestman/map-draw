@@ -1,5 +1,5 @@
 //
-//  ViewController+MapKit.swift
+//  ViewController+Map.swift
 //  MapDraw
 //
 //  Created by Bobby Westman on 6/17/19.
@@ -8,6 +8,15 @@
 
 import Foundation
 import MapKit
+
+extension ViewController {
+    @IBAction func mapToggleButtonClick(_ sender: Any) {
+        map.mapType = (map.mapType == .satelliteFlyover) ? .hybridFlyover : .satelliteFlyover
+        
+        let text =  (mapToggleButton.titleLabel?.text == "Show Map Info") ? "Hide Map Info" : "Show Map Info"
+        mapToggleButton.setTitle(text, for: .normal)
+    }
+}
 
 extension ViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {

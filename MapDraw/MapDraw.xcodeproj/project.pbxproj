@@ -16,10 +16,13 @@
 		C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDAE22B89A1100DD3890 /* TextHelper.swift */; };
 		C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB122B89B8600DD3890 /* MapHelper.swift */; };
 		C534CDB522B8A2A100DD3890 /* ViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */; };
-		C534CDB822B8A32600DD3890 /* ViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB722B8A32600DD3890 /* ViewController+MapKit.swift */; };
+		C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB722B8A32600DD3890 /* ViewController+Map.swift */; };
 		C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */; };
 		C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */; };
 		C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDBE22B9C2E000DD3890 /* ScreenshotHelper.swift */; };
+		C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC122BB626C00DD3890 /* Canvas.swift */; };
+		C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC322BB62BB00DD3890 /* ViewController+Drawing.swift */; };
+		C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +37,13 @@
 		C534CDAE22B89A1100DD3890 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		C534CDB122B89B8600DD3890 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UITableView.swift"; sourceTree = "<group>"; };
-		C534CDB722B8A32600DD3890 /* ViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+MapKit.swift"; sourceTree = "<group>"; };
+		C534CDB722B8A32600DD3890 /* ViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Map.swift"; sourceTree = "<group>"; };
 		C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ColorPicker.swift"; sourceTree = "<group>"; };
 		C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		C534CDBE22B9C2E000DD3890 /* ScreenshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotHelper.swift; sourceTree = "<group>"; };
+		C534CDC122BB626C00DD3890 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		C534CDC322BB62BB00DD3890 /* ViewController+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Drawing.swift"; sourceTree = "<group>"; };
+		C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Screenshot.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		C534CD9622B8673400DD3890 /* MapDraw */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDC022BB625D00DD3890 /* Views */,
 				C534CDB322B8A27D00DD3890 /* VC */,
 				C534CDAC22B899E700DD3890 /* Utils */,
 				C534CD9722B8673400DD3890 /* AppDelegate.swift */,
@@ -80,21 +87,12 @@
 			path = MapDraw;
 			sourceTree = "<group>";
 		};
-		C534CDA922B8707800DD3890 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				C534CDAA22B8709700DD3890 /* ColorPicker.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
 		C534CDAC22B899E700DD3890 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				C534CDBD22B9C2CB00DD3890 /* Screenshot */,
 				C534CDB022B89B7700DD3890 /* Map */,
 				C534CDAD22B899F900DD3890 /* Text */,
-				C534CDA922B8707800DD3890 /* Color */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -120,10 +118,12 @@
 			children = (
 				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
-				C534CDB722B8A32600DD3890 /* ViewController+MapKit.swift */,
+				C534CDB722B8A32600DD3890 /* ViewController+Map.swift */,
 				C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */,
 				C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */,
 				C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */,
+				C534CDC322BB62BB00DD3890 /* ViewController+Drawing.swift */,
+				C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -134,6 +134,15 @@
 				C534CDBE22B9C2E000DD3890 /* ScreenshotHelper.swift */,
 			);
 			path = Screenshot;
+			sourceTree = "<group>";
+		};
+		C534CDC022BB625D00DD3890 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C534CDC122BB626C00DD3890 /* Canvas.swift */,
+				C534CDAA22B8709700DD3890 /* ColorPicker.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,14 +217,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
+				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,
 				C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */,
 				C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */,
 				C534CDB522B8A2A100DD3890 /* ViewController+UITableView.swift in Sources */,
+				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
+				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,
-				C534CDB822B8A32600DD3890 /* ViewController+MapKit.swift in Sources */,
+				C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */,
 				C534CDAB22B8709700DD3890 /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
