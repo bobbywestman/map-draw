@@ -25,6 +25,7 @@
 		C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */; };
 		C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */; };
 		C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCB22BC830C00DD3890 /* CanvasModels.swift */; };
+		C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Screenshot.swift"; sourceTree = "<group>"; };
 		C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		C534CDCB22BC830C00DD3890 /* CanvasModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasModels.swift; sourceTree = "<group>"; };
+		C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		C534CD9622B8673400DD3890 /* MapDraw */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDCF22BC873E00DD3890 /* Protocols */,
 				C534CDCA22BC82FC00DD3890 /* Models */,
 				C534CDC022BB625D00DD3890 /* Views */,
 				C534CDB322B8A27D00DD3890 /* VC */,
@@ -133,6 +136,14 @@
 				C534CDCB22BC830C00DD3890 /* CanvasModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C534CDCF22BC873E00DD3890 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
+				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
 				C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */,
 				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,
 				C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */,

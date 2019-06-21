@@ -9,11 +9,27 @@
 import Foundation
 import UIKit
 
+enum DrawingState {
+    case line
+    case box
+    case pin
+    case none
+}
+
 struct PointGroup {
     var id: UUID
     var points: [CGPoint]
     var color: UIColor
     var path: UIBezierPath?
+    var redoPoints: [CGPoint]
+    
+    init(id: UUID, points: [CGPoint], color: UIColor, path: UIBezierPath? = nil, redoPoints: [CGPoint] = []) {
+        self.id = id
+        self.points = points
+        self.color = color
+        self.path = path
+        self.redoPoints = redoPoints
+    }
 }
 
 extension PointGroup: Equatable {

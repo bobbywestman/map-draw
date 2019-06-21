@@ -64,20 +64,20 @@ extension ViewController {
         colorPicker.delegate = self
 
         map.mapType = .hybridFlyover
-        // TODO: set map center initially at current location
+        // TODO: set map center initially at current location?
 
         searchBar.delegate = self
-
         completer.delegate = self
-        // TODO: set completer.region based on current location?
-        // Specifying a region does not guarantee that the results will all be inside the region. It is merely a hint to the search engine.
 
         searchResultsTableView.dataSource = self
         searchResultsTableView.delegate = self
         searchResultsTableView.isHidden = true
 
+        canvas.delegate = self
         let tapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.tapDetected(tapRecognizer:)))
         canvas.addGestureRecognizer(tapRecognizer)
+        canvas.drawColor = .black
+        canvas.drawingState = .none
     }
 }
 
