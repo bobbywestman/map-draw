@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 extension ViewController: CanvasHandling {
+    func colorChanged(to color: UIColor) {
+        drawingChanged(to: canvas.drawingState)
+    }
+    
     func drawingChanged(to state: DrawingState) {
         boxButton.backgroundColor = canvas.drawColor.lighter().lighter()
         lineButton.backgroundColor = canvas.drawColor.lighter().lighter()
@@ -64,15 +68,17 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func undoButtonClick(_ sender: Any) {
-        guard let selectedGroup = canvas.selectedGroup, selectedGroup.points.count > 0 else {
+        guard let selectedGroup = canvas.selectedGroup, selectedGroup.points.count > 1 else {
             return
         }
         
         if let index = canvas.groups.index(of: selectedGroup),
             let lastPoint = canvas.groups[index].points.last {
             canvas.groups[index].redoPoints.append(lastPoint)
-
             canvas.groups[index].points.removeLast()
+
+            // update selectedGroup
+            canvas.selectedGroup = canvas.groups[index]
         }
     }
     
@@ -86,6 +92,9 @@ extension ViewController {
             canvas.groups[index].points.append(lastPoint)
             
             canvas.groups[index].redoPoints.removeLast()
+            
+            // update selectedGroup
+            canvas.selectedGroup = canvas.groups[index]
         }
     }
     

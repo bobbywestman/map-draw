@@ -16,6 +16,7 @@ enum DrawingState {
     case none
 }
 
+// TODO: make this a class, we keep having to update selected group copy value
 struct PointGroup {
     var id: UUID
     var points: [CGPoint]

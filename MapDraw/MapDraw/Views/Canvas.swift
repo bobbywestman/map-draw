@@ -34,7 +34,7 @@ class Canvas: UIView {
     
     var drawColor: UIColor = .black {
         didSet {
-            
+            delegate?.colorChanged(to: drawColor)
         }
     }
     
@@ -125,6 +125,7 @@ extension Canvas {
                     selectedGroup = nil
                 } else {
                     selectedGroup = group
+                    drawColor = group.color
                     break // only select one line at a time, break on first hit
                 }
             }
@@ -139,6 +140,8 @@ extension Canvas {
             let group = groups[i]
             if let selected = selectedGroup, group == selected {
                 groups[i].points.append(tapLocation)
+                groups[i].redoPoints = []
+                selectedGroup = groups[i] // need to update selected group points for undo / redo
                 return
             }
         }

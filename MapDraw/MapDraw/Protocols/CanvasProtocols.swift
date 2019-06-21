@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CanvasHandling: class {
     func drawingChanged(to state: DrawingState)
+    func colorChanged(to color: UIColor)
 }
