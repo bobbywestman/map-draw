@@ -75,7 +75,9 @@ extension ViewController {
 
         canvas.delegate = self
         let tapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.tapDetected(tapRecognizer:)))
+        let dragRecognizer = UIPanGestureRecognizer(target: canvas, action: #selector(Canvas.dragDetected(dragRecognizer:)))
         canvas.addGestureRecognizer(tapRecognizer)
+        canvas.addGestureRecognizer(dragRecognizer)
         canvas.drawColor = .black
         canvas.drawingState = .none
     }

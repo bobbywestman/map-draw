@@ -26,6 +26,8 @@
 		C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */; };
 		C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCB22BC830C00DD3890 /* CanvasModels.swift */; };
 		C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */; };
+		C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */; };
+		C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		C534CDCB22BC830C00DD3890 /* CanvasModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasModels.swift; sourceTree = "<group>"; };
 		C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
+		C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Gesture.swift"; sourceTree = "<group>"; };
+		C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Drawing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				C534CDC122BB626C00DD3890 /* Canvas.swift */,
+				C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */,
+				C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */,
 				C534CDAA22B8709700DD3890 /* ColorPicker.swift */,
 			);
 			path = Views;
@@ -221,6 +227,7 @@
 				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
 				C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */,
 				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,
+				C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */,
 				C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */,
 				C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */,
 				C534CDB522B8A2A100DD3890 /* ViewController+UITableView.swift in Sources */,
@@ -228,6 +235,7 @@
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
+				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,

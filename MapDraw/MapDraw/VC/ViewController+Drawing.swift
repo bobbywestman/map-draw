@@ -34,6 +34,8 @@ extension ViewController: CanvasHandling {
 
 extension ViewController {
     @IBAction func boxButtonClick(_ sender: Any) {
+        canvas.selectedGroup = nil
+        
         switch canvas.drawingState {
         case .box:
             canvas.drawingState = .none
@@ -57,6 +59,8 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func pinButtonClick(_ sender: Any) {
+        canvas.selectedGroup = nil
+        
         switch canvas.drawingState {
         case .pin:
             canvas.drawingState = .none
