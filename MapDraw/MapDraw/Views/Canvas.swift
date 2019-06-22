@@ -41,4 +41,7 @@ class Canvas: UIView {
     var dragStartedLocation: CGPoint?
     
     var draggingPoint: Point?
+    
+    let kPointTapThreshold = CGFloat(20)
+    let kPointConnectThreshold = CGFloat(20)
 }

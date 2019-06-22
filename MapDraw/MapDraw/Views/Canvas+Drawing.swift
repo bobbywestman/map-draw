@@ -37,16 +37,12 @@ extension Canvas {
             stroke.setStroke()
             path.stroke()
             
-            if group.points.count > 2, group.points.first == group.points.last {
+            if pathClosed(withPointIn: group) {
                 path.close()
                 
                 let fill = stroke.withAlphaComponent(0.25)
                 fill.setFill()
                 path.fill()
-                
-                // path complete, deselect
-                selectedGroup = nil
-                drawingState = .none
             }
             
             groups[i].path = path
@@ -55,13 +51,53 @@ extension Canvas {
 }
 
 extension Canvas {
+    func pathClosed(withPointIn group: PointGroup) -> Bool {
+        if group.points.count > 2, group.points.first == group.points.last {
+            return true
+        }
+        return false
+    }
+}
+
+extension Canvas {
     func drawLinePoint(_ tapLocation:CGPoint) {
+        guard let selected = selectedGroup else {
+            // create a new group if no group is currently selected
+            let point = Point(id: UUID(), location: tapLocation)
+            let points = [point]
+            let color = drawColor
+            let id = UUID()
+            let newGroup = PointGroup(id: id, points: points, color: color)
+            groups.append(newGroup)
+            
+            // new group created, select it
+            selectedGroup = newGroup
+            return
+        }
+        
+        guard !pathClosed(withPointIn: selected) else {
+            // draw line points only on groups that do not have closed/compelted paths
+            return
+        }
+        
         // append point to selected group
         for i in 0..<groups.count {
             let group = groups[i]
-            if let selected = selectedGroup, group == selected {
-                let point = Point(id: UUID(), location: tapLocation)
-                groups[i].points.append(point)
+            if group == selected {
+                if let firstPoint = group.points.first,
+                    distance(tapLocation, firstPoint.location) < kPointConnectThreshold {
+                    // point was drawn close enough to first point to connect & complete the path
+                    groups[i].points.append(firstPoint)
+                    
+                    // path complete, reset drawing state, since no more line points can be added for this group
+                    drawingState = .none
+                } else {
+                    // new point was drawn
+                    let point = Point(id: UUID(), location: tapLocation)
+                    groups[i].points.append(point)
+                }
+                
+                // a new point has been made, reset any saved redo points
                 groups[i].redoPoints = []
                 
                 // need to update selected group points for undo / redo
@@ -69,14 +105,5 @@ extension Canvas {
                 return
             }
         }
-        
-        // or create a new group if the selected group doesnt exit
-        let point = Point(id: UUID(), location: tapLocation)
-        let points = [point]
-        let color = drawColor
-        let id = UUID()
-        let newGroup = PointGroup(id: id, points: points, color: color)
-        selectedGroup = newGroup
-        groups.append(newGroup)
     }
 }

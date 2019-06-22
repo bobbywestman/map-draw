@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-let kPointTapThreshold = CGFloat(20)
-
 // TODO: move this
 func distance(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
     let xDist = a.x - b.x
@@ -20,7 +18,7 @@ func distance(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
 
 extension Canvas {
     @objc public func tapDetected(tapRecognizer:UITapGestureRecognizer) {
-        hitTest(tapLocation: tapRecognizer.location(in: self))
+        tapDetected(tapLocation: tapRecognizer.location(in: self))
     }
     
     @objc public func dragDetected(dragRecognizer:UIPanGestureRecognizer) {
@@ -58,7 +56,7 @@ extension Canvas {
 }
 
 extension Canvas {
-    private func hitTest(tapLocation:CGPoint) {
+    private func tapDetected(tapLocation:CGPoint) {
         switch drawingState {
         case .line:
             drawLinePoint(tapLocation)
@@ -95,14 +93,10 @@ extension Canvas {
     }
     
     private func hitTestForLinePath(_ tapLocation:CGPoint) {
+        var hitDetected = false
+        
         for group in groups {
-            // Should be able to select completed paths, since the undo / redo button can still work
-            //            // don't select completed paths
-            //            guard group.points.first != group.points.last else {
-            //                continue
-            //            }
-            
-            //check toggle selection if path exists
+            // verify path exists, some groups have 0 or 1 points
             guard let path = group.path else {
                 continue
             }
@@ -112,10 +106,13 @@ extension Canvas {
             let bezierCopy = UIBezierPath(cgPath: cgCopy)
             if bezierCopy.contains(tapLocation) {
                 // tap detected inside path
-                
+                hitDetected = true
+
                 if group == selectedGroup {
+                    // deselect group
                     selectedGroup = nil
                 } else {
+                    // select group
                     selectedGroup = group
                     drawColor = group.color
                     
@@ -123,6 +120,11 @@ extension Canvas {
                     break
                 }
             }
+        }
+        
+        if !hitDetected {
+            // if no paths tapped, deselect currently selected group
+            selectedGroup = nil
         }
     }
 }
