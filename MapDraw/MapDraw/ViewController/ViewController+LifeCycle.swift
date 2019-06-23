@@ -56,17 +56,18 @@ extension ViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super .viewWillTransition(to: size, with: coordinator)
         
-        selectorView.removeExternalBorders()
-
-        coordinator.animate(alongsideTransition: nil, completion: { _ in
-            guard let map = self.map else {
-                return
-            }
-            
-            self.selectorView?.aspectRatio =  CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height)
-            self.selectorView?.center = map.center
-            self.selectorView?.addExternalBorder(5.0, .white)
-        })
+        // TODO: fix this.. somethings not working right
+//        selectorView.removeExternalBorders()
+//
+//        coordinator.animate(alongsideTransition: nil, completion: { _ in
+//            guard let map = self.map else {
+//                return
+//            }
+//
+//            self.selectorView?.aspectRatio =  CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height)
+//            self.selectorView?.center = map.center
+//            self.selectorView?.addExternalBorder(5.0, .white)
+//        })
         
     }
 }

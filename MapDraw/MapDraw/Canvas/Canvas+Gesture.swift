@@ -53,13 +53,18 @@ extension Canvas {
         switch drawingState {
         case .line:
             drawLinePoint(tapLocation)
+        case .pin:
+            drawPin(tapLocation)
         case .none:
             hitTestForLinePath(tapLocation)
         default:
             break
         }
     }
-    
+}
+
+extension Canvas {
+    /// Used to add a point to a line
     private func hitTestForLinePoint(_ tapLocation:CGPoint) {
         var closestPointInThreshold: Point?
         var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
@@ -85,6 +90,7 @@ extension Canvas {
         draggingPoint = closestPointInThreshold
     }
     
+    /// Used to handle selection of a path
     private func hitTestForLinePath(_ tapLocation:CGPoint) {
         var hitDetected = false
         

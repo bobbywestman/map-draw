@@ -109,3 +109,9 @@ extension Canvas {
         }
     }
 }
+
+extension Canvas {
+    func drawPin(_ tapLocation:CGPoint) {
+        // TODO: impl
+    }
+}
