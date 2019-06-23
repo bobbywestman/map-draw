@@ -12,19 +12,26 @@ import MapKit
 class ViewController: UIViewController {
     // MARK: Title
 
+    /// Label with app title.
     @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: Map
 
+    /// Map.
     @IBOutlet weak var map: MKMapView!
+    
+    /// Button that toggles map type / information.
     @IBOutlet weak var mapToggleButton: UIButton!
 
     // MARK: Screenshot
 
+    /// Button that triggers an alert prompting user to save a screenshot to the camera roll.
     @IBOutlet weak var saveButton: UIButton!
 
     // MARK: State
     
+    /// State that defines what "mode" the user is currently interacting with.
+    /// When changing modes, hide / show relevant views.
     var interactionState: InteractionState = .selection {
         didSet {
             switch interactionState {
@@ -116,11 +123,5 @@ class ViewController: UIViewController {
             }
             tableViewHeight.constant = min(200, height)
         }
-    }
-}
-
-extension ViewController {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchBar.endEditing(true)
     }
 }

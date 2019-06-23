@@ -29,13 +29,18 @@
 		C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */; };
 		C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */; };
 		C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */; };
-		C534CDD722BF207900DD3890 /* ViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD622BF207900DD3890 /* ViewControllerState.swift */; };
-		C534CDDC22BF20C400DD3890 /* CanvasState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDDB22BF20C400DD3890 /* CanvasState.swift */; };
+		C534CDD722BF207900DD3890 /* ViewControllerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */; };
+		C534CDDC22BF20C400DD3890 /* CanvasTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDDB22BF20C400DD3890 /* CanvasTypes.swift */; };
 		C534CDDE22BF211100DD3890 /* ColorPickerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDDD22BF211100DD3890 /* ColorPickerProtocols.swift */; };
 		C534CDE222BF258300DD3890 /* CGHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE122BF258300DD3890 /* CGHelper.swift */; };
 		C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE322BF267600DD3890 /* CanvasConstants.swift */; };
 		C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */; };
 		C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE922BF305700DD3890 /* ResizableView.swift */; };
+		C534CDEC22BF77D500DD3890 /* ResizableViewTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDEB22BF77D500DD3890 /* ResizableViewTypes.swift */; };
+		C534CDEE22BF783000DD3890 /* ResizableView+Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDED22BF783000DD3890 /* ResizableView+Pinch.swift */; };
+		C534CDF022BF784600DD3890 /* ResizableView+Pan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDEF22BF784600DD3890 /* ResizableView+Pan.swift */; };
+		C534CDF222BF785D00DD3890 /* ResizableView+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDF122BF785D00DD3890 /* ResizableView+Rotation.swift */; };
+		C534CDF422BF78D100DD3890 /* ResizableView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDF322BF78D100DD3890 /* ResizableView+Gesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,13 +68,18 @@
 		C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Gesture.swift"; sourceTree = "<group>"; };
 		C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Drawing.swift"; sourceTree = "<group>"; };
 		C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Selection.swift"; sourceTree = "<group>"; };
-		C534CDD622BF207900DD3890 /* ViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerState.swift; sourceTree = "<group>"; };
-		C534CDDB22BF20C400DD3890 /* CanvasState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasState.swift; sourceTree = "<group>"; };
+		C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTypes.swift; sourceTree = "<group>"; };
+		C534CDDB22BF20C400DD3890 /* CanvasTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasTypes.swift; sourceTree = "<group>"; };
 		C534CDDD22BF211100DD3890 /* ColorPickerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerProtocols.swift; sourceTree = "<group>"; };
 		C534CDE122BF258300DD3890 /* CGHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelper.swift; sourceTree = "<group>"; };
 		C534CDE322BF267600DD3890 /* CanvasConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasConstants.swift; sourceTree = "<group>"; };
 		C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LifeCycle.swift"; sourceTree = "<group>"; };
 		C534CDE922BF305700DD3890 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
+		C534CDEB22BF77D500DD3890 /* ResizableViewTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableViewTypes.swift; sourceTree = "<group>"; };
+		C534CDED22BF783000DD3890 /* ResizableView+Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Pinch.swift"; sourceTree = "<group>"; };
+		C534CDEF22BF784600DD3890 /* ResizableView+Pan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Pan.swift"; sourceTree = "<group>"; };
+		C534CDF122BF785D00DD3890 /* ResizableView+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Rotation.swift"; sourceTree = "<group>"; };
+		C534CDF322BF78D100DD3890 /* ResizableView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Gesture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +140,7 @@
 		C534CDB322B8A27D00DD3890 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDD622BF207900DD3890 /* ViewControllerState.swift */,
+				C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */,
 				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
 				C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */,
@@ -148,7 +158,7 @@
 		C534CDC022BB625D00DD3890 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDDB22BF20C400DD3890 /* CanvasState.swift */,
+				C534CDDB22BF20C400DD3890 /* CanvasTypes.swift */,
 				C534CDCB22BC830C00DD3890 /* CanvasModels.swift */,
 				C534CDE322BF267600DD3890 /* CanvasConstants.swift */,
 				C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */,
@@ -171,7 +181,12 @@
 		C534CDE822BF303E00DD3890 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDEB22BF77D500DD3890 /* ResizableViewTypes.swift */,
 				C534CDE922BF305700DD3890 /* ResizableView.swift */,
+				C534CDF322BF78D100DD3890 /* ResizableView+Gesture.swift */,
+				C534CDEF22BF784600DD3890 /* ResizableView+Pan.swift */,
+				C534CDED22BF783000DD3890 /* ResizableView+Pinch.swift */,
+				C534CDF122BF785D00DD3890 /* ResizableView+Rotation.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -247,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C534CDD722BF207900DD3890 /* ViewControllerState.swift in Sources */,
+				C534CDF022BF784600DD3890 /* ResizableView+Pan.swift in Sources */,
+				C534CDD722BF207900DD3890 /* ViewControllerTypes.swift in Sources */,
 				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
 				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
@@ -262,16 +278,20 @@
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
 				C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
+				C534CDF422BF78D100DD3890 /* ResizableView+Gesture.swift in Sources */,
 				C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,
 				C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
+				C534CDEE22BF783000DD3890 /* ResizableView+Pinch.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,
+				C534CDF222BF785D00DD3890 /* ResizableView+Rotation.swift in Sources */,
+				C534CDEC22BF77D500DD3890 /* ResizableViewTypes.swift in Sources */,
 				C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */,
 				C534CDDE22BF211100DD3890 /* ColorPickerProtocols.swift in Sources */,
-				C534CDDC22BF20C400DD3890 /* CanvasState.swift in Sources */,
+				C534CDDC22BF20C400DD3890 /* CanvasTypes.swift in Sources */,
 				C534CDAB22B8709700DD3890 /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
