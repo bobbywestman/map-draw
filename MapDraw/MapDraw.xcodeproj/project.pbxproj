@@ -35,7 +35,7 @@
 		C534CDE222BF258300DD3890 /* CGHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE122BF258300DD3890 /* CGHelper.swift */; };
 		C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE322BF267600DD3890 /* CanvasConstants.swift */; };
 		C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */; };
-		C534CDEA22BF305700DD3890 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE922BF305700DD3890 /* SelectionView.swift */; };
+		C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE922BF305700DD3890 /* ResizableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,7 @@
 		C534CDE122BF258300DD3890 /* CGHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelper.swift; sourceTree = "<group>"; };
 		C534CDE322BF267600DD3890 /* CanvasConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasConstants.swift; sourceTree = "<group>"; };
 		C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LifeCycle.swift"; sourceTree = "<group>"; };
-		C534CDE922BF305700DD3890 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		C534CDE922BF305700DD3890 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		C534CDE822BF303E00DD3890 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDE922BF305700DD3890 /* SelectionView.swift */,
+				C534CDE922BF305700DD3890 /* ResizableView.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
 				C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
-				C534CDEA22BF305700DD3890 /* SelectionView.swift in Sources */,
+				C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,

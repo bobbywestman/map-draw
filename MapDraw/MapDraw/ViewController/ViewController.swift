@@ -66,8 +66,8 @@ class ViewController: UIViewController {
     // MARK: Selection
     
     /// The view in which the selection will be made.
-    @IBOutlet weak var selectorView: UIView!
-
+    @IBOutlet weak var selectorView: ResizableView!
+    
     /// The view containing the image of the selection.
     @IBOutlet weak var selectionImageView: UIImageView!
     

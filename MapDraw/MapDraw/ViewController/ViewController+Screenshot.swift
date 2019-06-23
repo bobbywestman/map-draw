@@ -27,7 +27,7 @@ extension ViewController {
         // calculate height
         let height = CGFloat(125)
         // calculate aspect ratio of map
-        let ratio = map.frame.width / map.frame.height
+        let ratio = CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height) 
         // calculate width
         let width = ratio * height
         

@@ -26,16 +26,47 @@ extension ViewController {
         canvas.delegate = self
         
         let canvasTapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.handleTap(recognizer:)))
-        let canvasDragRecognizer = UIPanGestureRecognizer(target: canvas, action: #selector(Canvas.handleDrag(recognizer:)))
+        let canvasPanRecognizer = UIPanGestureRecognizer(target: canvas, action: #selector(Canvas.handlePan(recognizer:)))
         canvas.addGestureRecognizer(canvasTapRecognizer)
-        canvas.addGestureRecognizer(canvasDragRecognizer)
+        canvas.addGestureRecognizer(canvasPanRecognizer)
         
         colorPicker.elementSize = 27
         colorPicker.delegate = self
         
         interactionState = .selection
         
-        selectorView.addExternalBorder(5.0, .white)
         selectorView.backgroundColor = .clear
+        selectorView.container = map
+        
+        let selectorPanRecognizer = UIPanGestureRecognizer(target: selectorView, action: #selector(ResizableView.handlePan(recognizer:)))
+        let selectorPinchRecognizer = UIPinchGestureRecognizer(target: selectorView, action: #selector(ResizableView.handlePinch(recognizer:)))
+        let selectorRotationRecognizer = UIRotationGestureRecognizer(target: selectorView, action: #selector(ResizableView.handleRotation(recognizer:)))
+        selectorView.addGestureRecognizer(selectorPanRecognizer)
+        selectorView.addGestureRecognizer(selectorPinchRecognizer)
+        selectorView.addGestureRecognizer(selectorRotationRecognizer)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectorView.aspectRatio =  CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height)
+        selectorView.addExternalBorder(5.0, .white)
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super .viewWillTransition(to: size, with: coordinator)
+        
+        selectorView.removeExternalBorders()
+
+        coordinator.animate(alongsideTransition: nil, completion: { _ in
+            guard let map = self.map else {
+                return
+            }
+            
+            self.selectorView?.aspectRatio =  CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height)
+            self.selectorView?.center = map.center
+            self.selectorView?.addExternalBorder(5.0, .white)
+        })
+        
     }
 }

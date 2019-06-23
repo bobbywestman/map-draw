@@ -14,7 +14,7 @@ extension Canvas {
         tapDetected(tapLocation: recognizer.location(in: self))
     }
     
-    @objc func handleDrag(recognizer: UIPanGestureRecognizer) {
+    @objc func handlePan(recognizer: UIPanGestureRecognizer) {
         let location = recognizer.location(in: self)
         
         if recognizer.state == .began {

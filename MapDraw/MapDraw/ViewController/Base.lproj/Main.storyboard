@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="116" width="1024" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0T-Y1-StW" userLabel="Selector View">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0T-Y1-StW" userLabel="Selector View" customClass="ResizableView" customModule="MapDraw" customModuleProvider="target">
                                 <rect key="frame" x="392" y="320" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,18 +206,18 @@
                                 <rect key="frame" x="20" y="658" width="984" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-qF-jF8">
-                                        <rect key="frame" x="245.5" y="0.0" width="493" height="100"/>
+                                        <rect key="frame" x="281" y="0.0" width="422" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MN-CG-kaS">
-                                                <rect key="frame" x="10" y="51" width="473" height="41"/>
-                                                <string key="text">Drag across the screen to highlight an area of the map to edit.
+                                                <rect key="frame" x="10" y="51" width="402" height="41"/>
+                                                <string key="text">Drag across the map to highlight an area to edit.
 Then click the "Select" button to enter editing mode.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejO-qJ-0cd">
-                                                <rect key="frame" x="216.5" y="10" width="60" height="36"/>
+                                                <rect key="frame" x="181" y="10" width="60" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Select"/>
                                                 <connections>
@@ -292,7 +292,7 @@ Then click the "Select" button to enter editing mode.</string>
                         <outlet property="selectButton" destination="ejO-qJ-0cd" id="hdg-Fv-MjW"/>
                         <outlet property="selectionImageView" destination="lhJ-P5-uiJ" id="zoh-Yu-r9d"/>
                         <outlet property="selectionPanel" destination="GOn-aw-SgB" id="kev-Jd-ILe"/>
-                        <outlet property="selectorView" destination="G0T-Y1-StW" id="xbs-sW-fIJ"/>
+                        <outlet property="selectorView" destination="G0T-Y1-StW" id="RNg-on-Zoi"/>
                         <outlet property="tableViewHeight" destination="fQw-Dr-H1Q" id="NLO-eM-JeN"/>
                         <outlet property="titleLabel" destination="mtT-He-45j" id="MaU-xZ-UfU"/>
                         <outlet property="undoButton" destination="B3T-n6-3tf" id="AXh-Uo-Mzc"/>

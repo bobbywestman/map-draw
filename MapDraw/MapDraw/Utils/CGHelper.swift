@@ -19,6 +19,10 @@ class CGHelper {
         let yDist = a.y - b.y
         return CGFloat(sqrt(xDist * xDist + yDist * yDist))
     }
+    
+    static func aspectRatio(width: CGFloat, height: CGFloat) -> CGFloat {
+        return width / height
+    }
 }
 
 /// Creates a border around the *outside* of a UIView
