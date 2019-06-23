@@ -14,12 +14,40 @@ extension Canvas {
         tapDetected(tapLocation: recognizer.location(in: self))
     }
     
+    private func tapDetected(tapLocation:CGPoint) {
+        switch drawingState {
+        case .line:
+            drawLinePoint(tapLocation)
+        case .pin:
+            drawPin(tapLocation)
+        case .none:
+            toggleSelection(tapLocation)
+        default:
+            break
+        }
+    }
+}
+
+extension Canvas {
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
         let location = recognizer.location(in: self)
         
         switch recognizer.state {
         case .began:
-            hitTestForLinePoint(location)
+            switch drawingState {
+            case .line:
+                draggingPoint = hitTestForPanningLinePoint(location)
+            case .pin:
+                draggingPin = hitTestForPanningPin(location)
+            case .none:
+                draggingPin = hitTestForPanningPin(location)
+                
+                if draggingPin == nil {
+                    draggingPoint = hitTestForPanningLinePoint(location)
+                }
+            default:
+                break
+            }
         case .ended:
             draggingPoint = nil
             draggingPin = nil
@@ -36,30 +64,17 @@ extension Canvas {
                     }
                 }
             } else if draggingPin != nil {
-                
+                for i in 0..<pins.count {
+                    let pin = pins[i]
+                    if pin == draggingPin {
+                        pins[i].location = location
+                    }
+                }
             }
         }
     }
-}
-
-extension Canvas {
-    private func tapDetected(tapLocation:CGPoint) {
-        switch drawingState {
-        case .line:
-            drawLinePoint(tapLocation)
-        case .pin:
-            drawPin(tapLocation)
-        case .none:
-            hitTestForLinePath(tapLocation)
-        default:
-            break
-        }
-    }
-}
-
-extension Canvas {
-    /// Used to add a point to a line
-    private func hitTestForLinePoint(_ tapLocation:CGPoint) {
+    
+    private func hitTestForPanningLinePoint(_ tapLocation:CGPoint) -> LinePoint? {
         var closestPointInThreshold: LinePoint?
         var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
@@ -70,7 +85,7 @@ extension Canvas {
             
             for point in line.points {
                 let distance = CGHelper.distance(tapLocation, point.location)
-                guard distance < Canvas.kPointTapThreshold else {
+                guard distance < Canvas.kLinePointTapThreshold else {
                     continue
                 }
                 if distance < closestDistance {
@@ -80,43 +95,84 @@ extension Canvas {
             }
         }
         
-        draggingPoint = closestPointInThreshold
+        return closestPointInThreshold
     }
     
-    /// Used to handle selection of a path
-    private func hitTestForLinePath(_ tapLocation:CGPoint) {
-        var hitDetected = false
+    private func hitTestForPanningPin(_ tapLocation:CGPoint) -> Pin? {
+        var closestPinInThreshold: Pin?
+        var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
-        for line in lines {
-            // verify path exists, some lines have 0 or 1 points
-            guard let path = line.path else {
+        for pin in pins {
+            let distance = CGHelper.distance(tapLocation, pin.location)
+            guard distance < Canvas.kPinTapThreshold else {
                 continue
             }
-            
-            // we need to copy the path, to hit test inside the entire drawn stroke
-            let cgCopy = path.cgPath.copy(strokingWithWidth: path.lineWidth, lineCap: path.lineCapStyle, lineJoin: path.lineJoinStyle, miterLimit: path.miterLimit)
-            let bezierCopy = UIBezierPath(cgPath: cgCopy)
-            if bezierCopy.contains(tapLocation) {
-                // tap detected inside path
-                hitDetected = true
+            if distance < closestDistance {
+                closestDistance = distance
+                closestPinInThreshold = pin
+            }
+        }
+        
+        return closestPinInThreshold
+    }
+}
 
-                if line == selectedLine {
-                    // deselect line
-                    selectedLine = nil
+extension Canvas {
+    /// Used to handle selection of a path
+    private func toggleSelection(_ tapLocation:CGPoint) {
+        var hitDetected = false
+        
+        for pin in pins {
+            if CGHelper.distance(tapLocation, pin.location) < Canvas.kPinTapThreshold {
+                // tap detected for pin
+                hitDetected = true
+                
+                if pin == selectedPin {
+                    // deselect pin
+                    selectedPin = nil
                 } else {
-                    // select line
-                    selectedLine = line
-                    drawColor = line.color
+                    // select pin
+                    selectedPin = pin
+                    drawColor = pin.color
                     
-                    // only select one line at a time in case of overlaps, break on first hit
+                    // only select one pin at a time in case of overlaps, break on first hit
                     break
                 }
             }
         }
         
         if !hitDetected {
-            // if no paths tapped, deselect currently selected line
-            selectedLine = nil
+            for line in lines {
+                // verify path exists, some lines have 0 or 1 points
+                guard let path = line.path else {
+                    continue
+                }
+                
+                // we need to copy the path, to hit test inside the entire drawn stroke
+                let pathCgCopy = path.cgPath.copy(strokingWithWidth: path.lineWidth, lineCap: path.lineCapStyle, lineJoin: path.lineJoinStyle, miterLimit: path.miterLimit)
+                let lineHitPath = UIBezierPath(cgPath: pathCgCopy)
+                if lineHitPath.contains(tapLocation) {
+                    // tap detected inside path
+                    hitDetected = true
+                    
+                    if line == selectedLine {
+                        // deselect line
+                        selectedLine = nil
+                    } else {
+                        // select line
+                        selectedLine = line
+                        drawColor = line.color
+                        
+                        // only select one line at a time in case of overlaps, break on first hit
+                        break
+                    }
+                }
+            }
+        }
+        
+        if !hitDetected {
+            // if no paths tapped, deselect currently selected elements
+            deselect()
         }
     }
 }

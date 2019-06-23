@@ -12,8 +12,11 @@ import UIKit
 /// Constants used to define thresholds for detecting line point locations.
 extension Canvas {
     /// When dragging / moving line points, this threshold determines the size of the area in which a point will detect a "hit" and be moved.
-    static let kPointTapThreshold = CGFloat(20)
+    static let kLinePointTapThreshold = CGFloat(20)
     
     /// When adding new line points, this threshold determines the size of the area in which a point will "connect" with the first point on the line, to create a closed / completed path.
-    static let kPointConnectThreshold = CGFloat(20)
+    static let kLinePointConnectThreshold = CGFloat(20)
+    
+    /// When dragging / moving pins, this threshold determines the size of the area in which a pin will detect a "hit" and be moved.
+    static let kPinTapThreshold = CGFloat(20)
 }

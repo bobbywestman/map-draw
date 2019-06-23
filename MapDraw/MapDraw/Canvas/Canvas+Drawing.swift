@@ -12,10 +12,22 @@ import UIKit
 extension Canvas {
     func clearDrawings() {
         lines = []
+        pins = []
     }
 }
 
 extension Canvas {
+    func updatePinImages() {
+        for image in pinImages {
+            image.removeFromSuperview()
+        }
+        pinImages = []
+        
+        for pin in pins {
+            drawPinImage(pin)
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         for i in 0..<lines.count {
             let line = lines[i]
@@ -66,6 +78,7 @@ extension Canvas {
 }
 
 extension Canvas {
+    /// Used to add a point to a line
     func drawLinePoint(_ tapLocation:CGPoint) {
         guard let selectedLine = selectedLine else {
             // create a new line if no line is currently selected
@@ -92,7 +105,7 @@ extension Canvas {
             if line == selectedLine {
                 if line.points.count > 2,
                     let firstPoint = line.points.first,
-                    CGHelper.distance(tapLocation, firstPoint.location) < Canvas.kPointConnectThreshold {
+                    CGHelper.distance(tapLocation, firstPoint.location) < Canvas.kLinePointConnectThreshold {
                     // point was drawn close enough to first point to connect & complete the path
                     lines[i].points.append(firstPoint)
                     
@@ -118,6 +131,24 @@ extension Canvas {
 
 extension Canvas {
     func drawPin(_ tapLocation:CGPoint) {
-        // TODO: impl
+        let pin = Pin(id: UUID(), color: drawColor, location: tapLocation)
+        pins.append(pin)
+        
+        drawPinImage(pin)
+    }
+    
+    func drawPinImage(_ pin: Pin) {
+        let image = UIImage(named: "Pin")?.withRenderingMode(.alwaysTemplate)
+        
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = pin.color
+        
+        let width = CGFloat(16.75)
+        let height = CGFloat(24)
+        imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        imageView.center = CGPoint(x: pin.location.x, y: pin.location.y - height)
+        
+        addSubview(imageView)
+        pinImages.append(imageView)
     }
 }

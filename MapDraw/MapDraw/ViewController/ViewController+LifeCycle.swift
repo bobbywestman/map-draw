@@ -23,7 +23,7 @@ extension ViewController {
         
         canvas.delegate = self
         drawingDelegate = canvas
-        canvas.drawColor = .black
+        drawingDelegate?.setColor(.black)
         canvas.drawingState = .none
         
         let canvasTapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.handleTap(recognizer:)))

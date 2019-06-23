@@ -11,12 +11,14 @@ import UIKit
 
 /// Protocol for sending events to a Canvas.
 protocol Canvasing: class {
+    func setColor(_ color: UIColor)
     func drawLine()
     func drawPin()
     func drawBox()
     func undo()
     func redo()
     func clear()
+    func deselect()
 }
 
 /// Protocol for handling events from a Canvas.

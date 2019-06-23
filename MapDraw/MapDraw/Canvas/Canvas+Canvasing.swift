@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 extension Canvas: Canvasing {
+    func setColor(_ color: UIColor) {
+        drawColor = color
+    }
+    
     func drawLine() {
+        selectedPin = nil
+        
         switch drawingState {
         case .line:
             drawingState = .none
@@ -25,6 +32,7 @@ extension Canvas: Canvasing {
         switch drawingState {
         case .pin:
             drawingState = .none
+            selectedPin = nil
         default:
             drawingState = .pin
         }
@@ -32,6 +40,7 @@ extension Canvas: Canvasing {
     
     func drawBox() {
         selectedLine = nil
+        selectedPin = nil
         
         switch drawingState {
         case .box:
@@ -74,5 +83,10 @@ extension Canvas: Canvasing {
     
     func clear() {
         clearDrawings()
+    }
+    
+    func deselect() {
+        selectedLine = nil
+        selectedPin = nil
     }
 }

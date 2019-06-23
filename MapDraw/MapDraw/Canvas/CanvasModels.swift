@@ -15,6 +15,15 @@ struct Pin {
     var location: CGPoint
 }
 
+extension Pin: Equatable {
+    public static func == (lhs: Pin, rhs: Pin) -> Bool {
+        guard lhs.id == rhs.id else {
+            return false
+        }
+        return true
+    }
+}
+
 // TODO: make this a class, we keep having to update `selectedLine` copy value
 struct Line {
     let id: UUID

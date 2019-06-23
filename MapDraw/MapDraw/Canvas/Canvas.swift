@@ -24,9 +24,23 @@ class Canvas: UIView {
         }
     }
 
+    var pins = [Pin]() {
+        didSet {
+            updatePinImages()
+        }
+    }
+    
+    var pinImages = [UIImageView]()
+    
+    var selectedPin: Pin? {
+        didSet {
+            updatePinImages()
+        }
+    }
+    
     var drawingState: DrawingState = .none {
         didSet {
-            print(drawingState)
+            print("Drawing state: \(drawingState)")
             
             delegate?.drawingChanged(to: drawingState)
         }

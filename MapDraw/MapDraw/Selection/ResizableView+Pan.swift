@@ -51,22 +51,22 @@ extension ResizableView {
                 // resize view while dragging corner
                 
                 // TODO: impl
-                print("topLeft")
+                print("Panning selector view from corner: topLeft")
             case .topRight:
                 // resize view while dragging corner
                 
                 // TODO: impl
-                print("topRight")
+                print("Panning selector view from corner: topRight")
             case .bottomRight:
                 // resize view while dragging corner
                 
                 // TODO: impl
-                print("bottomRight")
+                print("Panning selector view from corner: bottomRight")
             case .bottomLeft:
                 // resize view while dragging corner
                 
                 // TODO: impl
-                print("bottomLeft")
+                print("Panning selector view from corner: bottomLeft")
             }
             
             setNeedsDisplay()
