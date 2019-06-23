@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class ResizableView: UIView {
-    /// View that this `ResizableView` is contained in. Used to calculate gesture locations.
-    public var container: UIView?
+    /// View that this `ResizableView` is contained in. Gestures and positioning / resizing will be restricted to this view.
+    public var boundingView: UIView?
     
     /// Aspect ratio the view must keep while rezing.
     public var aspectRatio: CGFloat? {
@@ -28,11 +28,14 @@ class ResizableView: UIView {
         }
     }
     
-    var panning: ResizableViewPanGestureLocation? = .center
+    /// Used to calculate the area of corners used to resize the view.
+    public var cornerSize = CGFloat(40)
+    
+    /// Minimum size of this view
+    public var minimumSize = CGFloat(100)
+    
+    var panning: ResizableViewPanGestureLocation?
     var panningStartLocation: CGPoint?
-
-    let cornerSize = CGFloat(30)
-    let minSize = CGFloat(60)
     
     var topLeftCorner: CGRect {
         get {
@@ -57,5 +60,8 @@ class ResizableView: UIView {
             return CGRect(x: frame.minX, y: frame.maxY - cornerSize, width: cornerSize, height: cornerSize);
         }
     }
+    
+    /// TODO: remove this, used for debugging
+    var location: CGPoint?
 }
 

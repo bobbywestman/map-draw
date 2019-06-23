@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+/// Protocol for sending events to a Canvas.
+protocol Canvasing: class {
+    func drawLine()
+    func drawPin()
+    func drawBox()
+    func undo()
+    func redo()
+    func clear()
+}
+
 /// Protocol for handling events from a Canvas.
 protocol CanvasHandling: class {
     

@@ -34,72 +34,29 @@ extension ViewController: CanvasHandling {
 
 extension ViewController {
     @IBAction func boxButtonClick(_ sender: Any) {
-        canvas.selectedGroup = nil
-        
-        switch canvas.drawingState {
-        case .box:
-            canvas.drawingState = .none
-        default:
-            canvas.drawingState = .box
-        }
+        drawingDelegate?.drawBox()
     }
 
     @IBAction func lineButtonClick(_ sender: Any) {
-        switch canvas.drawingState {
-        case .line:
-            canvas.drawingState = .none
-            canvas.selectedGroup = nil
-        default:
-            canvas.drawingState = .line
-        }
+        drawingDelegate?.drawLine()
     }
 
     @IBAction func pinButtonClick(_ sender: Any) {
-        canvas.selectedGroup = nil
-        
-        switch canvas.drawingState {
-        case .pin:
-            canvas.drawingState = .none
-        default:
-            canvas.drawingState = .pin
-        }
+        drawingDelegate?.drawPin()
     }
 }
 
 extension ViewController {
     @IBAction func undoButtonClick(_ sender: Any) {
-        guard let selectedGroup = canvas.selectedGroup, selectedGroup.points.count > 1 else {
-            return
-        }
-        
-        if let index = canvas.groups.index(of: selectedGroup),
-            let lastPoint = canvas.groups[index].points.last {
-            canvas.groups[index].redoPoints.append(lastPoint)
-            canvas.groups[index].points.removeLast()
-
-            // update selectedGroup
-            canvas.selectedGroup = canvas.groups[index]
-        }
+        drawingDelegate?.undo()
     }
     
     @IBAction func redoButtonClick(_ sender: Any) {
-        guard let selectedGroup = canvas.selectedGroup else {
-            return
-        }
-        
-        if let index = canvas.groups.index(of: selectedGroup),
-            let lastPoint = canvas.groups[index].redoPoints.last {
-            canvas.groups[index].points.append(lastPoint)
-            
-            canvas.groups[index].redoPoints.removeLast()
-            
-            // update selectedGroup
-            canvas.selectedGroup = canvas.groups[index]
-        }
+        drawingDelegate?.redo()
     }
     
     @IBAction func clearButtonClick(_ sender: Any) {
-        canvas.clearDrawings()
+        drawingDelegate?.clear()
     }
 }
 

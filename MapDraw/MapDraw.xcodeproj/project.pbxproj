@@ -41,6 +41,7 @@
 		C534CDF022BF784600DD3890 /* ResizableView+Pan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDEF22BF784600DD3890 /* ResizableView+Pan.swift */; };
 		C534CDF222BF785D00DD3890 /* ResizableView+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDF122BF785D00DD3890 /* ResizableView+Rotation.swift */; };
 		C534CDF422BF78D100DD3890 /* ResizableView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDF322BF78D100DD3890 /* ResizableView+Gesture.swift */; };
+		C534CDF622C0098A00DD3890 /* Canvas+Canvasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDF522C0098A00DD3890 /* Canvas+Canvasing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C534CDEF22BF784600DD3890 /* ResizableView+Pan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Pan.swift"; sourceTree = "<group>"; };
 		C534CDF122BF785D00DD3890 /* ResizableView+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Rotation.swift"; sourceTree = "<group>"; };
 		C534CDF322BF78D100DD3890 /* ResizableView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResizableView+Gesture.swift"; sourceTree = "<group>"; };
+		C534CDF522C0098A00DD3890 /* Canvas+Canvasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Canvasing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C534CDC122BB626C00DD3890 /* Canvas.swift */,
 				C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */,
 				C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */,
+				C534CDF522C0098A00DD3890 /* Canvas+Canvasing.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
 				C534CDF422BF78D100DD3890 /* ResizableView+Gesture.swift in Sources */,
 				C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */,
+				C534CDF622C0098A00DD3890 /* Canvas+Canvasing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,

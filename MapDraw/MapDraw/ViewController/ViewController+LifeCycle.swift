@@ -21,9 +21,10 @@ extension ViewController {
         searchResultsTableView.delegate = self
         searchResultsTableView.isHidden = true
         
+        canvas.delegate = self
+        drawingDelegate = canvas
         canvas.drawColor = .black
         canvas.drawingState = .none
-        canvas.delegate = self
         
         let canvasTapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.handleTap(recognizer:)))
         let canvasPanRecognizer = UIPanGestureRecognizer(target: canvas, action: #selector(Canvas.handlePan(recognizer:)))
@@ -36,7 +37,7 @@ extension ViewController {
         interactionState = .selection
         
         selectorView.backgroundColor = .clear
-        selectorView.container = map
+        selectorView.boundingView = map
         
         let selectorPanRecognizer = UIPanGestureRecognizer(target: selectorView, action: #selector(ResizableView.handlePan(recognizer:)))
         let selectorPinchRecognizer = UIPinchGestureRecognizer(target: selectorView, action: #selector(ResizableView.handlePinch(recognizer:)))

@@ -87,8 +87,10 @@ class ViewController: UIViewController {
     // MARK: Drawing
     
     /// The bottom panel with interactive elements for drawing.
-    @IBOutlet weak var drawingPanel: UIView!
     @IBOutlet weak var canvas: Canvas!
+    weak var drawingDelegate: Canvasing?
+    
+    @IBOutlet weak var drawingPanel: UIView!
     @IBOutlet weak var boxButton: UIButton!
     @IBOutlet weak var lineButton: UIButton!
     @IBOutlet weak var pinButton: UIButton!

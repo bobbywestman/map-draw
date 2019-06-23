@@ -17,7 +17,7 @@ enum ResizableViewPanGestureLocation {
     case topRight
     
     /// The pan gesture was started in the bottom right corner
-    case bottomright
+    case bottomRight
     
     /// The pan gesture was started in the bottom left corner
     case bottomLeft

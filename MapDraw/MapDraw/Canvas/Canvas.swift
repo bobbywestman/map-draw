@@ -12,13 +12,13 @@ import UIKit
 class Canvas: UIView {
     weak var delegate: CanvasHandling?
     
-    var groups = [PointGroup]() {
+    var lines = [Line]() {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var selectedGroup: PointGroup? {
+    var selectedLine: Line? {
         didSet {
             setNeedsDisplay()
         }
@@ -38,11 +38,6 @@ class Canvas: UIView {
         }
     }
     
-    var dragStartedLocation: CGPoint?
-    
-    var draggingPoint: Point?
-    
-    func clearDrawings() {
-        groups = []
-    }
+    var draggingPoint: LinePoint?
+    var draggingPin: Pin?
 }

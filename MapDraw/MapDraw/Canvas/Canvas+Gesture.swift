@@ -17,32 +17,26 @@ extension Canvas {
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
         let location = recognizer.location(in: self)
         
-        if recognizer.state == .began {
-            dragStartedLocation = location
-            
-            guard let dragStartedLocation = dragStartedLocation else {
-                return
-            }
-            
-            hitTestForLinePoint(dragStartedLocation)
-        }
-        else if recognizer.state == .ended {
-            dragStartedLocation = nil
+        switch recognizer.state {
+        case .began:
+            hitTestForLinePoint(location)
+        case .ended:
             draggingPoint = nil
+            draggingPin = nil
             return
-        }
-        
-        guard draggingPoint != nil else {
-            return
-        }
-        
-        for i in 0..<groups.count {
-            let group = groups[i]
-            for j in 0..<group.points.count {
-                let point = group.points[j]
-                if point == draggingPoint {
-                    groups[i].points[j].location = location
+        default:
+            if draggingPoint != nil  {
+                for i in 0..<lines.count {
+                    let line = lines[i]
+                    for j in 0..<line.points.count {
+                        let point = line.points[j]
+                        if point == draggingPoint {
+                            lines[i].points[j].location = location
+                        }
+                    }
                 }
+            } else if draggingPin != nil {
+                
             }
         }
     }
@@ -66,22 +60,21 @@ extension Canvas {
 extension Canvas {
     /// Used to add a point to a line
     private func hitTestForLinePoint(_ tapLocation:CGPoint) {
-        var closestPointInThreshold: Point?
+        var closestPointInThreshold: LinePoint?
         var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
-        for group in groups {
-            
-            guard group.points.count > 1 else {
+        for line in lines {
+            guard line.points.count > 1 else {
                 continue
             }
             
-            for point in group.points {
-                let delta = CGHelper.distance(tapLocation, point.location)
-                guard delta < Canvas.kPointTapThreshold else {
+            for point in line.points {
+                let distance = CGHelper.distance(tapLocation, point.location)
+                guard distance < Canvas.kPointTapThreshold else {
                     continue
                 }
-                if delta < closestDistance {
-                    closestDistance = delta
+                if distance < closestDistance {
+                    closestDistance = distance
                     closestPointInThreshold = point
                 }
             }
@@ -94,9 +87,9 @@ extension Canvas {
     private func hitTestForLinePath(_ tapLocation:CGPoint) {
         var hitDetected = false
         
-        for group in groups {
-            // verify path exists, some groups have 0 or 1 points
-            guard let path = group.path else {
+        for line in lines {
+            // verify path exists, some lines have 0 or 1 points
+            guard let path = line.path else {
                 continue
             }
             
@@ -107,13 +100,13 @@ extension Canvas {
                 // tap detected inside path
                 hitDetected = true
 
-                if group == selectedGroup {
-                    // deselect group
-                    selectedGroup = nil
+                if line == selectedLine {
+                    // deselect line
+                    selectedLine = nil
                 } else {
-                    // select group
-                    selectedGroup = group
-                    drawColor = group.color
+                    // select line
+                    selectedLine = line
+                    drawColor = line.color
                     
                     // only select one line at a time in case of overlaps, break on first hit
                     break
@@ -122,8 +115,8 @@ extension Canvas {
         }
         
         if !hitDetected {
-            // if no paths tapped, deselect currently selected group
-            selectedGroup = nil
+            // if no paths tapped, deselect currently selected line
+            selectedLine = nil
         }
     }
 }
