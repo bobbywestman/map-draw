@@ -84,12 +84,14 @@ extension Canvas {
         for i in 0..<groups.count {
             let group = groups[i]
             if group == selected {
-                if let firstPoint = group.points.first,
-                    distance(tapLocation, firstPoint.location) < kPointConnectThreshold {
+                if group.points.count > 2,
+                    let firstPoint = group.points.first,
+                    CGHelper.distance(tapLocation, firstPoint.location) < Canvas.kPointConnectThreshold {
                     // point was drawn close enough to first point to connect & complete the path
                     groups[i].points.append(firstPoint)
                     
-                    // path complete, reset drawing state, since no more line points can be added for this group
+                    // path complete, reset drawing state + deselect, since no more line points can be added for this group
+                    selectedGroup = nil
                     drawingState = .none
                 } else {
                     // new point was drawn

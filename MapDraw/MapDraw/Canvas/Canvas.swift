@@ -42,6 +42,7 @@ class Canvas: UIView {
     
     var draggingPoint: Point?
     
-    let kPointTapThreshold = CGFloat(20)
-    let kPointConnectThreshold = CGFloat(20)
+    func clearDrawings() {
+        groups = []
+    }
 }

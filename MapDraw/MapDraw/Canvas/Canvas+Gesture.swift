@@ -9,22 +9,15 @@
 import Foundation
 import UIKit
 
-// TODO: move this
-func distance(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
-    let xDist = a.x - b.x
-    let yDist = a.y - b.y
-    return CGFloat(sqrt(xDist * xDist + yDist * yDist))
-}
-
 extension Canvas {
-    @objc public func tapDetected(tapRecognizer:UITapGestureRecognizer) {
-        tapDetected(tapLocation: tapRecognizer.location(in: self))
+    @objc func handleTap(recognizer: UITapGestureRecognizer) {
+        tapDetected(tapLocation: recognizer.location(in: self))
     }
     
-    @objc public func dragDetected(dragRecognizer:UIPanGestureRecognizer) {
-        let location = dragRecognizer.location(in: self)
+    @objc func handleDrag(recognizer: UIPanGestureRecognizer) {
+        let location = recognizer.location(in: self)
         
-        if dragRecognizer.state == .began {
+        if recognizer.state == .began {
             dragStartedLocation = location
             
             guard let dragStartedLocation = dragStartedLocation else {
@@ -33,7 +26,7 @@ extension Canvas {
             
             hitTestForLinePoint(dragStartedLocation)
         }
-        else if dragRecognizer.state == .ended {
+        else if recognizer.state == .ended {
             dragStartedLocation = nil
             draggingPoint = nil
             return
@@ -69,7 +62,7 @@ extension Canvas {
     
     private func hitTestForLinePoint(_ tapLocation:CGPoint) {
         var closestPointInThreshold: Point?
-        var closestDistance = CGFloat.greatestFiniteMagnitude
+        var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
         for group in groups {
             
@@ -78,8 +71,8 @@ extension Canvas {
             }
             
             for point in group.points {
-                let delta = distance(tapLocation, point.location)
-                guard delta < kPointTapThreshold else {
+                let delta = CGHelper.distance(tapLocation, point.location)
+                guard delta < Canvas.kPointTapThreshold else {
                     continue
                 }
                 if delta < closestDistance {

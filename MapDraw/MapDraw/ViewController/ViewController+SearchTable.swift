@@ -1,5 +1,5 @@
 //
-//  ViewController+UITableView.swift
+//  ViewController+SearchTable.swift
 //  MapDraw
 //
 //  Created by Bobby Westman on 6/17/19.

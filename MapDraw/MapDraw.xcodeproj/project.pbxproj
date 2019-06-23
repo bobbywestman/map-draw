@@ -15,7 +15,7 @@
 		C534CDAB22B8709700DD3890 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDAA22B8709700DD3890 /* ColorPicker.swift */; };
 		C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDAE22B89A1100DD3890 /* TextHelper.swift */; };
 		C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB122B89B8600DD3890 /* MapHelper.swift */; };
-		C534CDB522B8A2A100DD3890 /* ViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */; };
+		C534CDB522B8A2A100DD3890 /* ViewController+SearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB422B8A2A100DD3890 /* ViewController+SearchTable.swift */; };
 		C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB722B8A32600DD3890 /* ViewController+Map.swift */; };
 		C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */; };
 		C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */; };
@@ -28,6 +28,14 @@
 		C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */; };
 		C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */; };
 		C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */; };
+		C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */; };
+		C534CDD722BF207900DD3890 /* ViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD622BF207900DD3890 /* ViewControllerState.swift */; };
+		C534CDDC22BF20C400DD3890 /* CanvasState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDDB22BF20C400DD3890 /* CanvasState.swift */; };
+		C534CDDE22BF211100DD3890 /* ColorPickerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDDD22BF211100DD3890 /* ColorPickerProtocols.swift */; };
+		C534CDE222BF258300DD3890 /* CGHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE122BF258300DD3890 /* CGHelper.swift */; };
+		C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE322BF267600DD3890 /* CanvasConstants.swift */; };
+		C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */; };
+		C534CDEA22BF305700DD3890 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDE922BF305700DD3890 /* SelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +49,7 @@
 		C534CDAA22B8709700DD3890 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		C534CDAE22B89A1100DD3890 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		C534CDB122B89B8600DD3890 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
-		C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UITableView.swift"; sourceTree = "<group>"; };
+		C534CDB422B8A2A100DD3890 /* ViewController+SearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SearchTable.swift"; sourceTree = "<group>"; };
 		C534CDB722B8A32600DD3890 /* ViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Map.swift"; sourceTree = "<group>"; };
 		C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ColorPicker.swift"; sourceTree = "<group>"; };
 		C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SearchBar.swift"; sourceTree = "<group>"; };
@@ -54,6 +62,14 @@
 		C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
 		C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Gesture.swift"; sourceTree = "<group>"; };
 		C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Drawing.swift"; sourceTree = "<group>"; };
+		C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Selection.swift"; sourceTree = "<group>"; };
+		C534CDD622BF207900DD3890 /* ViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerState.swift; sourceTree = "<group>"; };
+		C534CDDB22BF20C400DD3890 /* CanvasState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasState.swift; sourceTree = "<group>"; };
+		C534CDDD22BF211100DD3890 /* ColorPickerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerProtocols.swift; sourceTree = "<group>"; };
+		C534CDE122BF258300DD3890 /* CGHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelper.swift; sourceTree = "<group>"; };
+		C534CDE322BF267600DD3890 /* CanvasConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasConstants.swift; sourceTree = "<group>"; };
+		C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LifeCycle.swift"; sourceTree = "<group>"; };
+		C534CDE922BF305700DD3890 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +102,10 @@
 		C534CD9622B8673400DD3890 /* MapDraw */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDCF22BC873E00DD3890 /* Protocols */,
-				C534CDCA22BC82FC00DD3890 /* Models */,
-				C534CDC022BB625D00DD3890 /* Views */,
-				C534CDB322B8A27D00DD3890 /* VC */,
+				C534CDB322B8A27D00DD3890 /* ViewController */,
+				C534CDC022BB625D00DD3890 /* Canvas */,
+				C534CDE822BF303E00DD3890 /* Selection */,
+				C534CDD822BF208D00DD3890 /* ColorPicker */,
 				C534CDAC22B899E700DD3890 /* Utils */,
 				C534CD9722B8673400DD3890 /* AppDelegate.swift */,
 				C534CD9E22B8673500DD3890 /* Assets.xcassets */,
@@ -106,50 +122,58 @@
 				C534CDBE22B9C2E000DD3890 /* ScreenshotHelper.swift */,
 				C534CDB122B89B8600DD3890 /* MapHelper.swift */,
 				C534CDAE22B89A1100DD3890 /* TextHelper.swift */,
+				C534CDE122BF258300DD3890 /* CGHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C534CDB322B8A27D00DD3890 /* VC */ = {
+		C534CDB322B8A27D00DD3890 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDD622BF207900DD3890 /* ViewControllerState.swift */,
 				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
+				C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */,
 				C534CDB722B8A32600DD3890 /* ViewController+Map.swift */,
-				C534CDB422B8A2A100DD3890 /* ViewController+UITableView.swift */,
+				C534CDB422B8A2A100DD3890 /* ViewController+SearchTable.swift */,
 				C534CDB922B8A36500DD3890 /* ViewController+ColorPicker.swift */,
 				C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */,
 				C534CDC322BB62BB00DD3890 /* ViewController+Drawing.swift */,
 				C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */,
+				C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */,
 			);
-			path = VC;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		C534CDC022BB625D00DD3890 /* Views */ = {
+		C534CDC022BB625D00DD3890 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				C534CDDB22BF20C400DD3890 /* CanvasState.swift */,
+				C534CDCB22BC830C00DD3890 /* CanvasModels.swift */,
+				C534CDE322BF267600DD3890 /* CanvasConstants.swift */,
+				C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */,
 				C534CDC122BB626C00DD3890 /* Canvas.swift */,
 				C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */,
 				C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		C534CDD822BF208D00DD3890 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C534CDDD22BF211100DD3890 /* ColorPickerProtocols.swift */,
 				C534CDAA22B8709700DD3890 /* ColorPicker.swift */,
 			);
-			path = Views;
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
-		C534CDCA22BC82FC00DD3890 /* Models */ = {
+		C534CDE822BF303E00DD3890 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
-				C534CDCB22BC830C00DD3890 /* CanvasModels.swift */,
+				C534CDE922BF305700DD3890 /* SelectionView.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C534CDCF22BC873E00DD3890 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */,
-			);
-			path = Protocols;
+			path = Selection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,23 +247,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C534CDD722BF207900DD3890 /* ViewControllerState.swift in Sources */,
+				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
 				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
 				C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */,
 				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,
+				C534CDE222BF258300DD3890 /* CGHelper.swift in Sources */,
 				C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */,
 				C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */,
 				C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */,
-				C534CDB522B8A2A100DD3890 /* ViewController+UITableView.swift in Sources */,
+				C534CDB522B8A2A100DD3890 /* ViewController+SearchTable.swift in Sources */,
 				C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */,
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
+				C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
+				C534CDEA22BF305700DD3890 /* SelectionView.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,
+				C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,
 				C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */,
+				C534CDDE22BF211100DD3890 /* ColorPickerProtocols.swift in Sources */,
+				C534CDDC22BF20C400DD3890 /* CanvasState.swift in Sources */,
 				C534CDAB22B8709700DD3890 /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

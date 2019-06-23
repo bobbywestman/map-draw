@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-enum DrawingState {
-    case line
-    case box
-    case pin
-    case none
-}
-
 // TODO: make this a class, we keep having to update selected group copy value
 struct PointGroup {
     let id: UUID

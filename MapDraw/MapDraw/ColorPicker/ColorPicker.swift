@@ -9,10 +9,6 @@
 // https://stackoverflow.com/questions/27208386/simple-swift-color-picker-popover-ios
 import UIKit
 
-protocol ColorPickerDelegate: class{
-    func colorDidChange(color: UIColor)
-}
-
 class ColorPickerView : UIView {
     
     weak var delegate: ColorPickerDelegate?

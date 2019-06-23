@@ -43,9 +43,7 @@ extension ViewController {
             canvas.drawingState = .box
         }
     }
-}
 
-extension ViewController {
     @IBAction func lineButtonClick(_ sender: Any) {
         switch canvas.drawingState {
         case .line:
@@ -55,9 +53,7 @@ extension ViewController {
             canvas.drawingState = .line
         }
     }
-}
 
-extension ViewController {
     @IBAction func pinButtonClick(_ sender: Any) {
         canvas.selectedGroup = nil
         
@@ -103,6 +99,12 @@ extension ViewController {
     }
     
     @IBAction func clearButtonClick(_ sender: Any) {
-        canvas.groups = []
+        canvas.clearDrawings()
+    }
+}
+
+extension ViewController {
+    @IBAction func cancelDrawingButtonClick(_ sender: Any) {
+        interactionState = .selection
     }
 }
