@@ -48,9 +48,9 @@ extension Canvas {
             
             let stroke: UIColor
             if let selected = selectedLine, line == selected {
-                stroke = line.color.lighter()
-            } else {
                 stroke = line.color
+            } else {
+                stroke = line.color.lighter()
             }
             stroke.setStroke()
             path.stroke()
