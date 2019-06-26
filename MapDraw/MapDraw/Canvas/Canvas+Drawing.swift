@@ -14,6 +14,8 @@ extension Canvas {
         lines = []
         pins = []
         deselectAll()
+        draggingPin = nil
+        draggingPoint = nil
     }
 }
 

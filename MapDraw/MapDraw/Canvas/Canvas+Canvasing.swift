@@ -59,34 +59,30 @@ extension Canvas: Canvasing {
     }
     
     func undo() {
-        guard let selectedLine = selectedLine, selectedLine.points.count > 0 else {
+        guard let selectedLine = selectedLine,
+            selectedLine.points.count > 0,
+            let index = lines.index(of: selectedLine),
+            let lastPoint = lines[index].points.last else {
             return
         }
         
-        if let index = lines.index(of: selectedLine),
-            let lastPoint = lines[index].points.last {
-            lines[index].redoPoints.append(lastPoint)
-            lines[index].points.removeLast()
-            
-            // update selectedLine
-            self.selectedLine = lines[index]
-        }
+        lines[index].redoPoints.append(lastPoint)
+        lines[index].points.removeLast()
+        
+        // update selectedLine
+        selectLine(lines[index])
     }
     
     func redo() {
-        guard let selectedLine = selectedLine else {
+        guard let selectedLine = selectedLine,
+            let index = lines.index(of: selectedLine),
+            let lastPoint = lines[index].redoPoints.last else {
             return
         }
         
-        if let index = lines.index(of: selectedLine),
-            let lastPoint = lines[index].redoPoints.last {
-            lines[index].points.append(lastPoint)
-            
-            lines[index].redoPoints.removeLast()
-            
-            // update selectedLine
-            self.selectedLine = lines[index]
-        }
+        lines[index].points.append(lastPoint)
+        lines[index].redoPoints.removeLast()
+        selectLine(lines[index])
     }
     
     func clear() {

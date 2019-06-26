@@ -151,7 +151,7 @@ extension Canvas {
         var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
         for line in lines {
-            guard line.points.count > 1 else {
+            guard line.points.count > 0 else {
                 continue
             }
             

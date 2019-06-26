@@ -72,8 +72,24 @@ extension Canvas {
     
     func didSelectLine(_ tapLocation:CGPoint) -> Bool {
         for line in lines {
-            // verify path exists, some lines have 0 or 1 points
-            guard let path = line.path else {
+            // verify path exists, and line has more than 1 point
+            guard let path = line.path,
+                line.points.count > 1 else {
+                for point in line.points {
+                    let distance = CGHelper.distance(tapLocation, point.location)
+                    guard distance < Canvas.kLinePointTapThreshold else {
+                        continue
+                    }
+                    if line == selectedLine {
+                        // line already selected, deselect it
+                        deselectAll()
+                    } else {
+                        selectLine(line)
+                        
+                        // line was selected
+                        return true
+                    }
+                }
                 continue
             }
             
