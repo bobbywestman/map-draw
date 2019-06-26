@@ -34,15 +34,15 @@ extension ViewController: CanvasHandling {
 
 extension ViewController {
     @IBAction func boxButtonClick(_ sender: Any) {
-        drawingDelegate?.drawBox()
+        drawingDelegate?.drawingBox()
     }
 
     @IBAction func lineButtonClick(_ sender: Any) {
-        drawingDelegate?.drawLine()
+        drawingDelegate?.drawingLine()
     }
 
     @IBAction func pinButtonClick(_ sender: Any) {
-        drawingDelegate?.drawPin()
+        drawingDelegate?.drawingPin()
     }
 }
 

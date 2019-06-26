@@ -14,7 +14,7 @@ extension Canvas: Canvasing {
         drawColor = color
     }
     
-    func drawLine() {
+    func drawingLine() {
         selectedPin = nil
         
         switch drawingState {
@@ -26,7 +26,7 @@ extension Canvas: Canvasing {
         }
     }
     
-    func drawPin() {
+    func drawingPin() {
         selectedLine = nil
         
         switch drawingState {
@@ -38,7 +38,7 @@ extension Canvas: Canvasing {
         }
     }
     
-    func drawBox() {
+    func drawingBox() {
         selectedLine = nil
         selectedPin = nil
         

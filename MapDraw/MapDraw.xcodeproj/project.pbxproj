@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C511622A22C2F5140031F5A5 /* Canvas+PanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622922C2F5140031F5A5 /* Canvas+PanGesture.swift */; };
+		C511622C22C2F5240031F5A5 /* Canvas+TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622B22C2F5240031F5A5 /* Canvas+TapGesture.swift */; };
+		C511622E22C2F5CF0031F5A5 /* Canvas+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622D22C2F5CF0031F5A5 /* Canvas+Selection.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -26,7 +29,6 @@
 		C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */; };
 		C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCB22BC830C00DD3890 /* CanvasModels.swift */; };
 		C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */; };
-		C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */; };
 		C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */; };
 		C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */; };
 		C534CDD722BF207900DD3890 /* ViewControllerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */; };
@@ -45,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C511622922C2F5140031F5A5 /* Canvas+PanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+PanGesture.swift"; sourceTree = "<group>"; };
+		C511622B22C2F5240031F5A5 /* Canvas+TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+TapGesture.swift"; sourceTree = "<group>"; };
+		C511622D22C2F5CF0031F5A5 /* Canvas+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Selection.swift"; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		C534CDC822BC7EFC00DD3890 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		C534CDCB22BC830C00DD3890 /* CanvasModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasModels.swift; sourceTree = "<group>"; };
 		C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
-		C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Gesture.swift"; sourceTree = "<group>"; };
 		C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Drawing.swift"; sourceTree = "<group>"; };
 		C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Selection.swift"; sourceTree = "<group>"; };
 		C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTypes.swift; sourceTree = "<group>"; };
@@ -165,7 +169,9 @@
 				C534CDE322BF267600DD3890 /* CanvasConstants.swift */,
 				C534CDCD22BC873600DD3890 /* CanvasProtocols.swift */,
 				C534CDC122BB626C00DD3890 /* Canvas.swift */,
-				C534CDD022BD7DD800DD3890 /* Canvas+Gesture.swift */,
+				C511622B22C2F5240031F5A5 /* Canvas+TapGesture.swift */,
+				C511622922C2F5140031F5A5 /* Canvas+PanGesture.swift */,
+				C511622D22C2F5CF0031F5A5 /* Canvas+Selection.swift */,
 				C534CDD222BD7E6600DD3890 /* Canvas+Drawing.swift */,
 				C534CDF522C0098A00DD3890 /* Canvas+Canvasing.swift */,
 			);
@@ -270,6 +276,7 @@
 				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
 				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
+				C511622C22C2F5240031F5A5 /* Canvas+TapGesture.swift in Sources */,
 				C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */,
 				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,
 				C534CDE222BF258300DD3890 /* CGHelper.swift in Sources */,
@@ -281,11 +288,11 @@
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
 				C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
+				C511622E22C2F5CF0031F5A5 /* Canvas+Selection.swift in Sources */,
 				C534CDF422BF78D100DD3890 /* ResizableView+Gesture.swift in Sources */,
 				C534CDEA22BF305700DD3890 /* ResizableView.swift in Sources */,
 				C534CDF622C0098A00DD3890 /* Canvas+Canvasing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
-				C534CDD122BD7DD800DD3890 /* Canvas+Gesture.swift in Sources */,
 				C534CDBA22B8A36500DD3890 /* ViewController+ColorPicker.swift in Sources */,
 				C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
@@ -293,6 +300,7 @@
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,
 				C534CDF222BF785D00DD3890 /* ResizableView+Rotation.swift in Sources */,
 				C534CDEC22BF77D500DD3890 /* ResizableViewTypes.swift in Sources */,
+				C511622A22C2F5140031F5A5 /* Canvas+PanGesture.swift in Sources */,
 				C534CDB822B8A32600DD3890 /* ViewController+Map.swift in Sources */,
 				C534CDDE22BF211100DD3890 /* ColorPickerProtocols.swift in Sources */,
 				C534CDDC22BF20C400DD3890 /* CanvasTypes.swift in Sources */,

@@ -27,48 +27,6 @@ class ViewController: UIViewController {
 
     /// Button that triggers an alert prompting user to save a screenshot to the camera roll.
     @IBOutlet weak var saveButton: UIButton!
-
-    // MARK: State
-    
-    /// State that defines what "mode" the user is currently interacting with.
-    /// When changing modes, hide / show relevant views.
-    var interactionState: InteractionState = .selection {
-        didSet {
-            switch interactionState {
-            case .selection:
-                canvas.drawingState = .none
-                canvas.clearDrawings()
-                canvas.isHidden = true
-                drawingPanel.isHidden = true
-                
-                selectorView.isHidden = true // this is visible on button tap, not state change
-                selectionImageView.isHidden = true // this is visible on button tap, not state change
-                selectionImageView.image = nil
-                selectionPanel.isHidden = false
-                
-                saveButton.isHidden = true
-                cancelDrawingButton.isHidden = true
-                
-                searchBar.isHidden = false
-                mapToggleButton.isHidden = false
-                titleLabel.isHidden = false
-            case .drawing:
-                canvas.isHidden = false
-                drawingPanel.isHidden = false
-                
-                selectorView.isHidden = true
-                selectionImageView.isHidden = false
-                selectionPanel.isHidden = true
-                
-                saveButton.isHidden = false
-                cancelDrawingButton.isHidden = false
-
-                searchBar.isHidden = true
-                mapToggleButton.isHidden = true
-                titleLabel.isHidden = true
-            }
-        }
-    }
     
     // MARK: Selection
     
@@ -124,6 +82,48 @@ class ViewController: UIViewController {
                 height += cell.frame.height
             }
             tableViewHeight.constant = min(200, height)
+        }
+    }
+    
+    // MARK: State
+    
+    /// State that defines what "mode" the user is currently interacting with.
+    /// When changing modes, hide / show relevant views.
+    var interactionState: InteractionState = .selection {
+        didSet {
+            switch interactionState {
+            case .selection:
+                canvas.drawingState = .none
+                canvas.clearDrawings()
+                canvas.isHidden = true
+                drawingPanel.isHidden = true
+                
+                selectorView.isHidden = true // this is visible on button tap, not state change
+                selectionImageView.isHidden = true // this is visible on button tap, not state change
+                selectionImageView.image = nil
+                selectionPanel.isHidden = false
+                
+                saveButton.isHidden = true
+                cancelDrawingButton.isHidden = true
+                
+                searchBar.isHidden = false
+                mapToggleButton.isHidden = false
+                titleLabel.isHidden = false
+            case .drawing:
+                canvas.isHidden = false
+                drawingPanel.isHidden = false
+                
+                selectorView.isHidden = true
+                selectionImageView.isHidden = false
+                selectionPanel.isHidden = true
+                
+                saveButton.isHidden = false
+                cancelDrawingButton.isHidden = false
+                
+                searchBar.isHidden = true
+                mapToggleButton.isHidden = true
+                titleLabel.isHidden = true
+            }
         }
     }
 }
