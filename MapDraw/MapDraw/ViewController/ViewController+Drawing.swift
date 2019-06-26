@@ -62,6 +62,11 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func cancelDrawingButtonClick(_ sender: Any) {
+        guard canvas.pins.count > 0 || canvas.lines.count > 0 else {
+            interactionState = .selection
+            return
+        }
+        
         let alert = UIAlertController(title: "Cancel", message: "Are you sure?\nYour changes won't be saved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
         alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action:UIAlertAction!) in
