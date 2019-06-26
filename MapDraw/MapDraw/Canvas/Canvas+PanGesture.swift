@@ -63,7 +63,10 @@ extension Canvas {
             guard draggingPin == nil, draggingPoint == nil else { break }
             
             // draw new pin
-            draggingPin = drawPin(location)
+            // draw new point
+            let x = location.x - Canvas.kDragHorizontalOffset
+            let y = location.y - Canvas.kDragVerticalOffset
+            draggingPin = drawPin(CGPoint(x: x , y: y))
         case .none:
             // no drawing mode enabled, we can only drag elements
             // priority:
@@ -129,7 +132,7 @@ extension Canvas {
                     // replace last point with the frist one
                     lines[i].points[line.points.count - 1] = firstPoint
                     draggingPoint = firstPoint
-                    selectLine(line)
+                    selectLine(lines[i])
                 }
             }
         default:
