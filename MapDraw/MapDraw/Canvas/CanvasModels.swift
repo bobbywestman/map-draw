@@ -13,6 +13,16 @@ struct Pin {
     let id: UUID
     var color: UIColor
     var location: CGPoint
+    var number: Int?
+    var note: String?
+    
+    init(id: UUID, color: UIColor, location: CGPoint, number: Int? = nil, note: String? = nil) {
+        self.id = id
+        self.location = location
+        self.color = color
+        self.number = number
+        self.note = note
+    }
 }
 
 extension Pin: Equatable {

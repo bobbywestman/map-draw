@@ -86,16 +86,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MapDraw/Selection/ResizableView+Pan.swift"
-            timestampString = "583222359.404839"
+            filePath = "MapDraw/Canvas/Canvas+Drawing.swift"
+            timestampString = "583227319.6455719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "handlePan(recognizer:)"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "drawLinePoint(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapDraw/Canvas/Canvas+Drawing.swift"
-            timestampString = "583222359.40491"
+            timestampString = "583227319.646459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapDraw/Canvas/Canvas+Drawing.swift"
-            timestampString = "583222359.406068"
+            timestampString = "583227319.6471781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "drawLinePoint(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,27 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MapDraw/Canvas/Canvas+Drawing.swift"
-            timestampString = "583222359.4069459"
+            timestampString = "583227319.6478961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "drawLinePoint(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MapDraw/Canvas/Canvas+Drawing.swift"
-            timestampString = "583222359.40782"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "drawLinePoint(_:)"
             landmarkType = "7">
          </BreakpointContent>

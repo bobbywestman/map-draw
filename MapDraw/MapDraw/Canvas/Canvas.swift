@@ -54,4 +54,6 @@ class Canvas: UIView {
     
     var draggingPoint: LinePoint?
     var draggingPin: Pin?
+    
+    var pinOverlay: UIView?
 }

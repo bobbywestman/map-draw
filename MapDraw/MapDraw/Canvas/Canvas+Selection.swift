@@ -13,10 +13,13 @@ extension Canvas {
     func deselectAll() {
         selectedLine = nil
         selectedPin = nil
+        
+        hidePinOverlay()
     }
     
     func selectPin(_ pin: Pin) {
         selectedPin = pin
+        showPinOverlay()
         drawColor = pin.color
         
         selectedLine = nil
@@ -27,6 +30,7 @@ extension Canvas {
         drawColor = line.color
         
         selectedPin = nil
+        hidePinOverlay()
     }
 }
 
@@ -45,7 +49,7 @@ extension Canvas {
         
         if !hitDetected {
             // if no elements tapped, deselect currently selected elements
-            deselect()
+            deselectAll()
         }
     }
     
