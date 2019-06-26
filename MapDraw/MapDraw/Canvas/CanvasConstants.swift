@@ -24,10 +24,10 @@ extension Canvas {
     static let kPinTapThreshold = CGFloat(40)
     
     /// When dragging an element, the user's finger covers the exact location, this offest makes it a bit easier to see where exactly the element is being moved to.
-    static let kDragVerticalOffset = CGFloat(10)
+    static let kDragVerticalOffset = CGFloat(50)
     
     /// When dragging an element, the user's finger covers the exact location, this offest makes it a bit easier to see where exactly the element is being moved to.
-    static let kDragHorizontalOffset = CGFloat(45)
+    static let kDragHorizontalOffset = CGFloat(0)
     
     static let kPinHeight = CGFloat(31.2)
     static let kPinWidth = CGFloat(21.775)

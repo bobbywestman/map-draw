@@ -37,6 +37,6 @@ extension ViewController {
             screenshotView.heightAnchor.constraint(equalToConstant: height),
             screenshotView.widthAnchor.constraint(equalToConstant: width),
             ])
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }

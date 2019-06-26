@@ -11,7 +11,7 @@ import UIKit
 
 extension ViewController {
     override func viewDidLoad() {
-        map.mapType = .hybridFlyover
+        map.mapType = .hybrid
         // TODO: set map center initially at current location?
         
         searchBar.delegate = self

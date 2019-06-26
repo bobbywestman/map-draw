@@ -128,7 +128,7 @@ extension Canvas {
                     let lastPoint = line.points.last,
                     draggingPoint == lastPoint || draggingPoint == firstPoint,
                     CGHelper.distance(lastPoint.location, firstPoint.location) < Canvas.kLinePointConnectThreshold else {
-                    break
+                    continue
                 }
                 
                 if draggingPoint == firstPoint {
