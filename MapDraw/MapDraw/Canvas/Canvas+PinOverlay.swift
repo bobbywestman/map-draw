@@ -15,7 +15,22 @@ extension Canvas {
         pinOverlay = nil
     }
     
-    func showPinOverlay() {
+    func showPinOverlay(on pin: Pin) {
+        hidePinOverlay()
+        
+        addOverlay()
+        
+        guard let overlay = pinOverlay else { return }
+        
+        verifyPosition(of: overlay, in: self)
+    }
+
+    func addOverlay() {
+        pinOverlay = UIView()
+        
+    }
+    
+    func verifyPosition(of overlay: UIView, in boundingView: UIView) {
         
     }
 }

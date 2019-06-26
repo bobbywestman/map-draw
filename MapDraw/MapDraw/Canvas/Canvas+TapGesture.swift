@@ -45,9 +45,8 @@ extension Canvas {
             let pinImageCenter = calculatePinImageCenter(pin)
             
             let distance = CGHelper.distance(location, pinImageCenter)
-            guard distance < Canvas.kPinTapThreshold else {
-                continue
-            }
+            guard distance < Canvas.kPinTapThreshold else { continue }
+            
             if distance < closestDistance {
                 closestDistance = distance
                 closestPinInThreshold = pin

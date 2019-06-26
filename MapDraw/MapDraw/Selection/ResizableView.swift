@@ -16,9 +16,7 @@ class ResizableView: UIView {
     /// Aspect ratio the view must keep while rezing.
     public var aspectRatio: CGFloat? {
         didSet {
-            guard let ratio = aspectRatio else {
-                return
-            }
+            guard let ratio = aspectRatio else { return }
             
             let height = frame.height
             let width = height * ratio

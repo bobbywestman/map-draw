@@ -122,18 +122,29 @@ extension Canvas {
             // connect / close line if let go close enough to the first point
             for i in 0..<lines.count {
                 let line = lines[i]
-                if line == selectedLine,
+                guard line == selectedLine,
                     line.points.count > 3,
                     let firstPoint = line.points.first,
                     let lastPoint = line.points.last,
-                    draggingPoint == lastPoint,
-                    CGHelper.distance(lastPoint.location, firstPoint.location) < Canvas.kLinePointConnectThreshold {
-                    // point was dragged close enough to first point to connect & complete the path
+                    draggingPoint == lastPoint || draggingPoint == firstPoint,
+                    CGHelper.distance(lastPoint.location, firstPoint.location) < Canvas.kLinePointConnectThreshold else {
+                    break
+                }
+                
+                if draggingPoint == firstPoint {
+                    // first point was dragged close enough to last point to connect & complete the path
+                    // replace first point with the last one
+                    lines[i].points[0] = lastPoint
+                    draggingPoint = lastPoint
+                    selectLine(lines[i])
+                } else if draggingPoint == lastPoint {
+                    // last point was dragged close enough to first point to connect & complete the path
                     // replace last point with the frist one
                     lines[i].points[line.points.count - 1] = firstPoint
                     draggingPoint = firstPoint
                     selectLine(lines[i])
                 }
+                
             }
         default:
             break
@@ -151,15 +162,12 @@ extension Canvas {
         var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
         
         for line in lines {
-            guard line.points.count > 0 else {
-                continue
-            }
+            guard line.points.count > 0 else { continue }
             
             for point in line.points {
                 let distance = CGHelper.distance(location, point.location)
-                guard distance < Canvas.kLinePointTapThreshold else {
-                    continue
-                }
+                guard distance < Canvas.kLinePointTapThreshold else { continue }
+                
                 if distance < closestDistance {
                     closestDistance = distance
                     closestPointInThreshold = point
@@ -182,9 +190,8 @@ extension Canvas {
             let pinImageCenter = calculatePinImageCenter(pin)
             
             let distance = CGHelper.distance(location, pinImageCenter)
-            guard distance < Canvas.kPinTapThreshold else {
-                continue
-            }
+            guard distance < Canvas.kPinTapThreshold else { continue }
+            
             if distance < closestDistance {
                 closestDistance = distance
                 closestPinInThreshold = pin

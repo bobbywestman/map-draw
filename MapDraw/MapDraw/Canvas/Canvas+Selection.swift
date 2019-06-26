@@ -19,7 +19,7 @@ extension Canvas {
     
     func selectPin(_ pin: Pin) {
         selectedPin = pin
-        showPinOverlay()
+        showPinOverlay(on: pin)
         drawColor = pin.color
         
         selectedLine = nil
@@ -77,9 +77,8 @@ extension Canvas {
                 line.points.count > 1 else {
                 for point in line.points {
                     let distance = CGHelper.distance(tapLocation, point.location)
-                    guard distance < Canvas.kLinePointTapThreshold else {
-                        continue
-                    }
+                    guard distance < Canvas.kLinePointTapThreshold else { continue }
+                    
                     if line == selectedLine {
                         // line already selected, deselect it
                         deselectAll()

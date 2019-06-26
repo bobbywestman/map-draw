@@ -20,9 +20,7 @@ extension ViewController: UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard searchResults.count > 0 else {
-            return
-        }
+        guard searchResults.count > 0 else { return }
 
         let completion = searchResults[0]
         let searchRequest = MKLocalSearch.Request(completion: completion)

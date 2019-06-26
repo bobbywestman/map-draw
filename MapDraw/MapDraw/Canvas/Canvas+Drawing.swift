@@ -34,9 +34,7 @@ extension Canvas {
     override func draw(_ rect: CGRect) {
         for i in 0..<lines.count {
             let line = lines[i]
-            guard line.points.count > 0 else {
-                continue
-            }
+            guard line.points.count > 0 else { continue }
             
             let path = UIBezierPath()
             path.lineJoinStyle = .round
