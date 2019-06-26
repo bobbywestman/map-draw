@@ -12,21 +12,5 @@ import UIKit
 extension ViewController: ColorPickerDelegate {
     func colorDidChange(color: UIColor) {
         drawingDelegate?.setColor(color)
-        drawingDelegate?.deselect()
-        
-        boxButton.backgroundColor = color.lighter().lighter()
-        lineButton.backgroundColor = color.lighter().lighter()
-        pinButton.backgroundColor = color.lighter().lighter()
-        
-        switch canvas.drawingState {
-        case .box:
-            boxButton.backgroundColor = color
-        case .line:
-            lineButton.backgroundColor = color
-        case .pin:
-            pinButton.backgroundColor = color
-        case .none:
-            break
-        }
     }
 }

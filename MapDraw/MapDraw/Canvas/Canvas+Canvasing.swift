@@ -12,6 +12,14 @@ import UIKit
 extension Canvas: Canvasing {
     func setColor(_ color: UIColor) {
         drawColor = color
+        
+        if let selectedLine = selectedLine,
+            let index = lines.index(of: selectedLine) {
+            lines[index].color = color
+        } else if let selectedPin = selectedPin,
+            let index = pins.index(of: selectedPin) {
+            pins[index].color = color
+        }
     }
     
     func drawingLine() {
@@ -51,7 +59,7 @@ extension Canvas: Canvasing {
     }
     
     func undo() {
-        guard let selectedLine = selectedLine, selectedLine.points.count > 1 else {
+        guard let selectedLine = selectedLine, selectedLine.points.count > 0 else {
             return
         }
         
@@ -86,7 +94,6 @@ extension Canvas: Canvasing {
     }
     
     func deselect() {
-        selectedLine = nil
-        selectedPin = nil
+        deselectAll()
     }
 }

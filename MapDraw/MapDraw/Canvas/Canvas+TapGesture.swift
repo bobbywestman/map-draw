@@ -19,7 +19,7 @@ extension Canvas {
         case .line:
             _ = drawLinePoint(tapLocation)
         case .pin:
-            drawPin(tapLocation)
+            _ = drawPin(tapLocation)
         case .none:
             toggleSelection(tapLocation)
         default:

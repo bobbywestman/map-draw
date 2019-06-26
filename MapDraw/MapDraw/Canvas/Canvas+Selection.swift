@@ -10,7 +10,28 @@ import Foundation
 import UIKit
 
 extension Canvas {
-    /// Used to handle selection of a path
+    func deselectAll() {
+        selectedLine = nil
+        selectedPin = nil
+    }
+    
+    func selectPin(_ pin: Pin) {
+        selectedPin = pin
+        drawColor = pin.color
+        
+        selectedLine = nil
+    }
+    
+    func selectLine(_ line: Line) {
+        selectedLine = line
+        drawColor = line.color
+        
+        selectedPin = nil
+    }
+}
+
+extension Canvas {
+    /// Detect which element was tapped, and then toggle its selection
     func toggleSelection(_ tapLocation:CGPoint) {
         var hitDetected = false
         
@@ -18,10 +39,8 @@ extension Canvas {
             hitDetected = true
         }
         
-        if !hitDetected {
-            if didSelectLine(tapLocation) {
-                hitDetected = true
-            }
+        if !hitDetected, didSelectLine(tapLocation) {
+            hitDetected = true
         }
         
         if !hitDetected {
@@ -34,12 +53,10 @@ extension Canvas {
         for pin in pins {
             if CGHelper.distance(tapLocation, pin.location) < Canvas.kPinTapThreshold {
                 if pin == selectedPin {
-                    // deselect pin
-                    selectedPin = nil
+                    // pin already selected, deselect it
+                    deselectAll()
                 } else {
-                    // select pin
-                    selectedPin = pin
-                    drawColor = pin.color
+                    selectPin(pin)
                     
                     // pin was selected
                     return true
@@ -61,12 +78,10 @@ extension Canvas {
             let lineHitPath = UIBezierPath(cgPath: pathCgCopy)
             if lineHitPath.contains(tapLocation) {
                 if line == selectedLine {
-                    // deselect line
-                    selectedLine = nil
+                    // line already selected, deselect it
+                    deselectAll()
                 } else {
-                    // select line
-                    selectedLine = line
-                    drawColor = line.color
+                    selectLine(line)
                     
                     // line was selected
                     return true

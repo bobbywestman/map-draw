@@ -13,6 +13,7 @@ extension Canvas {
     func clearDrawings() {
         lines = []
         pins = []
+        deselectAll()
     }
 }
 
@@ -31,7 +32,6 @@ extension Canvas {
     override func draw(_ rect: CGRect) {
         for i in 0..<lines.count {
             let line = lines[i]
-            
             guard line.points.count > 0 else {
                 continue
             }
@@ -39,15 +39,36 @@ extension Canvas {
             let path = UIBezierPath()
             path.lineJoinStyle = .round
             path.lineCapStyle = .round
-            path.lineWidth = 5
+            path.lineWidth = Canvas.kLineWidth
             
-            path.move(to: line.points[0].location)
-            for point in line.points.dropFirst() {
+            for j in 0..<line.points.count {
+                let point = line.points[j]
+                
+                let diameter = Canvas.kLinePointDiameter
+                let radius = diameter / 2
+                
+                // draw point
+                let dotPath = UIBezierPath(ovalIn: CGRect(x: point.location.x - radius, y: point.location.y - radius, width: diameter, height: diameter))
+                dotPath.close()
+                let dotFill: UIColor
+                if line == selectedLine {
+                    dotFill = line.color
+                } else {
+                    dotFill = line.color.lighter()
+                }
+                dotFill.setFill()
+                dotPath.fill()
+                
+                // handle path
+                guard j > 0 else {
+                    path.move(to: line.points[0].location)
+                    continue
+                }
                 path.addLine(to: point.location)
             }
             
             let stroke: UIColor
-            if let selected = selectedLine, line == selected {
+            if line == selectedLine {
                 stroke = line.color
             } else {
                 stroke = line.color.lighter()
@@ -80,23 +101,19 @@ extension Canvas {
 extension Canvas {
     /// Used to add a point to a line
     func drawLinePoint(_ tapLocation:CGPoint) -> LinePoint? {
-        guard let selectedLine = selectedLine else {
-            // create a new line if no line is currently selected
+        guard let selectedLine = selectedLine, !pathClosed(withPointsIn: selectedLine) else {
+            // create a new line if no line is currently selected, or the selected line is closed
+            // draw line points only on lines that do not have closed/compelted paths
+
             let point = LinePoint(id: UUID(), location: tapLocation)
-            let points = [point]
             let color = drawColor
             let id = UUID()
-            let newLine = Line(id: id, points: points, color: color)
+            let newLine = Line(id: id, points: [point], color: color)
             lines.append(newLine)
             
             // new group created, select it
-            self.selectedLine = newLine
+            selectLine(newLine)
             return point
-        }
-        
-        // draw line points only on lines that do not have closed/compelted paths
-        guard !pathClosed(withPointsIn: selectedLine) else {
-            return nil
         }
         
         // append point to selected group
@@ -105,15 +122,12 @@ extension Canvas {
             if line == selectedLine {
                 let point: LinePoint
                 
-                if line.points.count > 3,
+                if line.points.count > 2,
                     let firstPoint = line.points.first,
                     CGHelper.distance(tapLocation, firstPoint.location) < Canvas.kLinePointConnectThreshold {
                     // point was drawn close enough to first point to connect & complete the path
                     point = firstPoint
                     lines[i].points.append(point)
-                    
-                    // path complete, reset drawing state, since no more line points can be added for this group
-                    drawingState = .none
                 } else {
                     // new point was drawn
                     point = LinePoint(id: UUID(), location: tapLocation)
@@ -124,7 +138,7 @@ extension Canvas {
                 lines[i].redoPoints = []
                 
                 // need to update selected group points for undo / redo
-                self.selectedLine = lines[i]
+                selectLine(lines[i])
                 return point
             }
         }
@@ -140,7 +154,7 @@ extension Canvas {
         
         drawPinImage(pin)
         
-        selectedPin = pin
+        selectPin(pin)
         return pin
     }
     
@@ -148,10 +162,8 @@ extension Canvas {
         let image = UIImage(named: "Pin")?.withRenderingMode(.alwaysTemplate)
         let imageView = UIImageView(image: image)
         
-        let width = CGFloat(16.75)
-        let height = CGFloat(24)
-        imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        imageView.center = CGPoint(x: pin.location.x - width / 2, y: pin.location.y - height)
+        imageView.frame = CGRect(x: 0, y: 0, width: Canvas.kPinWidth, height: Canvas.kPinHeight)
+        imageView.center = calculatePinImageCenter(pin)
         
         if let selected = selectedPin, pin == selected {
              imageView.tintColor = pin.color
@@ -161,5 +173,11 @@ extension Canvas {
         
         addSubview(imageView)
         pinImages.append(imageView)
+    }
+    
+    func calculatePinImageCenter(_ pin: Pin) -> CGPoint {
+        let width = Canvas.kPinWidth
+        let height = Canvas.kPinHeight
+        return CGPoint(x: pin.location.x - width / 2, y: pin.location.y - height)
     }
 }

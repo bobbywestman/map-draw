@@ -11,7 +11,7 @@ import UIKit
 
 struct Pin {
     let id: UUID
-    let color: UIColor
+    var color: UIColor
     var location: CGPoint
 }
 
@@ -27,7 +27,7 @@ extension Pin: Equatable {
 // TODO: make this a class, we keep having to update `selectedLine` copy value
 struct Line {
     let id: UUID
-    let color: UIColor
+    var color: UIColor
     var points: [LinePoint]
     var path: UIBezierPath?
     var redoPoints: [LinePoint]
