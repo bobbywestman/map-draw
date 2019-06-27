@@ -12,6 +12,7 @@
 		C511622E22C2F5CF0031F5A5 /* Canvas+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622D22C2F5CF0031F5A5 /* Canvas+Selection.swift */; };
 		C511623022C3535A0031F5A5 /* Canvas+PinOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622F22C3535A0031F5A5 /* Canvas+PinOverlay.swift */; };
 		C511623222C3E6B80031F5A5 /* ViewController+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */; };
+		C511623422C436E50031F5A5 /* ViewController+SizeClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		C511622D22C2F5CF0031F5A5 /* Canvas+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Selection.swift"; sourceTree = "<group>"; };
 		C511622F22C3535A0031F5A5 /* Canvas+PinOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+PinOverlay.swift"; sourceTree = "<group>"; };
 		C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Orientation.swift"; sourceTree = "<group>"; };
+		C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SizeClasses.swift"; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */,
 				C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */,
 				C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */,
+				C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C534CDF022BF784600DD3890 /* ResizableView+Pan.swift in Sources */,
+				C511623422C436E50031F5A5 /* ViewController+SizeClasses.swift in Sources */,
 				C534CDD722BF207900DD3890 /* ViewControllerTypes.swift in Sources */,
 				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,

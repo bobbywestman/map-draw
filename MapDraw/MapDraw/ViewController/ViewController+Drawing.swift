@@ -56,7 +56,14 @@ extension ViewController {
     }
     
     @IBAction func clearButtonClick(_ sender: Any) {
-        drawingDelegate?.clear()
+        guard canvas.pins.count > 0 || canvas.lines.count > 0 else { return }
+        
+        let alert = UIAlertController(title: "Clear Edits", message: "Are you sure?\nYour changes won't be saved.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action:UIAlertAction!) in
+            self.drawingDelegate?.clear()
+        })
+        present(alert, animated: true, completion: nil)
     }
 }
 

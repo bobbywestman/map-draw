@@ -86,6 +86,14 @@ extension Canvas {
     }
     
     func panning(_ location:CGPoint) {
+        
+        let x = location.x - Canvas.kDragHorizontalOffset
+        let y = location.y - Canvas.kDragVerticalOffset
+        let offsetLocation = CGPoint(x: x, y: y)
+        
+        // dont move elements out of bounds of the canvas
+        guard bounds.contains(offsetLocation) else { return }
+        
         if draggingPoint != nil  {
             // find the point that's being moved, and update location
             for i in 0..<lines.count {
@@ -93,9 +101,7 @@ extension Canvas {
                 for j in 0..<line.points.count {
                     let point = line.points[j]
                     if point == draggingPoint {
-                        let x = location.x - Canvas.kDragHorizontalOffset
-                        let y = location.y - Canvas.kDragVerticalOffset
-                        lines[i].points[j].location = CGPoint(x: x , y: y)
+                        lines[i].points[j].location = offsetLocation
                         draggingPoint = lines[i].points[j]
                         selectLine(lines[i])
                     }
@@ -106,9 +112,7 @@ extension Canvas {
             for i in 0..<pins.count {
                 let pin = pins[i]
                 if pin == draggingPin {
-                    let x = location.x - Canvas.kDragHorizontalOffset
-                    let y = location.y - Canvas.kDragVerticalOffset
-                    pins[i].location = CGPoint(x: x , y: y)
+                    pins[i].location = offsetLocation
                     draggingPin = pins[i]
                     selectPin(pins[i])
                 }

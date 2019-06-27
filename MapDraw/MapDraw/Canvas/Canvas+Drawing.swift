@@ -176,8 +176,7 @@ extension Canvas {
     }
     
     func calculatePinImageCenter(_ pin: Pin) -> CGPoint {
-        let width = Canvas.kPinWidth
         let height = Canvas.kPinHeight
-        return CGPoint(x: pin.location.x - width / 2, y: pin.location.y - height)
+        return CGPoint(x: pin.location.x, y: pin.location.y - (height / 2))
     }
 }
