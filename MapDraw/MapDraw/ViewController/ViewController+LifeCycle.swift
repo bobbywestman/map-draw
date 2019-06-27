@@ -75,7 +75,7 @@ extension ViewController {
         let darkTransparent = dark.withAlphaComponent(0.3)
         let lightTransparent = light.withAlphaComponent(0.3)
 
-        background.addBlur(.regular, intensity: 0.7)
+        background.addBlur(.regular, intensity: 0.2)
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear
         headerPanel.backgroundColor = .clear
@@ -108,15 +108,15 @@ extension ViewController {
         mapToggleButton.layer.borderWidth = 2.0
         mapToggleButton.layer.cornerRadius = 15.0
         
-        saveButton.setTitleColor(light, for: .normal)
-        saveButton.backgroundColor = darkTransparent
-        saveButton.layer.borderColor = light.cgColor
+        saveButton.setTitleColor(dark, for: .normal)
+        saveButton.backgroundColor = lightTransparent
+        saveButton.layer.borderColor = dark.cgColor
         saveButton.layer.borderWidth = 2.0
         saveButton.layer.cornerRadius = 15.0
         
-        cancelDrawingButton.setTitleColor(light, for: .normal)
-        cancelDrawingButton.backgroundColor = darkTransparent
-        cancelDrawingButton.layer.borderColor = light.cgColor
+        cancelDrawingButton.setTitleColor(dark, for: .normal)
+        cancelDrawingButton.backgroundColor = lightTransparent
+        cancelDrawingButton.layer.borderColor = dark.cgColor
         cancelDrawingButton.layer.borderWidth = 2.0
         cancelDrawingButton.layer.cornerRadius = 15.0
         
