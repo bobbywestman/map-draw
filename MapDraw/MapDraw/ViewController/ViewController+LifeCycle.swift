@@ -30,7 +30,9 @@ extension ViewController {
         canvas.addGestureRecognizer(canvasTapRecognizer)
         canvas.addGestureRecognizer(canvasPanRecognizer)
         
+        // update slider color
         colorSlider.value = 0.0
+        colorSliderValueChanged(colorSlider)
         
         selectorView.backgroundColor = .clear
         selectorView.boundingView = map
