@@ -85,7 +85,7 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func colorSliderValueChanged(_ sender: UISlider) {
-        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.8, alpha: 1.0)
+        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.55, alpha: 1.0)
         sender.thumbTintColor = color.lighter().lighter()
         sender.minimumTrackTintColor = color
         sender.maximumTrackTintColor = color

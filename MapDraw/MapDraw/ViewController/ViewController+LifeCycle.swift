@@ -24,6 +24,7 @@ extension ViewController {
         drawingDelegate = canvas
         drawingDelegate?.setColor(.black)
         canvas.drawingState = .none
+        canvas.clipsToBounds = true
         
         let canvasTapRecognizer = UITapGestureRecognizer(target: canvas, action: #selector(Canvas.handleTap(recognizer:)))
         let canvasPanRecognizer = UIPanGestureRecognizer(target: canvas, action: #selector(Canvas.handlePan(recognizer:)))
@@ -71,7 +72,7 @@ extension ViewController {
 extension ViewController {
     func setupStyles() {
         let dark = UIColor.gray
-        let light = UIColor.lightGray.lighter()
+        let light = UIColor.white
         let darkTransparent = dark.withAlphaComponent(0.3)
         let lightTransparent = light.withAlphaComponent(0.3)
 

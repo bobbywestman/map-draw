@@ -89,28 +89,26 @@ extension Canvas {
         var x = location.x - Canvas.kDragHorizontalOffset
         var y = location.y - Canvas.kDragVerticalOffset
         
-        // adjust offset, to keep point within bounds
-        // use +/- 1 so that bounds.contains() returns true
-        if x < bounds.minX {
-            x = bounds.minX + 1
-        } else if x > bounds.maxX {
-            x = bounds.maxX - 1
-        }
-        
-        // adjust offset, to keep point within bounds
-        // use +/- 1 so that bounds.contains() returns true
-        if y < bounds.minY {
-            y = bounds.minY + 1
-        } else if y > bounds.maxY {
-            y = bounds.maxY - 1
-        }
-        
-        let offsetLocation = CGPoint(x: x, y: y)
-        
-        // dont move elements out of bounds of the canvas
-        guard bounds.contains(offsetLocation) else { return }
-        
         if draggingPoint != nil  {
+            // adjust offset, to keep point within bounds
+            // use +/- 1 so that bounds.contains() returns true
+            if x < bounds.minX {
+                x = bounds.minX + 1
+            } else if x > bounds.maxX {
+                x = bounds.maxX - 1
+            }
+            
+            // adjust offset, to keep point within bounds
+            // use +/- 1 so that bounds.contains() returns true
+            if y < bounds.minY {
+                y = bounds.minY + 1
+            } else if y > bounds.maxY {
+                y = bounds.maxY - 1
+            }
+            
+            let offsetLocation = CGPoint(x: x, y: y)
+            guard bounds.contains(offsetLocation) else { return }
+            
             // find the point that's being moved, and update location
             for i in 0..<lines.count {
                 let line = lines[i]
@@ -124,6 +122,25 @@ extension Canvas {
                 }
             }
         } else if draggingPin != nil {
+            // adjust offset, to keep pin image within bounds
+            // use +/- 1 so that bounds.contains() returns true
+            if x < bounds.minX + (Canvas.kPinWidth / 2) {
+                x = bounds.minX + (Canvas.kPinWidth / 2) + 1
+            } else if x > bounds.maxX - (Canvas.kPinWidth / 2) {
+                x = bounds.maxX - (Canvas.kPinWidth / 2) - 1
+            }
+            
+            // adjust offset, to keep pin image within bounds
+            // use +/- 1 so that bounds.contains() returns true
+            if y < bounds.minY + (Canvas.kPinHeight) {
+                y = bounds.minY + (Canvas.kPinHeight) + 1
+            } else if y > bounds.maxY {
+                y = bounds.maxY - 1
+            }
+            
+            let offsetLocation = CGPoint(x: x, y: y)
+            guard bounds.contains(offsetLocation) else { return }
+            
             // find the pin that's being moved, and update location
             for i in 0..<pins.count {
                 let pin = pins[i]

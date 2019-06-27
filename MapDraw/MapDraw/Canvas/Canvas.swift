@@ -20,7 +20,7 @@ class Canvas: UIView {
     
     var selectedLine: Line? {
         didSet {
-            setNeedsDisplay()
+            setNeedsDisplay()            
         }
     }
 
