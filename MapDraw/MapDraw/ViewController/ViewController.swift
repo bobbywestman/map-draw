@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     /// The view in which the selection will be made.
     @IBOutlet weak var selectorView: ResizableView!
     
+    @IBOutlet weak var selectionNoteLabel: UILabel!
+    
     /// The view containing the image of the selection.
     @IBOutlet weak var selectionImageView: UIImageView!
     

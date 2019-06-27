@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func addBlur(_ style: UIBlurEffect.Style = .extraLight) {
+    func addBlur(_ style: UIBlurEffect.Style = .extraLight, intensity: CGFloat) {
         let blurEffect = UIBlurEffect(style: style)
         let blur = UIVisualEffectView(effect: blurEffect)
+        blur.alpha = intensity
         addSubview(blur)
 
         blur.translatesAutoresizingMaskIntoConstraints = false

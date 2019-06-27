@@ -15,5 +15,6 @@ extension ViewController {
         
         let text =  (mapToggleButton.titleLabel?.text == "Show Map Info") ? "Hide Map Info" : "Show Map Info"
         mapToggleButton.setTitle(text, for: .normal)
+        mapToggleButton.sizeToFit()
     }
 }
