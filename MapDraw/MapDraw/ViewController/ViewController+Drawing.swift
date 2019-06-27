@@ -82,3 +82,10 @@ extension ViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension ViewController {
+    @IBAction func colorSliderValueChanged(_ sender: UISlider) {
+        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.7, alpha: 1.0)
+        drawingDelegate?.setColor(color)
+    }
+}

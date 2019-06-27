@@ -12,7 +12,6 @@ import UIKit
 extension ViewController {
     override func viewDidLoad() {
         map.mapType = .hybrid
-        // TODO: set map center initially at current location?
         
         searchBar.delegate = self
         completer.delegate = self
@@ -31,10 +30,7 @@ extension ViewController {
         canvas.addGestureRecognizer(canvasTapRecognizer)
         canvas.addGestureRecognizer(canvasPanRecognizer)
         
-        colorPicker.elementSize = 27
-        colorPicker.delegate = self
-        
-        interactionState = .selection
+        colorSlider.value = 0.0
         
         selectorView.backgroundColor = .clear
         selectorView.boundingView = map
@@ -45,6 +41,8 @@ extension ViewController {
         selectorView.addGestureRecognizer(selectorPanRecognizer)
         selectorView.addGestureRecognizer(selectorPinchRecognizer)
         selectorView.addGestureRecognizer(selectorRotationRecognizer)
+        
+        interactionState = .selection
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -86,9 +86,25 @@ extension Canvas {
     }
     
     func panning(_ location:CGPoint) {
+        var x = location.x - Canvas.kDragHorizontalOffset
+        var y = location.y - Canvas.kDragVerticalOffset
         
-        let x = location.x - Canvas.kDragHorizontalOffset
-        let y = location.y - Canvas.kDragVerticalOffset
+        // adjust offset, to keep point within bounds
+        // use +/- 1 so that bounds.contains() returns true
+        if x < bounds.minX {
+            x = bounds.minX + 1
+        } else if x > bounds.maxX {
+            x = bounds.maxX - 1
+        }
+        
+        // adjust offset, to keep point within bounds
+        // use +/- 1 so that bounds.contains() returns true
+        if y < bounds.minY {
+            y = bounds.minY + 1
+        } else if y > bounds.maxY {
+            y = bounds.maxY - 1
+        }
+        
         let offsetLocation = CGPoint(x: x, y: y)
         
         // dont move elements out of bounds of the canvas

@@ -55,8 +55,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var redoButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var colorPicker: ColorPickerView!
     @IBOutlet weak var cancelDrawingButton: UIButton!
+    
+    // MARK: Color Picker
+    
+    @IBOutlet weak var colorSlider: ColorSlider!
     
     // MARK: Search
 

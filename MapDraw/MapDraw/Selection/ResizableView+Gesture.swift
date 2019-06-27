@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension ResizableView {
+    // need to do this to be able to handle multitple gestures simultaniously
     override func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         super.addGestureRecognizer(gestureRecognizer)
         gestureRecognizer.delegate = self
