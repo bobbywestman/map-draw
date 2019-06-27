@@ -61,6 +61,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorSlider: ColorSlider!
     
+    // MARK: Pin Number Picker
+    
+    @IBOutlet weak var pinNumberPicker: OrientablePickerView!
+    
     // MARK: Search
 
     @IBOutlet weak var searchBar: UISearchBar!

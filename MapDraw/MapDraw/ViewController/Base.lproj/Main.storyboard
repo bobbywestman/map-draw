@@ -208,14 +208,28 @@ Then click the "Select" button to enter editing mode.</string>
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-63-cSf" customClass="ColorSlider" customModule="MapDraw" customModuleProvider="target">
-                                        <rect key="frame" x="697" y="20" width="279" height="31"/>
+                                        <rect key="frame" x="697" y="5" width="279" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5uk-7j-9v5"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="colorSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="U9o-Qo-247"/>
                                         </connections>
                                     </slider>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-dH-g71" userLabel="PickerContainer">
+                                        <rect key="frame" x="699" y="40" width="275" height="55"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfg-do-dx3" customClass="OrientablePickerView" customModule="MapDraw" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="kLF-dH-g71" firstAttribute="top" secondItem="xFX-63-cSf" secondAttribute="bottom" constant="5" id="0My-pW-kbf"/>
                                     <constraint firstItem="B3T-n6-3tf" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="20" id="ADQ-GN-cgb"/>
                                     <constraint firstItem="QIh-Pp-pw7" firstAttribute="height" secondItem="oc7-RW-reW" secondAttribute="height" id="AZI-Y9-Nxy"/>
                                     <constraint firstItem="LxI-Sv-bAg" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="20" id="Dra-NB-ZBg"/>
@@ -223,9 +237,10 @@ Then click the "Select" button to enter editing mode.</string>
                                     <constraint firstItem="lXX-NY-j2l" firstAttribute="leading" secondItem="LX1-Y6-eTd" secondAttribute="leading" constant="50" id="GJa-zT-k3Y">
                                         <variation key="heightClass=regular-widthClass=compact" constant="5"/>
                                     </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="kLF-dH-g71" secondAttribute="bottom" constant="5" id="HA0-6K-avY"/>
                                     <constraint firstItem="HlH-HQ-03g" firstAttribute="leading" secondItem="LxI-Sv-bAg" secondAttribute="trailing" constant="15" id="KQe-ct-qLZ"/>
                                     <constraint firstItem="lXX-NY-j2l" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="20" id="LuY-2o-mFf"/>
-                                    <constraint firstItem="xFX-63-cSf" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="20" id="Mqd-KY-jaD"/>
+                                    <constraint firstItem="xFX-63-cSf" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="5" id="Mqd-KY-jaD"/>
                                     <constraint firstAttribute="bottom" secondItem="LxI-Sv-bAg" secondAttribute="bottom" constant="20" id="NfS-2z-A5Y"/>
                                     <constraint firstAttribute="bottom" secondItem="oc7-RW-reW" secondAttribute="bottom" constant="20" id="Teu-hn-XTu"/>
                                     <constraint firstItem="B3T-n6-3tf" firstAttribute="leading" secondItem="oc7-RW-reW" secondAttribute="trailing" constant="50" id="Y4x-jB-l0T">
@@ -244,7 +259,9 @@ Then click the "Select" button to enter editing mode.</string>
                                     <constraint firstAttribute="bottom" secondItem="QIh-Pp-pw7" secondAttribute="bottom" constant="20" id="iW7-dc-3YH"/>
                                     <constraint firstItem="QIh-Pp-pw7" firstAttribute="top" secondItem="LX1-Y6-eTd" secondAttribute="top" constant="20" id="jhk-tf-saW"/>
                                     <constraint firstItem="LxI-Sv-bAg" firstAttribute="leading" secondItem="B3T-n6-3tf" secondAttribute="trailing" constant="15" id="kUU-gv-EK3"/>
+                                    <constraint firstItem="kLF-dH-g71" firstAttribute="width" secondItem="xFX-63-cSf" secondAttribute="width" id="mnn-R8-Rb3"/>
                                     <constraint firstItem="QIh-Pp-pw7" firstAttribute="width" secondItem="lXX-NY-j2l" secondAttribute="width" id="mta-Dv-d6O"/>
+                                    <constraint firstAttribute="trailing" secondItem="kLF-dH-g71" secondAttribute="trailing" constant="10" id="rUA-oR-hzI"/>
                                     <constraint firstAttribute="bottom" secondItem="lXX-NY-j2l" secondAttribute="bottom" constant="20" id="rzp-Lu-kjZ"/>
                                     <constraint firstItem="oc7-RW-reW" firstAttribute="width" secondItem="QIh-Pp-pw7" secondAttribute="width" id="tuB-Ad-sCl"/>
                                     <constraint firstAttribute="bottom" secondItem="HlH-HQ-03g" secondAttribute="bottom" constant="20" id="xH5-wL-9tY"/>
@@ -293,6 +310,7 @@ Then click the "Select" button to enter editing mode.</string>
                         <outlet property="map" destination="7rb-iX-kdH" id="Gz0-ck-uZq"/>
                         <outlet property="mapToggleButton" destination="uTs-6j-XIX" id="jdf-8C-aMK"/>
                         <outlet property="pinButton" destination="oc7-RW-reW" id="JTM-eW-TqT"/>
+                        <outlet property="pinNumberPicker" destination="bfg-do-dx3" id="fBN-TL-rXB"/>
                         <outlet property="redoButton" destination="LxI-Sv-bAg" id="2dT-ph-QBC"/>
                         <outlet property="saveButton" destination="JvT-J2-Cea" id="C1v-Hr-JbR"/>
                         <outlet property="searchBar" destination="OiW-Cg-JPA" id="HC3-cO-zXV"/>

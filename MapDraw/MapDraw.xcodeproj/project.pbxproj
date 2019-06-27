@@ -14,6 +14,8 @@
 		C511623222C3E6B80031F5A5 /* ViewController+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */; };
 		C511623422C436E50031F5A5 /* ViewController+SizeClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */; };
 		C511623622C479420031F5A5 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623522C479420031F5A5 /* ColorSlider.swift */; };
+		C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */; };
+		C511623B22C48CC90031F5A5 /* OrientablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Orientation.swift"; sourceTree = "<group>"; };
 		C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SizeClasses.swift"; sourceTree = "<group>"; };
 		C511623522C479420031F5A5 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
+		C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NumberPicker.swift"; sourceTree = "<group>"; };
+		C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientablePickerView.swift; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C511623922C48C680031F5A5 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		C534CD8B22B8673400DD3890 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +136,7 @@
 				C534CDC022BB625D00DD3890 /* Canvas */,
 				C534CDE822BF303E00DD3890 /* Selection */,
 				C534CDD822BF208D00DD3890 /* ColorSlider */,
+				C511623922C48C680031F5A5 /* Picker */,
 				C534CDAC22B899E700DD3890 /* Utils */,
 				C534CD9722B8673400DD3890 /* AppDelegate.swift */,
 				C534CD9E22B8673500DD3890 /* Assets.xcassets */,
@@ -160,6 +173,7 @@
 				C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */,
 				C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */,
 				C511623322C436E50031F5A5 /* ViewController+SizeClasses.swift */,
+				C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -288,6 +302,7 @@
 				C534CDD322BD7E6600DD3890 /* Canvas+Drawing.swift in Sources */,
 				C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */,
 				C534CDBC22B8A3A500DD3890 /* ViewController+SearchBar.swift in Sources */,
+				C511623B22C48CC90031F5A5 /* OrientablePickerView.swift in Sources */,
 				C534CDB522B8A2A100DD3890 /* ViewController+SearchTable.swift in Sources */,
 				C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */,
 				C511623222C3E6B80031F5A5 /* ViewController+Orientation.swift in Sources */,
@@ -301,6 +316,7 @@
 				C534CDF622C0098A00DD3890 /* Canvas+Canvasing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */,
+				C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
 				C534CDEE22BF783000DD3890 /* ResizableView+Pinch.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,
