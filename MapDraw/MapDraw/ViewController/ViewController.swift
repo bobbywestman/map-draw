@@ -15,6 +15,15 @@ class ViewController: UIViewController {
     /// Label with app title.
     @IBOutlet weak var titleLabel: UILabel!
     
+    // MARK: Header
+    
+    @IBOutlet weak var headerPanel: UIView!
+    
+    // MARK: Background
+    
+    /// Background image.
+    @IBOutlet weak var background: UIImageView!
+    
     // MARK: Map
 
     /// Map.

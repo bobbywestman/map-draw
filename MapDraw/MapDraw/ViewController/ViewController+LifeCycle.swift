@@ -45,9 +45,14 @@ extension ViewController {
         selectorView.addGestureRecognizer(selectorRotationRecognizer)
         
         pinNumberPicker.delegate = self
-//        pinNumberPicker.dataSource = self
+        pinNumberPicker.dataSource = self
         pinNumberPicker.orientation = .horizontal
-
+        
+        background.addBlur(.regular)
+        drawingPanel.backgroundColor = .clear
+        selectionPanel.backgroundColor = .clear
+        headerPanel.backgroundColor = .clear
+        
         interactionState = .selection
     }
     

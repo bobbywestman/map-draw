@@ -16,6 +16,7 @@
 		C511623622C479420031F5A5 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623522C479420031F5A5 /* ColorSlider.swift */; };
 		C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */; };
 		C511623B22C48CC90031F5A5 /* OrientablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */; };
+		C511623D22C50EA60031F5A5 /* UIKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623C22C50EA60031F5A5 /* UIKitHelper.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		C511623522C479420031F5A5 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
 		C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NumberPicker.swift"; sourceTree = "<group>"; };
 		C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientablePickerView.swift; sourceTree = "<group>"; };
+		C511623C22C50EA60031F5A5 /* UIKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelper.swift; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C534CDB122B89B8600DD3890 /* MapHelper.swift */,
 				C534CDAE22B89A1100DD3890 /* TextHelper.swift */,
 				C534CDE122BF258300DD3890 /* CGHelper.swift */,
+				C511623C22C50EA60031F5A5 /* UIKitHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,
 				C534CDCE22BC873600DD3890 /* CanvasProtocols.swift in Sources */,
+				C511623D22C50EA60031F5A5 /* UIKitHelper.swift in Sources */,
 				C511622C22C2F5240031F5A5 /* Canvas+TapGesture.swift in Sources */,
 				C534CDCC22BC830C00DD3890 /* CanvasModels.swift in Sources */,
 				C534CDC222BB626C00DD3890 /* Canvas.swift in Sources */,

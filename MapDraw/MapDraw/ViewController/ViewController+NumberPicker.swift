@@ -25,8 +25,15 @@ extension ViewController: UIPickerViewDataSource {
 
 extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        // change color of selection indicators
+        if pickerView.subviews.count > 2 {
+            pickerView.subviews[1].backgroundColor = .white
+            pickerView.subviews[2].backgroundColor = .white
+        }
+        
         let label = UILabel()
         label.text = "\(row)"
+        label.textColor = .white
         label.textAlignment = .center
         label.transform = CGAffineTransform(rotationAngle: (.pi / 2))
         return label
