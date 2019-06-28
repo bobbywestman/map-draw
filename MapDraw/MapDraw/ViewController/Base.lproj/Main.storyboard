@@ -180,7 +180,6 @@ Then click the "Select" button to enter editing mode.</string>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
-                                        <inset key="imageEdgeInsets" minX="13.5" minY="-2" maxX="13.5" maxY="20"/>
                                         <state key="normal" title="Text" image="Text">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -193,7 +192,6 @@ Then click the "Select" button to enter editing mode.</string>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
-                                        <inset key="imageEdgeInsets" minX="13.5" minY="-2" maxX="13.5" maxY="20"/>
                                         <state key="normal" title="Line" image="Line">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -204,8 +202,8 @@ Then click the "Select" button to enter editing mode.</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc7-RW-reW">
                                         <rect key="frame" x="170" y="20" width="60" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
-                                        <inset key="imageEdgeInsets" minX="13.5" minY="-2" maxX="13.5" maxY="20"/>
                                         <state key="normal" title="Pin" image="Pin">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -213,23 +211,35 @@ Then click the "Select" button to enter editing mode.</string>
                                             <action selector="pinButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzk-cX-NRI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3T-n6-3tf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3T-n6-3tf">
                                         <rect key="frame" x="246.5" y="20" width="60" height="60"/>
-                                        <state key="normal" title="Undo"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
+                                        <state key="normal" title="Undo" image="Undo">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="undoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bda-LO-SRz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxI-Sv-bAg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxI-Sv-bAg">
                                         <rect key="frame" x="323" y="20" width="60" height="60"/>
-                                        <state key="normal" title="Redo"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
+                                        <state key="normal" title="Redo" image="Redo">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="redoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o1j-cO-oIk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-HQ-03g">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-HQ-03g">
                                         <rect key="frame" x="400" y="20" width="60" height="60"/>
-                                        <state key="normal" title="Clear"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <inset key="titleEdgeInsets" minX="-153" minY="0.0" maxX="0.0" maxY="3"/>
+                                        <state key="normal" title="Clear" image="Clear">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="clearButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="epf-XL-taH"/>
                                         </connections>
@@ -446,8 +456,11 @@ Then click the "Select" button to enter editing mode.</string>
     </scenes>
     <resources>
         <image name="Background" width="389.66665649414062" height="226.33332824707031"/>
+        <image name="Clear" width="153" height="212.33332824707031"/>
         <image name="Line" width="153" height="212.33332824707031"/>
         <image name="Pin" width="153" height="212.33332824707031"/>
+        <image name="Redo" width="153" height="212.33332824707031"/>
         <image name="Text" width="153" height="212.33332824707031"/>
+        <image name="Undo" width="153" height="212.33332824707031"/>
     </resources>
 </document>

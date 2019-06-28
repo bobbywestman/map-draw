@@ -15,17 +15,35 @@ extension ViewController: CanvasHandling {
     }
     
     func drawingChanged(to state: DrawingState) {
-        boxButton.backgroundColor = canvas.drawColor.lighter().lighter()
-        lineButton.backgroundColor = canvas.drawColor.lighter().lighter()
-        pinButton.backgroundColor = canvas.drawColor.lighter().lighter()
+        lineButton.tintColor = canvas.drawColor.lighter().lighter()
+        lineButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+        
+        boxButton.tintColor = canvas.drawColor.lighter().lighter()
+        boxButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+
+        pinButton.tintColor = canvas.drawColor.lighter().lighter()
+        pinButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+
+//        boxButton.backgroundColor = canvas.drawColor.lighter().lighter()
+//        lineButton.backgroundColor = canvas.drawColor.lighter().lighter()
+//        pinButton.backgroundColor = canvas.drawColor.lighter().lighter()
         
         switch state {
         case .line:
-            lineButton.backgroundColor = canvas.drawColor
+            lineButton.tintColor = canvas.drawColor
+            lineButton.layer.borderColor = canvas.drawColor.cgColor
+            
+            //            lineButton.backgroundColor = canvas.drawColor
         case .box:
-            boxButton.backgroundColor = canvas.drawColor
+            boxButton.tintColor = canvas.drawColor
+            boxButton.layer.borderColor = canvas.drawColor.cgColor
+
+//            boxButton.backgroundColor = canvas.drawColor
         case .pin:
-            pinButton.backgroundColor = canvas.drawColor
+            pinButton.tintColor = canvas.drawColor
+            pinButton.layer.borderColor = canvas.drawColor.cgColor
+
+//            pinButton.backgroundColor = canvas.drawColor
         case .none:
             break
         }

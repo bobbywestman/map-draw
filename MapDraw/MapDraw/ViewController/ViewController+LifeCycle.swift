@@ -85,24 +85,59 @@ extension ViewController {
         selectionNoteLabel.textColor = light
         
         undoButton.setTitleColor(light, for: .normal)
+        undoButton.tintColor = light
+        undoButton.backgroundColor = darkTransparent
+        undoButton.layer.borderColor = light.cgColor
+        undoButton.layer.borderWidth = 2.0
+        undoButton.layer.cornerRadius = 15.0
+        
         redoButton.setTitleColor(light, for: .normal)
+        redoButton.tintColor = light
+        redoButton.backgroundColor = darkTransparent
+        redoButton.layer.borderColor = light.cgColor
+        redoButton.layer.borderWidth = 2.0
+        redoButton.layer.cornerRadius = 15.0
+        
         clearButton.setTitleColor(light, for: .normal)
+        clearButton.tintColor = light
+        clearButton.backgroundColor = darkTransparent
+        clearButton.layer.borderColor = light.cgColor
+        clearButton.layer.borderWidth = 2.0
+        clearButton.layer.cornerRadius = 15.0
         
         pinButton.setTitleColor(light, for: .normal)
+        pinButton.backgroundColor = lightTransparent
         pinButton.layer.borderColor = light.cgColor
         pinButton.layer.borderWidth = 2.0
         pinButton.layer.cornerRadius = 15.0
         
         lineButton.setTitleColor(light, for: .normal)
-        lineButton.tintColor = light
+        lineButton.backgroundColor = lightTransparent
         lineButton.layer.borderColor = light.cgColor
         lineButton.layer.borderWidth = 2.0
         lineButton.layer.cornerRadius = 15.0
         
         boxButton.setTitleColor(light, for: .normal)
+        boxButton.backgroundColor = lightTransparent
         boxButton.layer.borderColor = light.cgColor
         boxButton.layer.borderWidth = 2.0
         boxButton.layer.cornerRadius = 15.0
+        
+//        pinButton.setTitleColor(light, for: .normal)
+//        pinButton.layer.borderColor = light.cgColor
+//        pinButton.layer.borderWidth = 2.0
+//        pinButton.layer.cornerRadius = 15.0
+//
+//        lineButton.setTitleColor(light, for: .normal)
+//        lineButton.tintColor = light
+//        lineButton.layer.borderColor = light.cgColor
+//        lineButton.layer.borderWidth = 2.0
+//        lineButton.layer.cornerRadius = 15.0
+//
+//        boxButton.setTitleColor(light, for: .normal)
+//        boxButton.layer.borderColor = light.cgColor
+//        boxButton.layer.borderWidth = 2.0
+//        boxButton.layer.cornerRadius = 15.0
         
         mapToggleButton.setTitleColor(dark, for: .normal)
         mapToggleButton.backgroundColor = lightTransparent
