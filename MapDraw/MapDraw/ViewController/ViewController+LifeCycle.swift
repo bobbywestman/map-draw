@@ -76,32 +76,32 @@ extension ViewController {
         let darkTransparent = dark.withAlphaComponent(0.3)
         let lightTransparent = light.withAlphaComponent(0.3)
 
-        background.blur(.regular, intensity: 0.2)
+        background.blur(.regular, intensity: 0.3)
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear
         headerPanel.backgroundColor = .clear
         
-        titleLabel.textColor = dark
+        titleLabel.textColor = light
         selectionNoteLabel.textColor = light
         
         undoButton.setTitleColor(light, for: .normal)
         undoButton.tintColor = light
         undoButton.backgroundColor = darkTransparent
-        undoButton.layer.borderColor = light.cgColor
+        undoButton.layer.borderColor = dark.cgColor
         undoButton.layer.borderWidth = 2.0
         undoButton.layer.cornerRadius = 15.0
         
         redoButton.setTitleColor(light, for: .normal)
         redoButton.tintColor = light
         redoButton.backgroundColor = darkTransparent
-        redoButton.layer.borderColor = light.cgColor
+        redoButton.layer.borderColor = dark.cgColor
         redoButton.layer.borderWidth = 2.0
         redoButton.layer.cornerRadius = 15.0
         
         clearButton.setTitleColor(light, for: .normal)
         clearButton.tintColor = light
         clearButton.backgroundColor = darkTransparent
-        clearButton.layer.borderColor = light.cgColor
+        clearButton.layer.borderColor = dark.cgColor
         clearButton.layer.borderWidth = 2.0
         clearButton.layer.cornerRadius = 15.0
         
@@ -123,27 +123,27 @@ extension ViewController {
         boxButton.layer.borderWidth = 2.0
         boxButton.layer.cornerRadius = 15.0
         
-        mapToggleButton.setTitleColor(dark, for: .normal)
-        mapToggleButton.backgroundColor = lightTransparent
+        mapToggleButton.setTitleColor(light, for: .normal)
+        mapToggleButton.backgroundColor = darkTransparent
         mapToggleButton.layer.borderColor = dark.cgColor
         mapToggleButton.layer.borderWidth = 2.0
         mapToggleButton.layer.cornerRadius = 15.0
         
-        saveButton.setTitleColor(dark, for: .normal)
-        saveButton.backgroundColor = lightTransparent
+        saveButton.setTitleColor(light, for: .normal)
+        saveButton.backgroundColor = darkTransparent
         saveButton.layer.borderColor = dark.cgColor
         saveButton.layer.borderWidth = 2.0
         saveButton.layer.cornerRadius = 15.0
         
-        cancelDrawingButton.setTitleColor(dark, for: .normal)
-        cancelDrawingButton.backgroundColor = lightTransparent
+        cancelDrawingButton.setTitleColor(light, for: .normal)
+        cancelDrawingButton.backgroundColor = darkTransparent
         cancelDrawingButton.layer.borderColor = dark.cgColor
         cancelDrawingButton.layer.borderWidth = 2.0
         cancelDrawingButton.layer.cornerRadius = 15.0
         
         selectButton.setTitleColor(light, for: .normal)
         selectButton.backgroundColor = darkTransparent
-        selectButton.layer.borderColor = light.cgColor
+        selectButton.layer.borderColor = dark.cgColor
         selectButton.layer.borderWidth = 2.0
         selectButton.layer.cornerRadius = 15.0
     }

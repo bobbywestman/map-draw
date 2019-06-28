@@ -49,7 +49,7 @@
                                             <action selector="mapToggleButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8x7-KJ-r4P"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiW-Cg-JPA">
+                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="OiW-Cg-JPA">
                                         <rect key="frame" x="20" y="0.0" width="275" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -455,7 +455,7 @@ Then click the "Select" button to enter editing mode.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="389.66665649414062" height="226.33332824707031"/>
+        <image name="Background" width="550" height="366.66665649414062"/>
         <image name="Clear" width="153" height="212.33332824707031"/>
         <image name="Line" width="153" height="212.33332824707031"/>
         <image name="Pin" width="153" height="212.33332824707031"/>
