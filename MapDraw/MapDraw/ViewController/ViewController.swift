@@ -47,6 +47,14 @@ class ViewController: UIViewController {
     /// The view containing the image of the selection.
     @IBOutlet weak var selectionImageView: UIImageView!
     
+    @IBOutlet weak var selectionImageTrailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var selectionImageLeading: NSLayoutConstraint!
+    
+    @IBOutlet weak var selectionImageTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var selectionImageBottom: NSLayoutConstraint!
+    
     /// The bottom panel with interactive elements for selecting a section of the map to draw on.
     @IBOutlet weak var selectionPanel: UIView!
     
@@ -130,6 +138,8 @@ class ViewController: UIViewController {
                 searchBar.isHidden = false
                 mapToggleButton.isHidden = false
                 titleLabel.isHidden = false
+                
+                map.isHidden = false
             case .drawing:
                 canvas.isHidden = false
                 drawingPanel.isHidden = false
@@ -144,6 +154,8 @@ class ViewController: UIViewController {
                 searchBar.isHidden = true
                 mapToggleButton.isHidden = true
                 titleLabel.isHidden = true
+                
+                map.isHidden = true
             }
         }
     }

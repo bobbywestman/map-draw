@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 extension ViewController {
+    func selectImage(_ image: UIImage) {
+        selectionImageView.image = image
+        // selectionImageView.height = image.height
+        interactionState = .drawing
+    }
+    
     @IBAction func selectButtonClick(_ sender: Any) {
         if selectorView.isHidden {
             // show the selector view
@@ -19,10 +25,7 @@ extension ViewController {
             // select highlighted portion of the map
             
             let screenshot = ScreenshotHelper.screenshot(of: view, in: selectorView.frame)
-            selectionImageView.image = screenshot
-            selectionImageView.isHidden = false
-
-            interactionState = .drawing
+            selectImage(screenshot)
         }
     }
     
