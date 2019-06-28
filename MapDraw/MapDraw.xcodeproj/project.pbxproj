@@ -16,6 +16,7 @@
 		C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */; };
 		C511623B22C48CC90031F5A5 /* OrientablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */; };
 		C511623D22C50EA60031F5A5 /* UIKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623C22C50EA60031F5A5 /* UIKitHelper.swift */; };
+		C511623F22C5A1520031F5A5 /* ViewController+Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NumberPicker.swift"; sourceTree = "<group>"; };
 		C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientablePickerView.swift; sourceTree = "<group>"; };
 		C511623C22C50EA60031F5A5 /* UIKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelper.swift; sourceTree = "<group>"; };
+		C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Upload.swift"; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */,
 				C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */,
 				C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */,
+				C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				C534CDC922BC7EFC00DD3890 /* ColorHelper.swift in Sources */,
 				C511623222C3E6B80031F5A5 /* ViewController+Orientation.swift in Sources */,
 				C534CDC622BB638200DD3890 /* ViewController+Screenshot.swift in Sources */,
+				C511623F22C5A1520031F5A5 /* ViewController+Upload.swift in Sources */,
 				C534CDD522BF1FFC00DD3890 /* ViewController+Selection.swift in Sources */,
 				C534CDC422BB62BB00DD3890 /* ViewController+Drawing.swift in Sources */,
 				C511622E22C2F5CF0031F5A5 /* Canvas+Selection.swift in Sources */,

@@ -53,8 +53,11 @@ class ViewController: UIViewController {
     /// The button to select a section of the map.
     @IBOutlet weak var selectButton: UIButton!
     
-    // MARK: Drawing
+    /// The button to upload an image to edit.
+    @IBOutlet weak var uploadButton: UIButton!
     
+    // MARK: Drawing
+
     /// The bottom panel with interactive elements for drawing.
     @IBOutlet weak var canvas: Canvas!
     weak var drawingDelegate: Canvasing?

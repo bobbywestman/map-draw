@@ -75,7 +75,9 @@ extension ViewController {
         let light = UIColor.white
         let darkTransparent = dark.withAlphaComponent(0.3)
         let lightTransparent = light.withAlphaComponent(0.3)
-
+        let borderWidth = CGFloat(2)
+        let cornerRadius = CGFloat(15)
+        
         background.blur(.regular, intensity: 0.3)
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear
@@ -88,63 +90,69 @@ extension ViewController {
         undoButton.tintColor = light
         undoButton.backgroundColor = darkTransparent
         undoButton.layer.borderColor = dark.cgColor
-        undoButton.layer.borderWidth = 2.0
-        undoButton.layer.cornerRadius = 15.0
+        undoButton.layer.borderWidth = borderWidth
+        undoButton.layer.cornerRadius = cornerRadius
         
         redoButton.setTitleColor(light, for: .normal)
         redoButton.tintColor = light
         redoButton.backgroundColor = darkTransparent
         redoButton.layer.borderColor = dark.cgColor
-        redoButton.layer.borderWidth = 2.0
-        redoButton.layer.cornerRadius = 15.0
+        redoButton.layer.borderWidth = borderWidth
+        redoButton.layer.cornerRadius = cornerRadius
         
         clearButton.setTitleColor(light, for: .normal)
         clearButton.tintColor = light
         clearButton.backgroundColor = darkTransparent
         clearButton.layer.borderColor = dark.cgColor
-        clearButton.layer.borderWidth = 2.0
-        clearButton.layer.cornerRadius = 15.0
+        clearButton.layer.borderWidth = borderWidth
+        clearButton.layer.cornerRadius = cornerRadius
         
         pinButton.setTitleColor(light, for: .normal)
         pinButton.backgroundColor = lightTransparent
         pinButton.layer.borderColor = light.cgColor
-        pinButton.layer.borderWidth = 2.0
-        pinButton.layer.cornerRadius = 15.0
+        pinButton.layer.borderWidth = borderWidth
+        pinButton.layer.cornerRadius = cornerRadius
         
         lineButton.setTitleColor(light, for: .normal)
         lineButton.backgroundColor = lightTransparent
         lineButton.layer.borderColor = light.cgColor
-        lineButton.layer.borderWidth = 2.0
-        lineButton.layer.cornerRadius = 15.0
+        lineButton.layer.borderWidth = borderWidth
+        lineButton.layer.cornerRadius = cornerRadius
         
         boxButton.setTitleColor(light, for: .normal)
         boxButton.backgroundColor = lightTransparent
         boxButton.layer.borderColor = light.cgColor
-        boxButton.layer.borderWidth = 2.0
-        boxButton.layer.cornerRadius = 15.0
+        boxButton.layer.borderWidth = borderWidth
+        boxButton.layer.cornerRadius = cornerRadius
         
         mapToggleButton.setTitleColor(light, for: .normal)
         mapToggleButton.backgroundColor = darkTransparent
         mapToggleButton.layer.borderColor = dark.cgColor
-        mapToggleButton.layer.borderWidth = 2.0
-        mapToggleButton.layer.cornerRadius = 15.0
+        mapToggleButton.layer.borderWidth = borderWidth
+        mapToggleButton.layer.cornerRadius = cornerRadius
         
         saveButton.setTitleColor(light, for: .normal)
         saveButton.backgroundColor = darkTransparent
         saveButton.layer.borderColor = dark.cgColor
-        saveButton.layer.borderWidth = 2.0
-        saveButton.layer.cornerRadius = 15.0
+        saveButton.layer.borderWidth = borderWidth
+        saveButton.layer.cornerRadius = cornerRadius
         
         cancelDrawingButton.setTitleColor(light, for: .normal)
         cancelDrawingButton.backgroundColor = darkTransparent
         cancelDrawingButton.layer.borderColor = dark.cgColor
-        cancelDrawingButton.layer.borderWidth = 2.0
-        cancelDrawingButton.layer.cornerRadius = 15.0
+        cancelDrawingButton.layer.borderWidth = borderWidth
+        cancelDrawingButton.layer.cornerRadius = cornerRadius
         
         selectButton.setTitleColor(light, for: .normal)
         selectButton.backgroundColor = darkTransparent
         selectButton.layer.borderColor = dark.cgColor
-        selectButton.layer.borderWidth = 2.0
-        selectButton.layer.cornerRadius = 15.0
+        selectButton.layer.borderWidth = borderWidth
+        selectButton.layer.cornerRadius = cornerRadius
+        
+        uploadButton.setTitleColor(light, for: .normal)
+        uploadButton.backgroundColor = darkTransparent
+        uploadButton.layer.borderColor = dark.cgColor
+        uploadButton.layer.borderWidth = borderWidth
+        uploadButton.layer.cornerRadius = cornerRadius
     }
 }
