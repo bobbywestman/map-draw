@@ -23,27 +23,17 @@ extension ViewController: CanvasHandling {
 
         pinButton.tintColor = canvas.drawColor.lighter().lighter()
         pinButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
-
-//        boxButton.backgroundColor = canvas.drawColor.lighter().lighter()
-//        lineButton.backgroundColor = canvas.drawColor.lighter().lighter()
-//        pinButton.backgroundColor = canvas.drawColor.lighter().lighter()
         
         switch state {
         case .line:
             lineButton.tintColor = canvas.drawColor
             lineButton.layer.borderColor = canvas.drawColor.cgColor
-            
-            //            lineButton.backgroundColor = canvas.drawColor
         case .box:
             boxButton.tintColor = canvas.drawColor
             boxButton.layer.borderColor = canvas.drawColor.cgColor
-
-//            boxButton.backgroundColor = canvas.drawColor
         case .pin:
             pinButton.tintColor = canvas.drawColor
             pinButton.layer.borderColor = canvas.drawColor.cgColor
-
-//            pinButton.backgroundColor = canvas.drawColor
         case .none:
             break
         }
