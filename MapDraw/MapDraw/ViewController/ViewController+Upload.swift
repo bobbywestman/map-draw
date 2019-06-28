@@ -29,7 +29,9 @@ extension ViewController: UIImagePickerControllerDelegate {
             selectImage(image)
         }
         
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: {
+            
+        })
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

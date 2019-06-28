@@ -11,7 +11,7 @@ import UIKit
 
 extension ViewController {
     @IBAction func saveButtonClick(_ sender: Any) {
-        let screenshot = ScreenshotHelper.screenshot(of: view, in: map.frame)
+        let screenshot = ScreenshotHelper.screenshot(of: view, in: selectionImageView.frame)
         
         let screenshotView = UIImageView(image: screenshot)
         screenshotView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ extension ViewController {
         // calculate height
         let height = CGFloat(125)
         // calculate aspect ratio of map
-        let ratio = CGHelper.aspectRatio(width: map.frame.width, height: map.frame.height) 
+        let ratio = CGHelper.aspectRatio(width: selectionImageView.frame.width, height: selectionImageView.frame.height) 
         // calculate width
         let width = ratio * height
         

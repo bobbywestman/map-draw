@@ -140,6 +140,11 @@ class ViewController: UIViewController {
                 titleLabel.isHidden = false
                 
                 map.isHidden = false
+                
+                selectionImageLeading.constant = 0
+                selectionImageTop.constant = 0
+                selectionImageTrailing.constant = 0
+                selectionImageBottom.constant = 0
             case .drawing:
                 canvas.isHidden = false
                 drawingPanel.isHidden = false
@@ -156,6 +161,49 @@ class ViewController: UIViewController {
                 titleLabel.isHidden = true
                 
                 map.isHidden = true
+                
+                guard let image = selectionImageView.image else {
+                    selectionImageLeading.constant = 0
+                    selectionImageTop.constant = 0
+                    selectionImageTrailing.constant = 0
+                    selectionImageBottom.constant = 0
+                    return
+                }
+                
+                // image is set to aspect-fit
+                // need to calculate the transformed size of the image, so that we can resize the canvas around the image. don't want to be drawing out of bounds of the selected image.
+                //
+                let boundingSize = selectionImageView.bounds.size
+                let imageSize = image.size
+                
+                // calculate transformation scale from aspect-fit sizing
+                var scale = boundingSize.width / imageSize.width
+                if (boundingSize.height / imageSize.height < scale) {
+                    scale = boundingSize.height / imageSize.height
+                }
+                
+                // get actual size of image after transform
+                let transformedImageSize = CGSize(width: scale * imageSize.width, height: scale * imageSize.height)
+
+                var horizontalOffset = CGFloat(0)
+                var verticalOffset = CGFloat(0)
+                var delta = CGFloat(0)
+                
+                if transformedImageSize.width < boundingSize.width {
+                    delta = boundingSize.width - transformedImageSize.width
+                    horizontalOffset = delta / 2
+                }
+                
+                if transformedImageSize.height < boundingSize.height {
+                    delta = boundingSize.height - transformedImageSize.height
+                    verticalOffset = delta / 2
+                }
+                
+                // update contraint contents to fill empty space
+                selectionImageLeading.constant = horizontalOffset
+                selectionImageTop.constant = verticalOffset
+                selectionImageTrailing.constant = -horizontalOffset
+                selectionImageBottom.constant = -verticalOffset
             }
         }
     }
