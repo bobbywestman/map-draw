@@ -71,12 +71,11 @@ extension ViewController {
 
 extension ViewController {
     func setupStyles() {
-        let dark = UIColor.gray
-        let light = UIColor.white
-        let darkTransparent = dark.withAlphaComponent(0.3)
-        let lightTransparent = light.withAlphaComponent(0.3)
-        let borderWidth = CGFloat(2)
-        let cornerRadius = CGFloat(15)
+        let dark = ViewController.dark
+        let light = ViewController.light
+        let darkTransparent = ViewController.darkTransparent
+        let borderWidth = ViewController.borderWidth
+        let cornerRadius = ViewController.cornerRadius
         
         background.blur(.regular, intensity: 0.3)
         drawingPanel.backgroundColor = .clear
@@ -108,19 +107,19 @@ extension ViewController {
         clearButton.layer.cornerRadius = cornerRadius
         
         pinButton.setTitleColor(light, for: .normal)
-        pinButton.backgroundColor = lightTransparent
+        pinButton.backgroundColor = darkTransparent
         pinButton.layer.borderColor = light.cgColor
         pinButton.layer.borderWidth = borderWidth
         pinButton.layer.cornerRadius = cornerRadius
         
         lineButton.setTitleColor(light, for: .normal)
-        lineButton.backgroundColor = lightTransparent
+        lineButton.backgroundColor = darkTransparent
         lineButton.layer.borderColor = light.cgColor
         lineButton.layer.borderWidth = borderWidth
         lineButton.layer.cornerRadius = cornerRadius
         
         boxButton.setTitleColor(light, for: .normal)
-        boxButton.backgroundColor = lightTransparent
+        boxButton.backgroundColor = darkTransparent
         boxButton.layer.borderColor = light.cgColor
         boxButton.layer.borderWidth = borderWidth
         boxButton.layer.cornerRadius = cornerRadius

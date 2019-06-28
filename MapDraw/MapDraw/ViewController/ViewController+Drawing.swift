@@ -15,25 +15,40 @@ extension ViewController: CanvasHandling {
     }
     
     func drawingChanged(to state: DrawingState) {
-        lineButton.tintColor = canvas.drawColor.lighter().lighter()
-        lineButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+        let lightTransparent = ViewController.lightTransparent
+        let darkTransparent = ViewController.darkTransparent
         
-        boxButton.tintColor = canvas.drawColor.lighter().lighter()
-        boxButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+        let drawColor = canvas.drawColor
+        let drawColorLighter = canvas.drawColor.lighter().lighter()
+        
+        lineButton.tintColor = drawColorLighter
+        lineButton.layer.borderColor = drawColorLighter.cgColor
+        lineButton.backgroundColor = darkTransparent
+        
+        boxButton.tintColor = drawColorLighter
+        boxButton.layer.borderColor = drawColorLighter.cgColor
+        boxButton.backgroundColor = darkTransparent
 
-        pinButton.tintColor = canvas.drawColor.lighter().lighter()
-        pinButton.layer.borderColor = canvas.drawColor.lighter().lighter().cgColor
+        pinButton.tintColor = drawColorLighter
+        pinButton.layer.borderColor = drawColorLighter.cgColor
+        pinButton.backgroundColor = darkTransparent
+        
+        colorSlider.value = Float(drawColor.hsba.h)
+        updateSliderColor(drawColor)
         
         switch state {
         case .line:
             lineButton.tintColor = canvas.drawColor
-            lineButton.layer.borderColor = canvas.drawColor.cgColor
+            lineButton.layer.borderColor = drawColor.cgColor
+            lineButton.backgroundColor = lightTransparent
         case .box:
             boxButton.tintColor = canvas.drawColor
-            boxButton.layer.borderColor = canvas.drawColor.cgColor
+            boxButton.layer.borderColor = drawColor.cgColor
+            boxButton.backgroundColor = lightTransparent
         case .pin:
             pinButton.tintColor = canvas.drawColor
-            pinButton.layer.borderColor = canvas.drawColor.cgColor
+            pinButton.layer.borderColor = drawColor.cgColor
+            pinButton.backgroundColor = lightTransparent
         case .none:
             break
         }
@@ -93,10 +108,14 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func colorSliderValueChanged(_ sender: UISlider) {
-        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.55, alpha: 1.0)
-        sender.thumbTintColor = color.lighter().lighter()
-        sender.minimumTrackTintColor = color
-        sender.maximumTrackTintColor = color
+        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.7, alpha: 1.0)
+        updateSliderColor(color)
         drawingDelegate?.setColor(color)
+    }
+    
+    func updateSliderColor(_ color: UIColor) {
+        colorSlider.thumbTintColor = color.lighter().lighter()
+        colorSlider.minimumTrackTintColor = color
+        colorSlider.maximumTrackTintColor = color
     }
 }

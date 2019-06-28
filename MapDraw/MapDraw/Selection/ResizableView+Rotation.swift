@@ -11,7 +11,7 @@ import UIKit
 
 extension ResizableView {
     @objc func handleRotation(recognizer: UIRotationGestureRecognizer) {
-        // TODO: Need to handle taking screenshots of rotates selection before enabling this
+        // TODO: Need to handle taking screenshots of rotated selection before enabling this
         
         //        let rotation: CGFloat = recognizer.rotation
         //        transform = transform.rotated(by: rotation)

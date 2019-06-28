@@ -25,3 +25,12 @@ extension UIView {
         ])
     }
 }
+
+// source: https://stackoverflow.com/a/30713456/11687264
+extension UIColor {
+    var hsba:(h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
+        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return (h: h, s: s, b: b, a: a)
+    }
+}
