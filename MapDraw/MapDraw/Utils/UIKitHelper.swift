@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func addBlur(_ style: UIBlurEffect.Style = .extraLight, intensity: CGFloat) {
+    func blur(_ style: UIBlurEffect.Style = .extraLight, intensity: CGFloat) {
         let blurEffect = UIBlurEffect(style: style)
         let blur = UIVisualEffectView(effect: blurEffect)
         blur.alpha = intensity

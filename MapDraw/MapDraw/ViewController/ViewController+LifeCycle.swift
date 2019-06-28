@@ -76,7 +76,7 @@ extension ViewController {
         let darkTransparent = dark.withAlphaComponent(0.3)
         let lightTransparent = light.withAlphaComponent(0.3)
 
-        background.addBlur(.regular, intensity: 0.2)
+        background.blur(.regular, intensity: 0.2)
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear
         headerPanel.backgroundColor = .clear
@@ -94,6 +94,7 @@ extension ViewController {
         pinButton.layer.cornerRadius = 15.0
         
         lineButton.setTitleColor(light, for: .normal)
+        lineButton.tintColor = light
         lineButton.layer.borderColor = light.cgColor
         lineButton.layer.borderWidth = 2.0
         lineButton.layer.cornerRadius = 15.0

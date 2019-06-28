@@ -159,7 +159,7 @@ extension Canvas {
     }
     
     func drawPinImage(_ pin: Pin) {
-        let image = UIImage(named: "Pin")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "Pin")
         let imageView = UIImageView(image: image)
         
         imageView.frame = CGRect(x: 0, y: 0, width: Canvas.kPinWidth, height: Canvas.kPinHeight)
