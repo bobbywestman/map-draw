@@ -18,6 +18,7 @@
 		C511623D22C50EA60031F5A5 /* UIKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623C22C50EA60031F5A5 /* UIKitHelper.swift */; };
 		C511623F22C5A1520031F5A5 /* ViewController+Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */; };
 		C511624122C5ECBE0031F5A5 /* ViewControllerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511624022C5ECBE0031F5A5 /* ViewControllerConstants.swift */; };
+		C511624322C7009C0031F5A5 /* ViewController+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511624222C7009C0031F5A5 /* ViewController+Styling.swift */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
 		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		C511623C22C50EA60031F5A5 /* UIKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelper.swift; sourceTree = "<group>"; };
 		C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Upload.swift"; sourceTree = "<group>"; };
 		C511624022C5ECBE0031F5A5 /* ViewControllerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerConstants.swift; sourceTree = "<group>"; };
+		C511624222C7009C0031F5A5 /* ViewController+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Styling.swift"; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				C534CD9B22B8673400DD3890 /* Main.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
 				C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */,
+				C511624222C7009C0031F5A5 /* ViewController+Styling.swift */,
 				C534CDB722B8A32600DD3890 /* ViewController+Map.swift */,
 				C534CDB422B8A2A100DD3890 /* ViewController+SearchTable.swift */,
 				C534CDBB22B8A3A500DD3890 /* ViewController+SearchBar.swift */,
@@ -297,6 +300,7 @@
 				C511624122C5ECBE0031F5A5 /* ViewControllerConstants.swift in Sources */,
 				C534CDF022BF784600DD3890 /* ResizableView+Pan.swift in Sources */,
 				C511623622C479420031F5A5 /* ColorSlider.swift in Sources */,
+				C511624322C7009C0031F5A5 /* ViewController+Styling.swift in Sources */,
 				C534CDD722BF207900DD3890 /* ViewControllerTypes.swift in Sources */,
 				C534CDE622BF278300DD3890 /* ViewController+LifeCycle.swift in Sources */,
 				C534CDB222B89B8600DD3890 /* MapHelper.swift in Sources */,

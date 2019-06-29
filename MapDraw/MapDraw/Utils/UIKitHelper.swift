@@ -34,3 +34,22 @@ extension UIColor {
         return (h: h, s: s, b: b, a: a)
     }
 }
+
+// adapted from source: https://stackoverflow.com/a/40561499/11687264
+extension UIImage {
+    class func circle(diameter: CGFloat, color: UIColor) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0)
+        guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
+        ctx.saveGState()
+        
+        let rect = CGRect(x: 0, y: 0, width: diameter, height: diameter)
+        ctx.setFillColor(color.cgColor)
+        ctx.fillEllipse(in: rect)
+        
+        ctx.restoreGState()
+        guard let img = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        
+        return img
+    }
+}
