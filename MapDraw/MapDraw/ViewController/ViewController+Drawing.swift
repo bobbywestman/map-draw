@@ -33,8 +33,15 @@ extension ViewController: CanvasHandling {
         pinButton.layer.borderColor = drawColorLighter.cgColor
         pinButton.backgroundColor = darkTransparent
         
-        colorSlider.value = Float(drawColor.hsba.h)
-        updateSliderColor(drawColor)
+        // Hue values 0.0 & 1.0 are the same color for some reason.
+        // Don't update slider position if positioned at either end and the same color is chosen.
+        // If you don't do this, dragging the slider to it's right edge (value == 1.0) makes it jump back to the left edge (value == 0.0)
+        // TODO: one possible way to solve this is making slider min = 0.0, slider max = 1.0 - (smallest possible float value)... but even then it might not work based on how the hue is calculated if there's any rounding involved
+        let hue = drawColor.hsba.h
+        if !(colorSlider.value == 1.0 && hue == 0.0 || colorSlider.value == 0.0 && hue == 1.0) {
+            colorSlider.value = Float(hue)
+            updateSliderColor(drawColor)
+        }
         
         switch state {
         case .line:
