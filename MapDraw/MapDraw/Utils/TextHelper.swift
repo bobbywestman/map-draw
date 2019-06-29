@@ -20,7 +20,7 @@ class TextHelper {
      - parameter size: The size the text should be set at
      - returns: A highlighted attributed string with the ranges highlighted
      */
-    static func highlightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat) -> NSAttributedString {
+    static func highlightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat, color: UIColor? = nil) -> NSAttributedString {
         let attributedText = NSMutableAttributedString(string: text)
         let regular = UIFont.systemFont(ofSize: size)
         attributedText.addAttribute(NSAttributedString.Key.font, value:regular, range:NSMakeRange(0, text.count))
@@ -28,6 +28,9 @@ class TextHelper {
         let bold = UIFont.boldSystemFont(ofSize: size)
         for value in ranges {
             attributedText.addAttribute(NSAttributedString.Key.font, value:bold, range:value.rangeValue)
+            if let color = color {
+                attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range:value.rangeValue)
+            }
         }
         return attributedText
     }

@@ -79,8 +79,10 @@ extension ViewController {
         
         UITextField.appearance(whenContainedInInstancesOf:
             [UISearchBar.self]).textColor = light
+        searchResultsTableView.backgroundColor = .clear
         
         background.blur(.regular, intensity: 0.3)
+        
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear
         headerPanel.backgroundColor = .clear
