@@ -97,8 +97,6 @@ class ViewController: UIViewController {
         didSet {
             guard searchResults.count > 0 else {
                 searchResultsTableView.isHidden = true
-                searchBar.resignFirstResponder
-                searchBar.endEditing(true)
                 return
             }
             searchResultsTableView.isHidden = false

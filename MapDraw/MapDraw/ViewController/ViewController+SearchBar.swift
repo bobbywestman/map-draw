@@ -51,6 +51,7 @@ extension ViewController: MKLocalSearchCompleterDelegate {
 
 extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchResults = []
         searchBar.endEditing(true)
     }
 }
