@@ -15,7 +15,6 @@ extension ViewController: CanvasHandling {
     }
     
     func drawingChanged(to state: DrawingState) {
-        let lightTransparent = ViewController.lightTransparent
         let darkTransparent = ViewController.darkTransparent
         
         let drawColor = canvas.drawColor
@@ -23,15 +22,15 @@ extension ViewController: CanvasHandling {
         
         lineButton.tintColor = drawColorLighter
         lineButton.layer.borderColor = drawColorLighter.cgColor
-        lineButton.backgroundColor = darkTransparent
+        lineButton.backgroundColor = .clear
         
         boxButton.tintColor = drawColorLighter
         boxButton.layer.borderColor = drawColorLighter.cgColor
-        boxButton.backgroundColor = darkTransparent
+        boxButton.backgroundColor = .clear
 
         pinButton.tintColor = drawColorLighter
         pinButton.layer.borderColor = drawColorLighter.cgColor
-        pinButton.backgroundColor = darkTransparent
+        pinButton.backgroundColor = .clear
         
         // Hue values 0.0 & 1.0 are the same color for some reason.
         // Don't update slider position if positioned at either end and the same color is chosen.
@@ -47,15 +46,15 @@ extension ViewController: CanvasHandling {
         case .line:
             lineButton.tintColor = canvas.drawColor
             lineButton.layer.borderColor = drawColor.cgColor
-            lineButton.backgroundColor = lightTransparent
+            lineButton.backgroundColor = darkTransparent
         case .box:
             boxButton.tintColor = canvas.drawColor
             boxButton.layer.borderColor = drawColor.cgColor
-            boxButton.backgroundColor = lightTransparent
+            boxButton.backgroundColor = darkTransparent
         case .pin:
             pinButton.tintColor = canvas.drawColor
             pinButton.layer.borderColor = drawColor.cgColor
-            pinButton.backgroundColor = lightTransparent
+            pinButton.backgroundColor = darkTransparent
         case .none:
             break
         }
