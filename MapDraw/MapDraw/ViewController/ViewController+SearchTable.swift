@@ -36,9 +36,7 @@ extension ViewController: UITableViewDataSource {
         let searchResult = searchResults[indexPath.section]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 
-        cell.backgroundColor = ViewController.darkLessTransparent
-        cell.layer.borderColor = ViewController.dark.cgColor
-        cell.layer.borderWidth = ViewController.borderWidth
+        cell.backgroundColor = ViewController.heavyMediumTransparent
         cell.layer.cornerRadius = ViewController.cornerRadius
         cell.textLabel?.textColor = ViewController.light.darker()
         cell.detailTextLabel?.textColor = ViewController.light.darker()

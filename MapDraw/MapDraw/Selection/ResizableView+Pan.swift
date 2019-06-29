@@ -23,17 +23,17 @@ extension ResizableView {
         
         switch recognizer.state {
         case .began:
-            if topLeftCorner.contains(location) {
-                panning = .topLeft
-            } else if topRightCorner.contains(location) {
-                panning = .topRight
-            } else if bottomLeftCorner.contains(location) {
-                panning = .bottomLeft
-            } else if bottomRightCorner.contains(location) {
-                panning = .bottomRight
-            } else {
+//            if topLeftCorner.contains(location) {
+//                panning = .topLeft
+//            } else if topRightCorner.contains(location) {
+//                panning = .topRight
+//            } else if bottomLeftCorner.contains(location) {
+//                panning = .bottomLeft
+//            } else if bottomRightCorner.contains(location) {
+//                panning = .bottomRight
+//            } else {
                 panning = .center
-            }
+//            }
         case .ended:
             panning = nil
         default:
