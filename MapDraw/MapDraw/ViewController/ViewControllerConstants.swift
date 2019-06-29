@@ -18,6 +18,6 @@ extension ViewController {
     static let lightTransparent = ViewController.light.withAlphaComponent(0.3)
     static let lightMediumTransparent = ViewController.light.withAlphaComponent(0.5)
     static let lightLessTransparent = ViewController.light.withAlphaComponent(0.7)
-    static let borderWidth = CGFloat(2)
+    static let borderWidth = CGFloat(1)
     static let cornerRadius = CGFloat(15)
 }
