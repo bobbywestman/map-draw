@@ -77,6 +77,9 @@ extension ViewController {
         let borderWidth = ViewController.borderWidth
         let cornerRadius = ViewController.cornerRadius
         
+        UITextField.appearance(whenContainedInInstancesOf:
+            [UISearchBar.self]).textColor = light
+        
         background.blur(.regular, intensity: 0.3)
         drawingPanel.backgroundColor = .clear
         selectionPanel.backgroundColor = .clear

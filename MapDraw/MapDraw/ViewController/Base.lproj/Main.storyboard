@@ -66,12 +66,13 @@
                                             <action selector="mapToggleButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8x7-KJ-r4P"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="OiW-Cg-JPA">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiW-Cg-JPA">
                                         <rect key="frame" x="20" y="0.0" width="275" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="275" id="Lfy-yV-Olc"/>
                                         </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -104,7 +105,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="OiW-Cg-JPA" firstAttribute="height" secondItem="IKL-Pf-vHH" secondAttribute="height" id="FQe-Ty-kTp"/>
                                     <constraint firstAttribute="trailing" secondItem="mtT-He-45j" secondAttribute="trailing" constant="20" id="Glq-vr-Ujg"/>
