@@ -75,6 +75,24 @@ extension Canvas: Canvasing {
         redoLastUndoneInteraction()
     }
     
+    func deleteSelected() {
+        if let selectedPin = selectedPin,
+            let index = pins.index(of: selectedPin) {
+            
+            pins.remove(at: index)
+            
+            undoableInteractionOccured()
+        }
+        
+        if let selectedLine = selectedLine,
+            let index = lines.index(of: selectedLine){
+            
+            lines.remove(at: index)
+            
+            undoableInteractionOccured()
+        }
+    }
+    
     func clear() {
         clearDrawings()
     }

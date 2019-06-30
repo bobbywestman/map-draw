@@ -112,6 +112,10 @@ extension ViewController {
         drawingDelegate?.redo()
     }
     
+    @IBAction func deleteButtonClick(_ sender: Any) {
+        drawingDelegate?.deleteSelected()
+    }
+    
     @IBAction func clearButtonClick(_ sender: Any) {
         guard canvas.pins.count > 0 || canvas.lines.count > 0 else { return }
         

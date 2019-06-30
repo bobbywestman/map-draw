@@ -12,6 +12,8 @@ import UIKit
 struct CanvasState {
     let pins: [Pin]
     let lines: [Line]
+    let selectedLine: Line?
+    let selectedPin: Pin?
 }
 
 struct Pin {

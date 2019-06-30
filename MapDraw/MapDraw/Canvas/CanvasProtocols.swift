@@ -18,6 +18,7 @@ protocol Canvasing: class {
     func drawingBox()
     func undo()
     func redo()
+    func deleteSelected()
     func clear()
     func deselect()
 }

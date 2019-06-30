@@ -66,6 +66,13 @@ extension ViewController {
         redoButton.layer.borderWidth = borderWidth
         redoButton.layer.cornerRadius = cornerRadius
         
+        deleteButton.setTitleColor(light, for: .normal)
+        deleteButton.tintColor = light
+        deleteButton.backgroundColor = .clear
+        deleteButton.layer.borderColor = dark.cgColor
+        deleteButton.layer.borderWidth = borderWidth
+        deleteButton.layer.cornerRadius = cornerRadius
+        
         clearButton.setTitleColor(light, for: .normal)
         clearButton.tintColor = light
         clearButton.backgroundColor = .clear

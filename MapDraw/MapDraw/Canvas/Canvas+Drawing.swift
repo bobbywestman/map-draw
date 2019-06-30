@@ -16,6 +16,8 @@ extension Canvas {
         deselectAll()
         draggingPin = nil
         draggingPoint = nil
+        undoStore = []
+        redoStore = []
     }
 }
 

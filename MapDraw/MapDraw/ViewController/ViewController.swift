@@ -76,8 +76,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var pinButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var redoButton: UIButton!
-    @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var cancelDrawingButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     // MARK: Color Picker
     
