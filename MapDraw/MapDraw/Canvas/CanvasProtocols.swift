@@ -32,4 +32,11 @@ protocol CanvasHandling: class {
     
     /// Pin number has changed.
     func pinValueChanged(to value: Int)
+    
+    func undoEnabled()
+    func undoDisabled()
+    func redoEnabled()
+    func redoDisabled()
+    func deleteEnabled()
+    func deleteDisabled()
 }

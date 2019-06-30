@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+struct CanvasState {
+    let pins: [Pin]
+    let lines: [Line]
+}
+
 struct Pin {
     let id: UUID
     var color: UIColor
@@ -40,14 +45,12 @@ struct Line {
     var color: UIColor
     var points: [LinePoint]
     var path: UIBezierPath?
-    var redoPoints: [LinePoint]
     
-    init(id: UUID, points: [LinePoint], color: UIColor, path: UIBezierPath? = nil, redoPoints: [LinePoint] = []) {
+    init(id: UUID, points: [LinePoint], color: UIColor, path: UIBezierPath? = nil) {
         self.id = id
         self.points = points
         self.color = color
         self.path = path
-        self.redoPoints = redoPoints
     }
 }
 

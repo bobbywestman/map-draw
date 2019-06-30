@@ -67,7 +67,7 @@ extension Canvas {
             if pathClosed(withPointsIn: line) {
                 path.close()
                 
-                let fill = stroke.withAlphaComponent(0.25)
+                let fill = stroke.withAlphaComponent(0.13)
                 fill.setFill()
                 path.fill()
             }
@@ -146,9 +146,6 @@ extension Canvas {
                     point = LinePoint(id: UUID(), location: tapLocation)
                     lines[i].points.append(point)
                 }
-                
-                // a new point has been made, reset any saved redo points
-                lines[i].redoPoints = []
                 
                 // need to update selected group points for undo / redo
                 selectLine(lines[i])

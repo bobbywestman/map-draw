@@ -10,6 +10,30 @@ import Foundation
 import UIKit
 
 extension ViewController: CanvasHandling {
+    func undoEnabled() {
+        // TODO: update undo button
+    }
+    
+    func undoDisabled() {
+        // TODO: update undo button
+    }
+    
+    func redoEnabled() {
+        // TODO: update redo button
+    }
+    
+    func redoDisabled() {
+        // TODO: update redo button
+    }
+    
+    func deleteEnabled() {
+        // TODO: update delete button
+    }
+    
+    func deleteDisabled() {
+        // TODO: update delete button
+    }
+    
     func pinValueChanged(to value: Int) {
         pinNumberPicker.selectRow(value, inComponent: 0, animated: true)
     }

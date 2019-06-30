@@ -35,10 +35,11 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // reset selector position before dismissing, so that it doesnt jump around
         resetSelectorPosition()
 
         picker.dismiss(animated: true, completion: { [weak self] in
-            // need to do this after transition, in case orientation changes
+            // need to do this after transition as well, in case orientation changes during transition
             self?.resetSelectorPosition()
         })
     }
