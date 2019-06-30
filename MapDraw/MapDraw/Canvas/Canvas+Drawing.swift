@@ -55,6 +55,7 @@ extension Canvas {
             let stroke: UIColor
             if line == selectedLine {
                 stroke = line.color
+
                 let pattern: [CGFloat] = [3.0, 10.0]
                 path.setLineDash(pattern, count: 2, phase: 0.0)
             } else {
