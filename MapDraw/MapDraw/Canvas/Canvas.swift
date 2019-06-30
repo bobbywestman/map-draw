@@ -35,6 +35,10 @@ class Canvas: UIView {
     var selectedPin: Pin? {
         didSet {
             updatePinImages()
+            
+            guard let selectedPin = selectedPin else { return }
+            
+            pinNumber = selectedPin.value
         }
     }
     
@@ -49,6 +53,12 @@ class Canvas: UIView {
     var drawColor: UIColor = .black {
         didSet {
             delegate?.colorChanged(to: drawColor)
+        }
+    }
+    
+    var pinNumber: Int = 0 {
+        didSet {
+            delegate?.pinValueChanged(to: pinNumber)
         }
     }
     

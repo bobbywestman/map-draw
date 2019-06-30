@@ -12,6 +12,7 @@ import UIKit
 /// Protocol for sending events to a Canvas.
 protocol Canvasing: class {
     func setColor(_ color: UIColor)
+    func setPinValue(_ value: Int)
     func drawingLine()
     func drawingPin()
     func drawingBox()
@@ -23,10 +24,12 @@ protocol Canvasing: class {
 
 /// Protocol for handling events from a Canvas.
 protocol CanvasHandling: class {
-    
     /// Drawing state has changed.
     func drawingChanged(to state: DrawingState)
     
     /// Drawing color has changed.
     func colorChanged(to color: UIColor)
+    
+    /// Pin number has changed.
+    func pinValueChanged(to value: Int)
 }

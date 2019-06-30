@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 extension Canvas: Canvasing {
+    func setPinValue(_ value: Int) {
+        pinNumber = value
+        
+        if let selectedPin = selectedPin,
+            let index = pins.index(of: selectedPin) {
+            pins[index].value = value
+        }
+    }
+    
     func setColor(_ color: UIColor) {
         drawColor = color
         

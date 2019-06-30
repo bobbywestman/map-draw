@@ -33,7 +33,6 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let searchResult = searchResults[indexPath.section]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 
         cell.backgroundColor = ViewController.heavyMediumTransparent
@@ -41,7 +40,13 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.textColor = ViewController.light.darker()
         cell.detailTextLabel?.textColor = ViewController.light.darker()
         
-        // TODO: update hardcoded fonts -> UIFont.preferredFont(forTextStyle: )
+        cell.selectionStyle = .default
+        let selectedBackgroundView = UIView()
+        selectedBackgroundView.backgroundColor = ViewController.lightMediumTransparent
+        selectedBackgroundView.layer.cornerRadius = ViewController.cornerRadius
+        cell.selectedBackgroundView = selectedBackgroundView
+
+        let searchResult = searchResults[indexPath.section]
         cell.textLabel?.attributedText = TextHelper.highlightedText(searchResult.title, inRanges: searchResult.titleHighlightRanges, size: 17.0, color: ViewController.light)
         cell.detailTextLabel?.attributedText = TextHelper.highlightedText(searchResult.subtitle, inRanges: searchResult.subtitleHighlightRanges, size: 12.0, color: ViewController.light)
         

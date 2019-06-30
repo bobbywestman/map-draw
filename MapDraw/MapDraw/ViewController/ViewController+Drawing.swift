@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 extension ViewController: CanvasHandling {
+    func pinValueChanged(to value: Int) {
+        pinNumberPicker.selectRow(value, inComponent: 0, animated: true)
+    }
+    
     func colorChanged(to color: UIColor) {
         drawingChanged(to: canvas.drawingState)
     }

@@ -27,7 +27,7 @@ extension ViewController: UISearchBarDelegate {
         let search = MKLocalSearch(request: searchRequest)
         search.start { [weak self] (response, error) in
             guard let self = self else { return }
-
+            
             if let coordinate = response?.mapItems[0].placemark.coordinate {
                 MapHelper.updateMap(self.map, location: coordinate)
                 self.searchBar.text = self.searchResults[0].title
@@ -51,7 +51,9 @@ extension ViewController: MKLocalSearchCompleterDelegate {
 
 extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchResults = []
         searchBar.endEditing(true)
+        
+        guard  searchResults.count > 0 else { return }
+        searchResults = []
     }
 }

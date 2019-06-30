@@ -37,9 +37,9 @@ extension Canvas {
             
             guard  draggingPoint == nil else { break }
             
-            draggingPin = hitTestForPanningPin(location)
-
-            guard draggingPin == nil, draggingPoint == nil else { break }
+//            draggingPin = hitTestForPanningPin(location)
+//
+//            guard draggingPin == nil, draggingPoint == nil else { break }
             
             // draw new point
             let x = location.x - Canvas.kDragHorizontalOffset
@@ -57,10 +57,10 @@ extension Canvas {
             
             guard draggingPin == nil else { break }
             
-            // check if user is going to move a line point
-            draggingPoint = hitTestForPanningLinePoint(location)
-            
-            guard draggingPin == nil, draggingPoint == nil else { break }
+//            // check if user is going to move a line point
+//            draggingPoint = hitTestForPanningLinePoint(location)
+//
+//            guard draggingPin == nil, draggingPoint == nil else { break }
             
             // draw new pin
             // draw new point
@@ -200,6 +200,10 @@ extension Canvas {
         
         for line in lines {
             guard line.points.count > 0 else { continue }
+            
+            if drawingState == .line {
+                guard line == selectedLine else { continue }
+            }
             
             for point in line.points {
                 let distance = CGHelper.distance(location, point.location)

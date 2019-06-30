@@ -15,13 +15,13 @@ extension Canvas {
     static let kLineTapThreshold = CGFloat(60)
     
     /// When dragging / moving line points, this threshold determines the size of the area in which a point will detect a "hit" and be moved.
-    static let kLinePointTapThreshold = CGFloat(40)
+    static let kLinePointTapThreshold = CGFloat(30)
     
     /// When adding new line points, this threshold determines the size of the area in which a point will "connect" with the first point on the line, to create a closed / completed path.
-    static let kLinePointConnectThreshold = CGFloat(30)
+    static let kLinePointConnectThreshold = CGFloat(15)
     
     /// When dragging or tapping pins, this threshold determines the size of the area in which a pin will detect a "hit".
-    static let kPinTapThreshold = CGFloat(40)
+    static let kPinTapThreshold = CGFloat(30)
     
     /// When dragging an element, the user's finger covers the exact location, this offest makes it a bit easier to see where exactly the element is being moved to.
     static let kDragVerticalOffset = CGFloat(50)
@@ -32,6 +32,6 @@ extension Canvas {
     static let kPinHeight = CGFloat(31.2)
     static let kPinWidth = CGFloat(21.775)
     
-    static let kLinePointDiameter = CGFloat(8)
+    static let kLinePointDiameter = CGFloat(11)
     static let kLineWidth = CGFloat(5)
 }

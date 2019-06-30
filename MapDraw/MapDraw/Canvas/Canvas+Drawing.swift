@@ -43,22 +43,7 @@ extension Canvas {
             
             for j in 0..<line.points.count {
                 let point = line.points[j]
-                
-                let diameter = Canvas.kLinePointDiameter
-                let radius = diameter / 2
-                
-                // draw point
-                let dotPath = UIBezierPath(ovalIn: CGRect(x: point.location.x - radius, y: point.location.y - radius, width: diameter, height: diameter))
-                dotPath.close()
-                let dotFill: UIColor
-                if line == selectedLine {
-                    dotFill = line.color
-                } else {
-                    dotFill = line.color.lighter()
-                }
-                dotFill.setFill()
-                dotPath.fill()
-                
+  
                 // handle path
                 guard j > 0 else {
                     path.move(to: line.points[0].location)
@@ -70,6 +55,8 @@ extension Canvas {
             let stroke: UIColor
             if line == selectedLine {
                 stroke = line.color
+                let pattern: [CGFloat] = [3.0, 10.0]
+                path.setLineDash(pattern, count: 2, phase: 0.0)
             } else {
                 stroke = line.color.lighter()
             }
@@ -85,6 +72,31 @@ extension Canvas {
             }
             
             lines[i].path = path
+            
+            // draw points after drawing lines, so they're on top
+            for j in 0..<line.points.count {
+                let point = line.points[j]
+                
+                let diameter: CGFloat
+                if line == selectedLine {
+                    diameter = Canvas.kLinePointDiameter
+                } else {
+                    diameter = 0
+                }
+                let radius = diameter / 2
+                
+                // draw point
+                let dotPath = UIBezierPath(ovalIn: CGRect(x: point.location.x - radius, y: point.location.y - radius, width: diameter, height: diameter))
+                dotPath.close()
+                let dotFill: UIColor
+                if line == selectedLine {
+                    dotFill = line.color.lighter().lighter()
+                } else {
+                    dotFill = line.color.lighter()
+                }
+                dotFill.setFill()
+                dotPath.fill()
+            }
         }
     }
 }
@@ -149,7 +161,7 @@ extension Canvas {
 
 extension Canvas {
     func drawPin(_ tapLocation:CGPoint) -> Pin {
-        let pin = Pin(id: UUID(), color: drawColor, location: tapLocation)
+        let pin = Pin(id: UUID(), color: drawColor, location: tapLocation, value: pinNumber)
         pins.append(pin)
         
         drawPinImage(pin)

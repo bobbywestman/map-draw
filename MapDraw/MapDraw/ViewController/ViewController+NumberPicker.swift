@@ -15,11 +15,11 @@ extension ViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return 36
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        drawingDelegate?.setPinValue(row)
     }
 }
 
@@ -32,10 +32,23 @@ extension ViewController: UIPickerViewDelegate {
         }
         
         let label = UILabel()
-        label.text = "\(row)"
+        label.text = getTextForRow(row)
         label.textColor = ViewController.light
         label.textAlignment = .center
         label.transform = CGAffineTransform(rotationAngle: (.pi / 2))
         return label
+    }
+    
+    func getTextForRow(_ row: Int) -> String{
+        if row == 0 {
+            return " "
+        } else if row > 0, row < 10 {
+            return "\(row)"
+        } else {
+            guard let characterIndex = UnicodeScalar(Int(UnicodeScalar("A").value) + (row - 10)) else {
+                return " "
+            }
+            return "\(Character(characterIndex))"
+        }
     }
 }
