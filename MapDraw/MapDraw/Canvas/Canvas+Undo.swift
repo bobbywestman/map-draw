@@ -37,6 +37,7 @@ extension Canvas {
         guard let restoredInteraction = undoStore.last else {
             lines = []
             pins = []
+            deselectAll()
             return
         }
         

@@ -152,7 +152,7 @@ extension ViewController {
     }
     
     func updateSliderColor(_ color: UIColor) {
-        colorSlider.thumbTintColor = color.lighter().lighter()
+        colorSlider.thumbTintColor = color.lighter()
         colorSlider.minimumTrackTintColor = color
         colorSlider.maximumTrackTintColor = color
     }
