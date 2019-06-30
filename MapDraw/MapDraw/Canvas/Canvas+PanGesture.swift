@@ -156,6 +156,8 @@ extension Canvas {
     func panEnded(_ location:CGPoint) {
         switch drawingState {
         case .line:
+            guard draggingPoint != nil else { break }
+            
             // connect / close line if let go close enough to the first point
             for i in 0..<lines.count {
                 let line = lines[i]
@@ -181,8 +183,13 @@ extension Canvas {
                     draggingPoint = firstPoint
                     selectLine(lines[i])
                 }
-                
             }
+            
+            undoableInteractionOccured()
+        case .pin:
+            guard draggingPin != nil else { break }
+            
+            undoableInteractionOccured()
         default:
             break
         }

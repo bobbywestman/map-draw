@@ -72,7 +72,7 @@ extension Canvas: Canvasing {
     }
     
     func redo() {
-        redoUndoneInteraction()
+        redoLastUndoneInteraction()
     }
     
     func clear() {

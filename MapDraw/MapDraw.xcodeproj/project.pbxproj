@@ -13,7 +13,7 @@
 		C511623022C3535A0031F5A5 /* Canvas+PinOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511622F22C3535A0031F5A5 /* Canvas+PinOverlay.swift */; };
 		C511623222C3E6B80031F5A5 /* ViewController+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */; };
 		C511623622C479420031F5A5 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623522C479420031F5A5 /* ColorSlider.swift */; };
-		C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */; };
+		C511623822C489940031F5A5 /* ViewController+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623722C489940031F5A5 /* ViewController+Picker.swift */; };
 		C511623B22C48CC90031F5A5 /* OrientablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */; };
 		C511623D22C50EA60031F5A5 /* UIKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623C22C50EA60031F5A5 /* UIKitHelper.swift */; };
 		C511623F22C5A1520031F5A5 /* ViewController+Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */; };
@@ -59,7 +59,7 @@
 		C511622F22C3535A0031F5A5 /* Canvas+PinOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+PinOverlay.swift"; sourceTree = "<group>"; };
 		C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Orientation.swift"; sourceTree = "<group>"; };
 		C511623522C479420031F5A5 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
-		C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NumberPicker.swift"; sourceTree = "<group>"; };
+		C511623722C489940031F5A5 /* ViewController+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Picker.swift"; sourceTree = "<group>"; };
 		C511623A22C48CC90031F5A5 /* OrientablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientablePickerView.swift; sourceTree = "<group>"; };
 		C511623C22C50EA60031F5A5 /* UIKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelper.swift; sourceTree = "<group>"; };
 		C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Upload.swift"; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				C534CDC522BB638200DD3890 /* ViewController+Screenshot.swift */,
 				C534CDD422BF1FFC00DD3890 /* ViewController+Selection.swift */,
 				C511623122C3E6B80031F5A5 /* ViewController+Orientation.swift */,
-				C511623722C489940031F5A5 /* ViewController+NumberPicker.swift */,
+				C511623722C489940031F5A5 /* ViewController+Picker.swift */,
 				C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */,
 			);
 			path = ViewController;
@@ -328,7 +328,7 @@
 				C534CDF622C0098A00DD3890 /* Canvas+Canvasing.swift in Sources */,
 				C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */,
 				C534CDE422BF267600DD3890 /* CanvasConstants.swift in Sources */,
-				C511623822C489940031F5A5 /* ViewController+NumberPicker.swift in Sources */,
+				C511623822C489940031F5A5 /* ViewController+Picker.swift in Sources */,
 				C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */,
 				C534CDEE22BF783000DD3890 /* ResizableView+Pinch.swift in Sources */,
 				C534CDBF22B9C2E000DD3890 /* ScreenshotHelper.swift in Sources */,

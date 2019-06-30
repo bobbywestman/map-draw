@@ -1,5 +1,5 @@
 //
-//  ViewController+NumberPicker.swift
+//  ViewController+Picker.swift
 //  MapDraw
 //
 //  Created by Bobby Westman on 6/27/19.

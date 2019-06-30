@@ -17,10 +17,14 @@ extension Canvas {
     private func tapDetected(tapLocation:CGPoint) {
         switch drawingState {
         case .line:
-            _ = drawLinePoint(tapLocation)
+            guard drawLinePoint(tapLocation) != nil else { break }
+            
+            undoableInteractionOccured()
         case .pin:
             guard let pin = hitTestForTappingPin(tapLocation) else {
                 _ = drawPin(tapLocation)
+                
+                undoableInteractionOccured()
                 break
             }
             selectPin(pin)

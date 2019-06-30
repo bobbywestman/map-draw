@@ -20,12 +20,29 @@ extension Canvas {
         
         undoStore.removeLast()
         redoStore.append(lastInteraction)
+        
+        restoreInteraction()
     }
     
-    func redoUndoneInteraction() {
-        guard let firstUndo = redoStore.first else { return }
+    func redoLastUndoneInteraction() {
+        guard let lastUndo = redoStore.last else { return }
         
-        redoStore.removeFirst()
-        undoStore.append(firstUndo)
+        redoStore.removeLast()
+        undoStore.append(lastUndo)
+        
+        restoreInteraction()
+    }
+    
+    private func restoreInteraction() {
+        guard let restoredInteraction = undoStore.last else {
+            lines = []
+            pins = []
+            setNeedsDisplay()
+            return
+        }
+        
+        lines = restoredInteraction.lines
+        pins = restoredInteraction.pins
+        setNeedsDisplay()
     }
 }
