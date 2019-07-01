@@ -57,6 +57,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        searchBar.endEditing(true)
+        
         let completion = searchResults[indexPath.row]
 
         let searchRequest = MKLocalSearch.Request(completion: completion)
