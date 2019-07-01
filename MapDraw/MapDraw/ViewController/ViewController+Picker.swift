@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension ViewController: UIPickerViewDataSource {
-    static let kPinLabelPickerNumberOfInts = 9
+    static let kPinLabelPickerNumberOfInts = 25
     static let kPinLabelPickerNumberOfAlphaCharacters = 26
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,7 +48,7 @@ extension ViewController: UIPickerViewDelegate {
         } else if row > 0, row < ViewController.kPinLabelPickerNumberOfInts + 1 {
             return "\(row)"
         } else {
-            guard let characterIndex = UnicodeScalar(Int(UnicodeScalar("A").value) + (row - 10)) else {
+            guard let characterIndex = UnicodeScalar(Int(UnicodeScalar("A").value) + (row - ViewController.kPinLabelPickerNumberOfInts - 1)) else {
                 return " "
             }
             return "\(Character(characterIndex))"
@@ -63,7 +63,7 @@ extension ViewController: UIPickerViewDelegate {
             intValue < ViewController.kPinLabelPickerNumberOfInts + 1 {
             return intValue
         } else if let charValue = UnicodeScalar(label)?.value {
-            return Int(charValue) - Int(UnicodeScalar("A").value) + 10
+            return Int(charValue) - Int(UnicodeScalar("A").value) + ViewController.kPinLabelPickerNumberOfInts
         } else {
             return nil
         }

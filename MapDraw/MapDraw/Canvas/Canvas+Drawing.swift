@@ -183,6 +183,30 @@ extension Canvas {
              imageView.tintColor = pin.color.lighter()
         }
         
+        let label = UILabel()
+        label.text = pin.label
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        
+        var red = CGFloat(0.0), green = CGFloat(0.0), blue = CGFloat(0.0), alpha = CGFloat(0.0)
+        pin.color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        // TODO: move to color helper
+        //https://stackoverflow.com/a/20978280/11687264
+        let threshold = CGFloat(0.29)
+        let delta = (red * 0.2999) + (green * 0.587) + (blue * 0.114)
+        print(delta)
+        label.textColor = (delta < threshold) ? .white : .black
+
+        imageView.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 3),
+            label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            label.widthAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.6),
+            label.heightAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 0.6),
+        ])
+        
         addSubview(imageView)
         pinImages.append(imageView)
     }
