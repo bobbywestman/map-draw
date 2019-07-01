@@ -26,9 +26,9 @@ class Canvas: UIView {
         }
     }
     
-    var pinNumber: Int = 0 {
+    var pinLabel: String = "" {
         didSet {
-            delegate?.pinValueChanged(to: pinNumber)
+            delegate?.pinLabelChanged(to: pinLabel)
         }
     }
     
@@ -56,7 +56,7 @@ class Canvas: UIView {
             
             guard let selectedPin = selectedPin else { return }
             
-            pinNumber = selectedPin.value
+            pinLabel = selectedPin.label
         }
     }
     

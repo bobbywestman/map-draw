@@ -161,7 +161,7 @@ extension Canvas {
 
 extension Canvas {
     func drawPin(_ tapLocation:CGPoint) -> Pin {
-        let pin = Pin(id: UUID(), color: drawColor, location: tapLocation, value: pinNumber)
+        let pin = Pin(id: UUID(), color: drawColor, location: tapLocation, label: pinLabel)
         pins.append(pin)
         
         drawPinImage(pin)

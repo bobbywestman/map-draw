@@ -34,8 +34,9 @@ extension ViewController: CanvasHandling {
         // TODO: update delete button
     }
     
-    func pinValueChanged(to value: Int) {
-        pinNumberPicker.selectRow(value, inComponent: 0, animated: true)
+    func pinLabelChanged(to label: String) {
+        guard let row = getRowForLabel(label) else { return }
+        pinLabelPicker.selectRow(row, inComponent: 0, animated: true)
     }
     
     func colorChanged(to color: UIColor) {

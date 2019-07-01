@@ -45,9 +45,9 @@ extension ViewController {
         selectorView.addGestureRecognizer(selectorPinchRecognizer)
         selectorView.addGestureRecognizer(selectorRotationRecognizer)
         
-        pinNumberPicker.delegate = self
-        pinNumberPicker.dataSource = self
-        pinNumberPicker.orientation = .horizontal
+        pinLabelPicker.delegate = self
+        pinLabelPicker.dataSource = self
+        pinLabelPicker.orientation = .horizontal
         
         setupStyles()
         

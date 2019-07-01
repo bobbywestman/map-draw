@@ -86,7 +86,7 @@ class ViewController: UIViewController {
     
     // MARK: Pin Number Picker
     
-    @IBOutlet weak var pinNumberPicker: OrientablePickerView!
+    @IBOutlet weak var pinLabelPicker: OrientablePickerView!
     
     // MARK: Search
 

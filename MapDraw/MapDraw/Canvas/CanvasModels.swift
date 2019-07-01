@@ -20,14 +20,14 @@ struct Pin {
     let id: UUID
     var color: UIColor
     var location: CGPoint
-    var value: Int
+    var label: String
     var note: String?
     
-    init(id: UUID, color: UIColor, location: CGPoint, value: Int = 0, note: String? = nil) {
+    init(id: UUID, color: UIColor, location: CGPoint, label: String = "", note: String? = nil) {
         self.id = id
         self.location = location
         self.color = color
-        self.value = value
+        self.label = label
         self.note = note
     }
 }

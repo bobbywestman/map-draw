@@ -10,16 +10,19 @@ import Foundation
 import UIKit
 
 extension ViewController: UIPickerViewDataSource {
+    static let kPinLabelPickerNumberOfInts = 9
+    static let kPinLabelPickerNumberOfAlphaCharacters = 26
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 36
+        return 1 + ViewController.kPinLabelPickerNumberOfInts + ViewController.kPinLabelPickerNumberOfAlphaCharacters
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        drawingDelegate?.setPinValue(row)
+        drawingDelegate?.setPinLabel(getLabelForRow(row))
     }
 }
 
@@ -32,23 +35,37 @@ extension ViewController: UIPickerViewDelegate {
         }
         
         let label = UILabel()
-        label.text = getTextForRow(row)
+        label.text = getLabelForRow(row)
         label.textColor = ViewController.light
         label.textAlignment = .center
         label.transform = CGAffineTransform(rotationAngle: (.pi / 2))
         return label
     }
     
-    func getTextForRow(_ row: Int) -> String{
+    func getLabelForRow(_ row: Int) -> String {
         if row == 0 {
             return " "
-        } else if row > 0, row < 10 {
+        } else if row > 0, row < ViewController.kPinLabelPickerNumberOfInts + 1 {
             return "\(row)"
         } else {
             guard let characterIndex = UnicodeScalar(Int(UnicodeScalar("A").value) + (row - 10)) else {
                 return " "
             }
             return "\(Character(characterIndex))"
+        }
+    }
+    
+    func getRowForLabel(_ label: String) -> Int? {
+        if label == " " {
+            return 0
+        } else if let intValue = Int(label),
+            intValue > 0,
+            intValue < ViewController.kPinLabelPickerNumberOfInts + 1 {
+            return intValue
+        } else if let charValue = UnicodeScalar(label)?.value {
+            return Int(charValue) - Int(UnicodeScalar("A").value) + 10
+        } else {
+            return nil
         }
     }
 }

@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 extension Canvas: Canvasing {
-    func setPinValue(_ value: Int) {
-        pinNumber = value
+    func setPinLabel(_ label: String) {
+        pinLabel = label
         
         if let selectedPin = selectedPin,
             let index = pins.index(of: selectedPin) {
-            pins[index].value = value
+            pins[index].label = label
         }
     }
     

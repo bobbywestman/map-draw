@@ -538,7 +538,7 @@ Click "Upload" to edit a photo from the camera roll.</string>
                         <outlet property="map" destination="7rb-iX-kdH" id="Gz0-ck-uZq"/>
                         <outlet property="mapToggleButton" destination="uTs-6j-XIX" id="jdf-8C-aMK"/>
                         <outlet property="pinButton" destination="oc7-RW-reW" id="JTM-eW-TqT"/>
-                        <outlet property="pinNumberPicker" destination="bfg-do-dx3" id="fBN-TL-rXB"/>
+                        <outlet property="pinLabelPicker" destination="bfg-do-dx3" id="fBN-TL-rXB"/>
                         <outlet property="redoButton" destination="LxI-Sv-bAg" id="2dT-ph-QBC"/>
                         <outlet property="saveButton" destination="JvT-J2-Cea" id="C1v-Hr-JbR"/>
                         <outlet property="searchBar" destination="OiW-Cg-JPA" id="HC3-cO-zXV"/>
