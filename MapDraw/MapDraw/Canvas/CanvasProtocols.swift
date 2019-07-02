@@ -21,6 +21,7 @@ protocol Canvasing: class {
     func deleteSelected()
     func clear()
     func deselect()
+    func undoableInteractionOccured()
 }
 
 /// Protocol for handling events from a Canvas.

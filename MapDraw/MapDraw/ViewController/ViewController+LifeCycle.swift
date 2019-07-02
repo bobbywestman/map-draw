@@ -22,7 +22,6 @@ extension ViewController {
         
         canvas.delegate = self
         drawingDelegate = canvas
-        drawingDelegate?.setColor(.black)
         canvas.drawingState = .none
         canvas.clipsToBounds = true
         

@@ -40,6 +40,7 @@ extension ViewController: CanvasHandling {
     }
     
     func colorChanged(to color: UIColor) {
+        // update colors of buttons
         drawingChanged(to: canvas.drawingState)
     }
     
@@ -150,6 +151,13 @@ extension ViewController {
         let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.7, alpha: 1.0)
         updateSliderColor(color)
         drawingDelegate?.setColor(color)
+    }
+    
+    @IBAction func colorSliderTouchUpOutside(_ sender: UISlider) {
+        drawingDelegate?.undoableInteractionOccured()
+    }
+    @IBAction func colorSliderTouchUpInside(_ sender: UISlider) {
+        drawingDelegate?.undoableInteractionOccured()
     }
     
     func updateSliderColor(_ color: UIColor) {

@@ -324,6 +324,8 @@ Click "Upload" to edit a photo from the camera roll.</string>
                                             <constraint firstAttribute="height" constant="30" id="5uk-7j-9v5"/>
                                         </constraints>
                                         <connections>
+                                            <action selector="colorSliderTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qg7-Qw-u7C"/>
+                                            <action selector="colorSliderTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="djC-Xs-f1a"/>
                                             <action selector="colorSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="U9o-Qo-247"/>
                                         </connections>
                                     </slider>
@@ -564,13 +566,13 @@ Click "Upload" to edit a photo from the camera roll.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="222.66667175292969" height="334"/>
+        <image name="Background" width="550.33331298828125" height="367"/>
         <image name="Clear" width="55" height="55"/>
         <image name="Delete" width="55" height="55.333332061767578"/>
-        <image name="Line" width="153" height="212.33332824707031"/>
-        <image name="PinIcon" width="153" height="212.33332824707031"/>
-        <image name="Redo" width="153" height="212.33332824707031"/>
-        <image name="Text" width="153" height="212.33332824707031"/>
-        <image name="Undo" width="153" height="212.33332824707031"/>
+        <image name="Line" width="55" height="55"/>
+        <image name="PinIcon" width="55" height="55"/>
+        <image name="Redo" width="55" height="55.333332061767578"/>
+        <image name="Text" width="55" height="55"/>
+        <image name="Undo" width="55" height="55"/>
     </resources>
 </document>

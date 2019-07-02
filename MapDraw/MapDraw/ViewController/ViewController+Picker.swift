@@ -23,6 +23,7 @@ extension ViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         drawingDelegate?.setPinLabel(getLabelForRow(row))
+        drawingDelegate?.undoableInteractionOccured()
     }
 }
 

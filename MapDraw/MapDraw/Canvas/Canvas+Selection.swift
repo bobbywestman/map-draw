@@ -19,18 +19,18 @@ extension Canvas {
     
     func selectPin(_ pin: Pin) {
         selectedPin = pin
-        showPinOverlay(on: pin)
-        drawColor = pin.color
-        
+        showPinOverlay(on: pin)        
         selectedLine = nil
+        
+        drawColor = pin.color
     }
     
     func selectLine(_ line: Line) {
         selectedLine = line
-        drawColor = line.color
-        
         selectedPin = nil
         hidePinOverlay()
+        
+        drawColor = line.color
     }
 }
 

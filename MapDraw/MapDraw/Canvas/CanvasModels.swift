@@ -14,6 +14,8 @@ struct CanvasState {
     let lines: [Line]
     let selectedLine: Line?
     let selectedPin: Pin?
+    let drawColor: UIColor
+    let pinLabel: String
 }
 
 struct Pin {

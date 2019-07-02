@@ -10,7 +10,7 @@ import Foundation
 
 extension Canvas {
     func undoableInteractionOccured() {
-        let state = CanvasState(pins: pins, lines: lines, selectedLine: selectedLine, selectedPin: selectedPin)
+        let state = CanvasState(pins: pins, lines: lines, selectedLine: selectedLine, selectedPin: selectedPin, drawColor: drawColor, pinLabel: pinLabel)
         undoStore.append(state)
         redoStore = []
     }
@@ -18,35 +18,42 @@ extension Canvas {
     func undoLastInteraction() {
         guard let lastInteraction = undoStore.last else { return }
         
+        // move current state to redoStore
         undoStore.removeLast()
         redoStore.append(lastInteraction)
         
-        restoreInteraction()
+        // restore previous state
+        restoreCanvasState(undoStore.last)
     }
     
     func redoLastUndoneInteraction() {
         guard let lastUndo = redoStore.last else { return }
         
+        // move last undone state to undoStore
         redoStore.removeLast()
         undoStore.append(lastUndo)
         
-        restoreInteraction()
+        // restore that last undone state
+        restoreCanvasState(undoStore.last)
     }
     
-    private func restoreInteraction() {
-        guard let restoredInteraction = undoStore.last else {
+    private func restoreCanvasState(_ state: CanvasState?) {
+        guard let restoredState = state else {
             lines = []
             pins = []
             deselectAll()
             return
         }
         
-        lines = restoredInteraction.lines
-        pins = restoredInteraction.pins
-        if let selectedLine = restoredInteraction.selectedLine {
+        if let selectedLine = restoredState.selectedLine {
             selectLine(selectedLine)
-        } else if let selectedPin = restoredInteraction.selectedPin {
+        } else if let selectedPin = restoredState.selectedPin {
             selectPin(selectedPin)
         }
+        
+        drawColor = restoredState.drawColor
+        pinLabel = restoredState.pinLabel
+        lines = restoredState.lines
+        pins = restoredState.pins
     }
 }
