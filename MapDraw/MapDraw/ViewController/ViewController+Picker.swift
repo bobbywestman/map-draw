@@ -63,7 +63,7 @@ extension ViewController: UIPickerViewDelegate {
             intValue < ViewController.kPinLabelPickerNumberOfInts + 1 {
             return intValue
         } else if let charValue = UnicodeScalar(label)?.value {
-            return Int(charValue) - Int(UnicodeScalar("A").value) + ViewController.kPinLabelPickerNumberOfInts
+            return Int(charValue) - Int(UnicodeScalar("A").value) + ViewController.kPinLabelPickerNumberOfInts + 1
         } else {
             return nil
         }
