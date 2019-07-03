@@ -13,6 +13,7 @@ extension Canvas {
     func deselectAll() {
         selectedLine = nil
         selectedPin = nil
+        selectedText = nil
         
         hidePinOverlay()
     }
@@ -21,6 +22,7 @@ extension Canvas {
         selectedPin = pin
         showPinOverlay(on: pin)        
         selectedLine = nil
+        selectedText = nil
         
         drawColor = pin.color
     }
@@ -31,6 +33,15 @@ extension Canvas {
         hidePinOverlay()
         
         drawColor = line.color
+    }
+    
+    func selectText(_ text: Text) {
+        selectedLine = nil
+        selectedPin = nil
+        selectedText = text
+        hidePinOverlay()
+        
+        drawColor = text.color
     }
 }
 
@@ -44,6 +55,10 @@ extension Canvas {
         }
         
         if !hitDetected, didSelectLine(tapLocation) {
+            hitDetected = true
+        }
+        
+        if !hitDetected, didSelectText(tapLocation) {
             hitDetected = true
         }
         
@@ -61,6 +76,30 @@ extension Canvas {
                     deselectAll()
                 } else {
                     selectPin(pin)
+                    
+                    // pin was selected
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func didSelectText(_ tapLocation:CGPoint) -> Bool {
+        for text in texts {
+            // dummy label for hit test
+            let label = UILabel()
+            label.text = text.text
+            label.textAlignment = .center
+            label.sizeToFit()
+            label.center = text.location
+            
+            if label.frame.contains(tapLocation) {
+                if text == selectedText {
+                    // text already selected, deselect it
+                    deselectAll()
+                } else {
+                    selectText(text)
                     
                     // pin was selected
                     return true

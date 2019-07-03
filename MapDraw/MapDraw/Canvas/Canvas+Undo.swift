@@ -10,7 +10,7 @@ import Foundation
 
 extension Canvas {
     func undoableInteractionOccured() {
-        let state = CanvasState(pins: pins, lines: lines, selectedLine: selectedLine, selectedPin: selectedPin, drawColor: drawColor, pinLabel: pinLabel)
+        let state = CanvasState(pins: pins, lines: lines, texts: texts, selectedLine: selectedLine, selectedPin: selectedPin, selectedText: selectedText, drawColor: drawColor, pinLabel: pinLabel)
         undoStore.append(state)
         redoStore = []
     }
@@ -41,6 +41,7 @@ extension Canvas {
         guard let restoredState = state else {
             lines = []
             pins = []
+            texts = []
             deselectAll()
             return
         }
@@ -49,11 +50,14 @@ extension Canvas {
             selectLine(selectedLine)
         } else if let selectedPin = restoredState.selectedPin {
             selectPin(selectedPin)
+        } else if let selectedText = restoredState.selectedText {
+            selectText(selectedText)
         }
         
         drawColor = restoredState.drawColor
         pinLabel = restoredState.pinLabel
         lines = restoredState.lines
         pins = restoredState.pins
+        texts = restoredState.texts
     }
 }

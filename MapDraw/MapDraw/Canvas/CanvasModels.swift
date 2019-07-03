@@ -12,8 +12,10 @@ import UIKit
 struct CanvasState {
     let pins: [Pin]
     let lines: [Line]
+    let texts: [Text]
     let selectedLine: Line?
     let selectedPin: Pin?
+    let selectedText: Text?
     let drawColor: UIColor
     let pinLabel: String
 }
@@ -74,6 +76,22 @@ struct LinePoint {
 
 extension LinePoint: Equatable {
     public static func == (lhs: LinePoint, rhs: LinePoint) -> Bool {
+        guard lhs.id == rhs.id else {
+            return false
+        }
+        return true
+    }
+}
+
+struct Text {
+    let id: UUID
+    var location: CGPoint
+    var text: String
+    var color: UIColor
+}
+
+extension Text: Equatable {
+    public static func == (lhs: Text, rhs: Text) -> Bool {
         guard lhs.id == rhs.id else {
             return false
         }

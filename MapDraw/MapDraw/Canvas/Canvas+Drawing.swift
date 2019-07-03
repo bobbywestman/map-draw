@@ -13,6 +13,7 @@ extension Canvas {
     func clearDrawings() {
         lines = []
         pins = []
+        texts = []
         deselectAll()
         draggingPin = nil
         draggingPoint = nil
@@ -30,6 +31,17 @@ extension Canvas {
         
         for pin in pins {
             drawPinImage(pin)
+        }
+    }
+    
+    func updateTextLabels() {
+        for label in labels {
+            label.removeFromSuperview()
+        }
+        labels = []
+
+        for text in texts {
+            drawTextLabel(text)
         }
     }
     
@@ -156,6 +168,36 @@ extension Canvas {
         }
         
         return nil
+    }
+}
+
+extension Canvas {
+    func drawText(location: CGPoint, text: String) -> Text {
+        let text = Text(id: UUID(), location: location, text: text, color: drawColor)
+        texts.append(text)
+        
+        drawTextLabel(text)
+        
+        selectText(text)
+        return text
+    }
+    
+    func drawTextLabel(_ text: Text) {
+        let label = UILabel()
+        label.text = text.text
+        label.textAlignment = .center
+        label.sizeToFit()
+        
+        if let selected = selectedText, text == selected {
+            label.textColor = text.color
+        } else {
+            label.textColor = text.color.lighter()
+        }
+        
+        addSubview(label)
+        label.center = text.location
+        
+        labels.append(label)
     }
 }
 

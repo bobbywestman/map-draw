@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     weak var drawingDelegate: Canvasing?
     
     @IBOutlet weak var drawingPanel: UIView!
-    @IBOutlet weak var boxButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var lineButton: UIButton!
     @IBOutlet weak var pinButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!

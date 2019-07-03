@@ -23,6 +23,8 @@ extension Canvas {
     /// When dragging or tapping pins, this threshold determines the size of the area in which a pin will detect a "hit".
     static let kPinTapThreshold = CGFloat(30)
     
+    static let kTextTapThreshold = CGFloat(20)
+    
     /// When dragging an element, the user's finger covers the exact location, this offest makes it a bit easier to see where exactly the element is being moved to.
     static let kDragVerticalOffset = CGFloat(50)
     

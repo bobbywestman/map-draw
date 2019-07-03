@@ -15,7 +15,7 @@ protocol Canvasing: class {
     func setPinLabel(_ label: String)
     func drawingLine()
     func drawingPin()
-    func drawingBox()
+    func drawingText(_ text: String)
     func undo()
     func redo()
     func deleteSelected()

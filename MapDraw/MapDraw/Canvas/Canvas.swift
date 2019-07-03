@@ -13,9 +13,7 @@ class Canvas: UIView {
     weak var delegate: CanvasHandling?
     
     var drawingState: DrawingState = .none {
-        didSet {
-            print("Drawing state: \(drawingState)")
-            
+        didSet {            
             delegate?.drawingChanged(to: drawingState)
         }
     }
@@ -43,10 +41,22 @@ class Canvas: UIView {
             setNeedsDisplay()            
         }
     }
+    
+    var selectedText: Text? {
+        didSet {
+            updateTextLabels()
+        }
+    }
 
     var pins = [Pin]() {
         didSet {
             updatePinImages()
+        }
+    }
+    
+    var texts = [Text]() {
+        didSet {
+            updateTextLabels()
         }
     }
     
@@ -61,6 +71,7 @@ class Canvas: UIView {
     }
     
     var pinImages = [UIImageView]()
+    var labels = [UILabel]()
     
     var draggingPoint: LinePoint?
     var draggingPin: Pin?

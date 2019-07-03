@@ -18,7 +18,7 @@ extension ViewController {
         
         let alert = UIAlertController(title: "Save Screenshot", message: "\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Save", style: .default) { (action:UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Save", style: .default) { (action) in
             ScreenshotHelper.saveImageToCameraRoll(screenshot)
         })
         alert.view.addSubview(screenshotView)

@@ -92,11 +92,11 @@ extension ViewController {
         lineButton.layer.borderWidth = borderWidth
         lineButton.layer.cornerRadius = cornerRadius
         
-        boxButton.setTitleColor(light, for: .normal)
-        boxButton.backgroundColor = .clear
-        boxButton.layer.borderColor = light.cgColor
-        boxButton.layer.borderWidth = borderWidth
-        boxButton.layer.cornerRadius = cornerRadius
+        textButton.setTitleColor(light, for: .normal)
+        textButton.backgroundColor = .clear
+        textButton.layer.borderColor = light.cgColor
+        textButton.layer.borderWidth = borderWidth
+        textButton.layer.cornerRadius = cornerRadius
         
         mapToggleButton.setTitleColor(light, for: .normal)
         mapToggleButton.backgroundColor = .clear

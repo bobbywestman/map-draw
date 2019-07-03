@@ -54,9 +54,9 @@ extension ViewController: CanvasHandling {
         lineButton.layer.borderColor = drawColorLighter.cgColor
         lineButton.backgroundColor = .clear
         
-        boxButton.tintColor = drawColorLighter
-        boxButton.layer.borderColor = drawColorLighter.cgColor
-        boxButton.backgroundColor = .clear
+        textButton.tintColor = drawColorLighter
+        textButton.layer.borderColor = drawColorLighter.cgColor
+        textButton.backgroundColor = .clear
 
         pinButton.tintColor = drawColorLighter
         pinButton.layer.borderColor = drawColorLighter.cgColor
@@ -77,10 +77,10 @@ extension ViewController: CanvasHandling {
             lineButton.tintColor = canvas.drawColor
             lineButton.layer.borderColor = drawColor.cgColor
             lineButton.backgroundColor = darkTransparent
-        case .box:
-            boxButton.tintColor = canvas.drawColor
-            boxButton.layer.borderColor = drawColor.cgColor
-            boxButton.backgroundColor = darkTransparent
+        case .text:
+            textButton.tintColor = canvas.drawColor
+            textButton.layer.borderColor = drawColor.cgColor
+            textButton.backgroundColor = darkTransparent
         case .pin:
             pinButton.tintColor = canvas.drawColor
             pinButton.layer.borderColor = drawColor.cgColor
@@ -92,8 +92,19 @@ extension ViewController: CanvasHandling {
 }
 
 extension ViewController {
-    @IBAction func boxButtonClick(_ sender: Any) {
-        drawingDelegate?.drawingBox()
+    @IBAction func textButtonClick(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Text:", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.keyboardType = .alphabet
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        let okAction = UIAlertAction(title: "Done", style: .default) { [unowned alert] (action) in
+            guard let textField = alert.textFields?.first, let text = textField.text else { return }
+            
+            self.drawingDelegate?.drawingText(text)
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 
     @IBAction func lineButtonClick(_ sender: Any) {
@@ -123,7 +134,7 @@ extension ViewController {
         
         let alert = UIAlertController(title: "Clear Edits", message: "Are you sure?\nYour changes won't be saved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action:UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action) in
             self.drawingDelegate?.clear()
         })
         present(alert, animated: true, completion: nil)
@@ -139,7 +150,7 @@ extension ViewController {
         
         let alert = UIAlertController(title: "Cancel", message: "Are you sure?\nYour changes won't be saved.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action:UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { (action) in
             self.interactionState = .selection
         })
         present(alert, animated: true, completion: nil)

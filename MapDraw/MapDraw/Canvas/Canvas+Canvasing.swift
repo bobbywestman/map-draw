@@ -10,6 +10,43 @@ import Foundation
 import UIKit
 
 extension Canvas: Canvasing {
+    func drawingText(_ text: String) {
+        selectedLine = nil
+        selectedPin = nil
+        selectedText = nil
+        
+        drawingState = .none
+        
+        _ = drawText(location: center, text: text)
+        undoableInteractionOccured()
+    }
+    
+    func drawingLine() {
+        selectedPin = nil
+        selectedText = nil
+        
+        switch drawingState {
+        case .line:
+            drawingState = .none
+            selectedLine = nil
+        default:
+            drawingState = .line
+        }
+    }
+    
+    func drawingPin() {
+        selectedLine = nil
+        selectedText = nil
+        
+        switch drawingState {
+        case .pin:
+            drawingState = .none
+            selectedPin = nil
+        default:
+            drawingState = .pin
+        }
+    }
+    
     func setPinLabel(_ label: String) {
         pinLabel = label
         
@@ -28,42 +65,9 @@ extension Canvas: Canvasing {
         } else if let selectedPin = selectedPin,
             let index = pins.index(of: selectedPin) {
             pins[index].color = color
-        }
-    }
-    
-    func drawingLine() {
-        selectedPin = nil
-        
-        switch drawingState {
-        case .line:
-            drawingState = .none
-            selectedLine = nil
-        default:
-            drawingState = .line
-        }
-    }
-    
-    func drawingPin() {
-        selectedLine = nil
-        
-        switch drawingState {
-        case .pin:
-            drawingState = .none
-            selectedPin = nil
-        default:
-            drawingState = .pin
-        }
-    }
-    
-    func drawingBox() {
-        selectedLine = nil
-        selectedPin = nil
-        
-        switch drawingState {
-        case .box:
-            drawingState = .none
-        default:
-            drawingState = .box
+        } else if let selectedText = selectedText,
+            let index = texts.index(of: selectedText) {
+            texts[index].color = color
         }
     }
     
@@ -88,6 +92,14 @@ extension Canvas: Canvasing {
             let index = lines.index(of: selectedLine){
             
             lines.remove(at: index)
+            
+            undoableInteractionOccured()
+        }
+        
+        if let selectedText = selectedText,
+            let index = texts.index(of: selectedText){
+            
+            texts.remove(at: index)
             
             undoableInteractionOccured()
         }

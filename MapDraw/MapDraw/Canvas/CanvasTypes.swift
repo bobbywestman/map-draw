@@ -13,8 +13,8 @@ enum DrawingState {
     /// User is drawing lines.
     case line
     
-    /// User is drawing boxes.
-    case box
+    /// User is inserting text.
+    case text
     
     /// User is adding pins.
     case pin

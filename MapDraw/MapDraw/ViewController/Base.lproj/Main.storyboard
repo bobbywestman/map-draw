@@ -246,7 +246,7 @@ Click "Upload" to edit a photo from the camera roll.</string>
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="boxButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxH-RF-5G6"/>
+                                            <action selector="textButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxH-RF-5G6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIh-Pp-pw7">
@@ -528,7 +528,6 @@ Click "Upload" to edit a photo from the camera roll.</string>
                     </view>
                     <connections>
                         <outlet property="background" destination="d0X-Mn-4oD" id="nYl-d7-F3D"/>
-                        <outlet property="boxButton" destination="lXX-NY-j2l" id="74C-3H-0TM"/>
                         <outlet property="cancelDrawingButton" destination="rWC-lf-vA7" id="dPo-ln-mgw"/>
                         <outlet property="canvas" destination="X8a-9W-nty" id="Zy2-aE-07h"/>
                         <outlet property="clearButton" destination="PV2-Cw-3Zc" id="8Vo-PB-3T9"/>
@@ -555,6 +554,7 @@ Click "Upload" to edit a photo from the camera roll.</string>
                         <outlet property="selectionPanel" destination="GOn-aw-SgB" id="kev-Jd-ILe"/>
                         <outlet property="selectorView" destination="G0T-Y1-StW" id="RNg-on-Zoi"/>
                         <outlet property="tableViewHeight" destination="fQw-Dr-H1Q" id="NLO-eM-JeN"/>
+                        <outlet property="textButton" destination="lXX-NY-j2l" id="74C-3H-0TM"/>
                         <outlet property="titleLabel" destination="mtT-He-45j" id="MaU-xZ-UfU"/>
                         <outlet property="undoButton" destination="B3T-n6-3tf" id="AXh-Uo-Mzc"/>
                         <outlet property="uploadButton" destination="Amg-OS-wBY" id="E2X-mO-dNX"/>
