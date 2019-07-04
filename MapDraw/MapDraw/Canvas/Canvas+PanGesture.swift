@@ -37,10 +37,6 @@ extension Canvas {
             
             guard  draggingPoint == nil else { break }
             
-//            draggingPin = hitTestForPanningPin(location)
-//
-//            guard draggingPin == nil, draggingPoint == nil else { break }
-            
             // draw new point
             let x = location.x - Canvas.kDragHorizontalOffset
             let y = location.y - Canvas.kDragVerticalOffset
@@ -56,11 +52,6 @@ extension Canvas {
             draggingPin = hitTestForPanningPin(location)
             
             guard draggingPin == nil else { break }
-            
-//            // check if user is going to move a line point
-//            draggingPoint = hitTestForPanningLinePoint(location)
-//
-//            guard draggingPin == nil, draggingPoint == nil else { break }
             
             // draw new pin
             // draw new point
@@ -80,6 +71,10 @@ extension Canvas {
             
             // check if user is going to move a line point
             draggingPoint = hitTestForPanningLinePoint(location)
+            
+            guard draggingPoint == nil else { break }
+            
+            draggingText = hitTestForPanningText(location)
         default:
             break
         }
@@ -150,6 +145,19 @@ extension Canvas {
                     selectPin(pins[i])
                 }
             }
+        } else if draggingText != nil {
+            let offsetLocation = CGPoint(x: x, y: y)
+            guard bounds.contains(offsetLocation) else { return }
+            
+            // find the pin that's being moved, and update location
+            for i in 0..<texts.count {
+                let text = texts[i]
+                if text == draggingText {
+                    texts[i].location = offsetLocation
+                    draggingText = texts[i]
+                    selectText(texts[i])
+                }
+            }
         }
     }
     
@@ -191,12 +199,21 @@ extension Canvas {
             
             undoableInteractionOccured()
         default:
+            if draggingPoint != nil {
+                undoableInteractionOccured()
+            } else if draggingPin != nil {
+                undoableInteractionOccured()
+            } else if draggingText != nil {
+                undoableInteractionOccured()
+            }
+            
             break
         }
         
         // pan ended, reset dragging points
         draggingPoint = nil
         draggingPin = nil
+        draggingText = nil
     }
 }
 
@@ -224,6 +241,32 @@ extension Canvas {
         }
         
         return closestPointInThreshold
+    }
+}
+
+extension Canvas {
+    private func hitTestForPanningText(_ location: CGPoint) -> Text? {
+        var closestTextInThreshold: Text?
+        var closestDistance = CGHelper.maxDistance() // use maximum possible distance as initial closest distance until a calculation has actually been made
+        
+        for text in texts {
+            // dummy label for hit test
+            let label = UILabel()
+            label.text = text.text
+            label.textAlignment = .center
+            label.font = UIFont(name: label.font.fontName, size: label.font.pointSize + 8.0) // use a bigger font size to have some padding for hit test
+            label.sizeToFit()
+            label.center = text.location
+            guard label.frame.contains(location) else { continue }
+            
+            let distance = CGHelper.distance(location, text.location)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestTextInThreshold = text
+            }
+        }
+        
+        return closestTextInThreshold
     }
 }
 
