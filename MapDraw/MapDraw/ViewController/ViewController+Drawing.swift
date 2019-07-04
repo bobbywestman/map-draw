@@ -57,20 +57,26 @@ extension ViewController: CanvasHandling {
         textButton.tintColor = drawColorLighter
         textButton.layer.borderColor = drawColorLighter.cgColor
         textButton.backgroundColor = .clear
-
+        
         pinButton.tintColor = drawColorLighter
         pinButton.layer.borderColor = drawColorLighter.cgColor
         pinButton.backgroundColor = .clear
         
-        // Hue values 0.0 & 1.0 are the same color for some reason.
-        // Don't update slider position if positioned at either end and the same color is chosen.
-        // If you don't do this, dragging the slider to it's right edge (value == 1.0) makes it jump back to the left edge (value == 0.0)
-        // TODO: one possible way to solve this is making slider min = 0.0, slider max = 1.0 - (smallest possible float value)... but even then it might not work based on how the hue is calculated if there's any rounding involved
-        let hue = drawColor.hsba.h
-        if !(colorSlider.value == 1.0 && hue == 0.0 || colorSlider.value == 0.0 && hue == 1.0) {
-            colorSlider.value = Float(hue)
-            updateSliderColor(drawColor)
+        if drawColor == .white {
+            colorSlider.value = Float(0.0)
+        } else if drawColor == .black {
+            colorSlider.value = Float(1.0)
+        } else {
+            // Hue values 0.0 & 1.0 are the same color for some reason.
+            // Don't update slider position if positioned at either end and the same color is chosen.
+            // If you don't do this, dragging the slider to it's right edge (value == 1.0) makes it jump back to the left edge (value == 0.0)
+            // NOTE: this is not really necessary anymore, since slider values 0.0 and 1.0 have custom colors (white and black)
+            let hue = drawColor.hsba.h
+            if !(colorSlider.value == 1.0 && hue == 0.0 || colorSlider.value == 0.0 && hue == 1.0) {
+                colorSlider.value = Float(hue)
+            }
         }
+        updateSliderColor(drawColor)
         
         switch state {
         case .line:
@@ -159,7 +165,16 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func colorSliderValueChanged(_ sender: UISlider) {
-        let color = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 0.7, alpha: 1.0)
+        let value = CGFloat(sender.value)
+        let color: UIColor
+        if value == 0.0 {
+            color = .white
+        } else if value == 1.0 {
+            color = .black
+        } else {
+            color = UIColor(hue: value, saturation: 1.0, brightness: 0.7, alpha: 1.0)
+        }
+        
         updateSliderColor(color)
         drawingDelegate?.setColor(color)
     }
@@ -172,8 +187,8 @@ extension ViewController {
     }
     
     func updateSliderColor(_ color: UIColor) {
-        colorSlider.thumbTintColor = color.lighter()
         colorSlider.minimumTrackTintColor = color
         colorSlider.maximumTrackTintColor = color
+        colorSlider.thumbTintColor = (color == .black) ? color : color.lighter()
     }
 }

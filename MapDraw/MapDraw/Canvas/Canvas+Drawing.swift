@@ -68,12 +68,24 @@ extension Canvas {
             
             let stroke: UIColor
             if line == selectedLine {
-                stroke = line.color
+                if line.color == .white {
+                    stroke = line.color.darker()
+                } else if line.color == .black {
+                    stroke = line.color.lighter()
+                } else {
+                    stroke = line.color
+                }
 
                 let pattern: [CGFloat] = [3.0, 10.0]
                 path.setLineDash(pattern, count: 2, phase: 0.0)
             } else {
-                stroke = line.color.lighter()
+                if line.color == .white {
+                    stroke = line.color
+                } else if line.color == .black {
+                    stroke = line.color
+                } else {
+                    stroke = line.color.lighter()
+                }
             }
             stroke.setStroke()
             path.stroke()
@@ -189,9 +201,21 @@ extension Canvas {
         label.sizeToFit()
         
         if let selected = selectedText, text == selected {
-            label.textColor = text.color
+            if text.color == .white {
+                label.textColor = text.color.darker()
+            } else if text.color == .black {
+                label.textColor = text.color.lighter()
+            } else {
+                label.textColor = text.color
+            }
         } else {
-            label.textColor = text.color.lighter()
+            if text.color == .white {
+                label.textColor = text.color
+            } else if text.color == .black {
+                label.textColor = text.color
+            } else {
+                label.textColor = text.color.lighter()
+            }
         }
         
         addSubview(label)
@@ -220,9 +244,21 @@ extension Canvas {
         imageView.center = calculatePinImageCenter(pin)
         
         if let selected = selectedPin, pin == selected {
-             imageView.tintColor = pin.color
+            if pin.color == .white {
+                imageView.tintColor = pin.color.darker()
+            } else if pin.color == .black {
+                imageView.tintColor = pin.color.lighter()
+            } else {
+                imageView.tintColor = pin.color
+            }
         } else {
-             imageView.tintColor = pin.color.lighter()
+            if pin.color == .white {
+                imageView.tintColor = pin.color
+            } else if pin.color == .black {
+                imageView.tintColor = pin.color
+            } else {
+                imageView.tintColor = pin.color.lighter()
+            }
         }
         
         let label = UILabel()
