@@ -254,7 +254,7 @@ extension Canvas {
             let label = UILabel()
             label.text = text.text
             label.textAlignment = .center
-            label.font = UIFont(name: label.font.fontName, size: label.font.pointSize + 8.0) // use a bigger font size to have some padding for hit test
+            label.font = UIFont.systemFont(ofSize: 30.0, weight: .bold)
             label.sizeToFit()
             label.center = text.location
             guard label.frame.contains(location) else { continue }

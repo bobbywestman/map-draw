@@ -91,6 +91,7 @@ extension Canvas {
             let label = UILabel()
             label.text = text.text
             label.textAlignment = .center
+            label.font = UIFont.systemFont(ofSize: 21.0, weight: .bold)
             label.sizeToFit()
             label.center = text.location
             
