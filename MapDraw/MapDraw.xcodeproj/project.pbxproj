@@ -19,9 +19,10 @@
 		C511623F22C5A1520031F5A5 /* ViewController+Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */; };
 		C511624322C7009C0031F5A5 /* ViewController+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511624222C7009C0031F5A5 /* ViewController+Styling.swift */; };
 		C511624922C8A14E0031F5A5 /* Canvas+Undo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511624822C8A14E0031F5A5 /* Canvas+Undo.swift */; };
+		C511624C22CDE2450031F5A5 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C511624A22CDE2450031F5A5 /* iPhone.storyboard */; };
 		C534CD9822B8673400DD3890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9722B8673400DD3890 /* AppDelegate.swift */; };
 		C534CD9A22B8673400DD3890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CD9922B8673400DD3890 /* ViewController.swift */; };
-		C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* Main.storyboard */; };
+		C534CD9D22B8673400DD3890 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9B22B8673400DD3890 /* iPad.storyboard */; };
 		C534CD9F22B8673500DD3890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C534CD9E22B8673500DD3890 /* Assets.xcassets */; };
 		C534CDA222B8673500DD3890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C534CDA022B8673500DD3890 /* LaunchScreen.storyboard */; };
 		C534CDAF22B89A1100DD3890 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534CDAE22B89A1100DD3890 /* TextHelper.swift */; };
@@ -65,10 +66,11 @@
 		C511623E22C5A1520031F5A5 /* ViewController+Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Upload.swift"; sourceTree = "<group>"; };
 		C511624222C7009C0031F5A5 /* ViewController+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Styling.swift"; sourceTree = "<group>"; };
 		C511624822C8A14E0031F5A5 /* Canvas+Undo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Canvas+Undo.swift"; sourceTree = "<group>"; };
+		C511624B22CDE2450031F5A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		C534CD9422B8673400DD3890 /* MapDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534CD9722B8673400DD3890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C534CD9922B8673400DD3890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C534CD9C22B8673400DD3890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C534CD9C22B8673400DD3890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		C534CD9E22B8673500DD3890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C534CDA122B8673500DD3890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C534CDA322B8673500DD3890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				C534CDD622BF207900DD3890 /* ViewControllerTypes.swift */,
-				C534CD9B22B8673400DD3890 /* Main.storyboard */,
+				C534CD9B22B8673400DD3890 /* iPad.storyboard */,
+				C511624A22CDE2450031F5A5 /* iPhone.storyboard */,
 				C534CD9922B8673400DD3890 /* ViewController.swift */,
 				C534CDE522BF278300DD3890 /* ViewController+LifeCycle.swift */,
 				C511624222C7009C0031F5A5 /* ViewController+Styling.swift */,
@@ -286,7 +289,8 @@
 			files = (
 				C534CDA222B8673500DD3890 /* LaunchScreen.storyboard in Resources */,
 				C534CD9F22B8673500DD3890 /* Assets.xcassets in Resources */,
-				C534CD9D22B8673400DD3890 /* Main.storyboard in Resources */,
+				C534CD9D22B8673400DD3890 /* iPad.storyboard in Resources */,
+				C511624C22CDE2450031F5A5 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +347,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C534CD9B22B8673400DD3890 /* Main.storyboard */ = {
+		C511624A22CDE2450031F5A5 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C511624B22CDE2450031F5A5 /* Base */,
+			);
+			name = iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C534CD9B22B8673400DD3890 /* iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C534CD9C22B8673400DD3890 /* Base */,
 			);
-			name = Main.storyboard;
+			name = iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C534CDA022B8673500DD3890 /* LaunchScreen.storyboard */ = {
