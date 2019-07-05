@@ -274,7 +274,6 @@ extension Canvas {
         //https://stackoverflow.com/a/20978280/11687264
         let threshold = CGFloat(0.29)
         let delta = (red * 0.2999) + (green * 0.587) + (blue * 0.114)
-        print(delta)
         label.textColor = (delta < threshold) ? .white : .black
 
         imageView.addSubview(label)
