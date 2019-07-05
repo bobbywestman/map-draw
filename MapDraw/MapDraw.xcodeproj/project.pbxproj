@@ -494,7 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: Bobby Westman (R86D575R5G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bobby Westman (R86D575R5G)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3YBQNWU9LS;
 				INFOPLIST_FILE = MapDraw/Info.plist;
@@ -514,7 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Bobby Westman (3YBQNWU9LS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bobby Westman (3YBQNWU9LS)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3YBQNWU9LS;
 				INFOPLIST_FILE = MapDraw/Info.plist;
