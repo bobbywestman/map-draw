@@ -11,7 +11,7 @@ import UIKit
 
 extension ViewController {
     @IBAction func saveButtonClick(_ sender: Any) {
-        let screenshot = ScreenshotHelper.screenshot(of: view, in: selectionImageView.frame)
+        let screenshot = view.screenshot(of: selectionImageView.frame)
         
         let screenshotView = UIImageView(image: screenshot)
         screenshotView.translatesAutoresizingMaskIntoConstraints = false

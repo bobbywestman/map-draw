@@ -24,7 +24,7 @@ extension ViewController {
         } else {
             // select highlighted portion of the map
             
-            let screenshot = ScreenshotHelper.screenshot(of: view, in: selectorView.frame)
+            let screenshot = view.screenshot(of: selectorView.frame)
             selectImage(screenshot)
         }
     }
