@@ -507,7 +507,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobbywestman.mapdraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MapDraw Debug Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Mapdraw dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -527,7 +527,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobbywestman.mapdraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MapDraw Distribution Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Mapdraw dist";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

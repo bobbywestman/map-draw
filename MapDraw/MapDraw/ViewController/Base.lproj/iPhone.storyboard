@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +21,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rb-iX-kdH">
-                                <rect key="frame" x="0.0" y="113.00000000000003" width="414" height="477.66666666666674"/>
+                                <rect key="frame" x="0.0" y="92.999999999999972" width="414" height="493.33333333333326"/>
                             </mapView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0T-Y1-StW" userLabel="Selector View" customClass="ResizableView" customModule="MapDraw" customModuleProvider="target">
                                 <rect key="frame" x="392" y="320" width="240" height="128"/>
@@ -31,34 +29,34 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-ZI-7jz" userLabel="Selection Image Filler 1">
-                                <rect key="frame" x="0.0" y="113.00000000000003" width="0.0" height="477.66666666666674"/>
+                                <rect key="frame" x="0.0" y="92.999999999999972" width="0.0" height="493.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMN-qk-TTU" userLabel="Selection Image Filler 2">
-                                <rect key="frame" x="0.0" y="590.66666666666663" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="586.33333333333337" width="414" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-1m-Ixk" userLabel="Selection Image Filler 3">
-                                <rect key="frame" x="414" y="113.00000000000003" width="0.0" height="477.66666666666674"/>
+                                <rect key="frame" x="414" y="92.999999999999972" width="0.0" height="493.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJs-TP-GLl" userLabel="Selection Image Filler 4">
-                                <rect key="frame" x="0.0" y="113" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lhJ-P5-uiJ" customClass="UIImageView">
-                                <rect key="frame" x="0.0" y="113.00000000000003" width="414" height="477.66666666666674"/>
+                                <rect key="frame" x="0.0" y="92.999999999999972" width="414" height="493.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8a-9W-nty" customClass="Canvas" customModule="MapDraw" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.00000000000003" width="414" height="477.66666666666674"/>
+                                <rect key="frame" x="0.0" y="92.999999999999972" width="414" height="493.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKL-Pf-vHH" userLabel="Header">
-                                <rect key="frame" x="0.0" y="20" width="414" height="93"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-6j-XIX">
-                                        <rect key="frame" x="20" y="0.0" width="139" height="37"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-6j-XIX">
+                                        <rect key="frame" x="20" y="0.0" width="138" height="37"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                         <state key="normal" title="Hide Map Info"/>
@@ -66,7 +64,7 @@
                                             <action selector="mapToggleButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8x7-KJ-r4P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvT-J2-Cea">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvT-J2-Cea">
                                         <rect key="frame" x="20" y="0.0" width="69" height="37"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
@@ -81,7 +79,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWC-lf-vA7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWC-lf-vA7">
                                         <rect key="frame" x="309" y="0.0" width="85" height="37"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -119,20 +117,20 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-lV-sft">
-                                <rect key="frame" x="10" y="113" width="394" height="200"/>
+                                <rect key="frame" x="10" y="93" width="394" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="woT-hb-zRS"/>
                                 </constraints>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOn-aw-SgB">
-                                <rect key="frame" x="0.0" y="590.66666666666663" width="414" height="145.33333333333337"/>
+                                <rect key="frame" x="0.0" y="586.33333333333337" width="414" height="149.66666666666663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-qF-jF8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="145.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="149.66666666666666"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejO-qJ-0cd">
-                                                <rect key="frame" x="82" y="24" width="81" height="37"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejO-qJ-0cd">
+                                                <rect key="frame" x="82.333333333333329" y="25.666666666666629" width="79.999999999999986" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                                 <state key="normal" title="Select"/>
@@ -140,8 +138,8 @@
                                                     <action selector="selectButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeI-9g-jzw"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-OS-wBY">
-                                                <rect key="frame" x="245" y="24" width="87" height="37"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-OS-wBY">
+                                                <rect key="frame" x="244.66666666666663" y="25.666666666666629" width="87" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                                                 <state key="normal" title="Upload"/>
@@ -150,7 +148,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MN-CG-kaS">
-                                                <rect key="frame" x="20" y="85.333333333333371" width="374" height="36"/>
+                                                <rect key="frame" x="20" y="88" width="374" height="36"/>
                                                 <string key="text">Click "Select" to capture an image of the map.
 Click "Upload" to edit a camera roll photo.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -158,27 +156,27 @@ Click "Upload" to edit a camera roll photo.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evN-Dw-c2u" userLabel="Equal Spacer Vertical">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="25.666666666666668"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jk2-as-O6f" userLabel="Equal Spacer Vertical">
-                                                <rect key="frame" x="0.0" y="61.000000000000007" width="414" height="24.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="62.666666666666636" width="414" height="25.333333333333336"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-w4-ZNe" userLabel="Equal Spacer Vertical">
-                                                <rect key="frame" x="0.0" y="121.33333333333337" width="414" height="24"/>
+                                                <rect key="frame" x="0.0" y="124.00000000000001" width="414" height="25.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8J-V8-3AI" userLabel="Equal Spacer">
-                                                <rect key="frame" x="0.0" y="24" width="82" height="37"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666629" width="82.333333333333329" height="37"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSK-d2-7Om" userLabel="Equal Spacer">
-                                                <rect key="frame" x="163" y="24" width="82" height="37"/>
+                                                <rect key="frame" x="162.33333333333334" y="25.666666666666629" width="82.333333333333343" height="37"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrC-hA-J9d" userLabel="Equal Spacer">
-                                                <rect key="frame" x="332" y="24" width="82" height="37"/>
+                                                <rect key="frame" x="331.66666666666669" y="25.666666666666629" width="82.333333333333314" height="37"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -227,14 +225,14 @@ Click "Upload" to edit a camera roll photo.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-Y6-eTd">
-                                <rect key="frame" x="0.0" y="590.66666666666663" width="414" height="145.33333333333337"/>
+                                <rect key="frame" x="0.0" y="586.33333333333337" width="414" height="149.66666666666663"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXX-NY-j2l">
-                                        <rect key="frame" x="3.6666666666666679" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="0.0" y="10.000000000000004" width="59" height="59.333333333333343"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="hhm-nl-CG7"/>
-                                            <constraint firstAttribute="height" constant="55" id="tnQ-24-p3C"/>
+                                            <constraint firstAttribute="width" secondItem="lXX-NY-j2l" secondAttribute="height" id="CSH-bZ-3XO"/>
+                                            <constraint firstAttribute="height" priority="750" constant="55" id="tJg-1W-pQF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
@@ -246,7 +244,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIh-Pp-pw7">
-                                        <rect key="frame" x="62.333333333333343" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="59" y="10.000000000000004" width="59.333333333333343" height="59.333333333333343"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
@@ -258,7 +256,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc7-RW-reW">
-                                        <rect key="frame" x="121" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="118.33333333333331" y="10.000000000000004" width="59" height="59.333333333333343"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
@@ -270,7 +268,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3T-n6-3tf">
-                                        <rect key="frame" x="179.66666666666666" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="177.33333333333334" y="10.000000000000004" width="59.333333333333343" height="59.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
                                         <state key="normal" title="Undo" image="Undo">
@@ -281,7 +279,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxI-Sv-bAg">
-                                        <rect key="frame" x="238" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="236.66666666666663" y="10.000000000000004" width="59" height="59.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
                                         <state key="normal" title="Redo" image="Redo">
@@ -292,7 +290,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-HQ-03g">
-                                        <rect key="frame" x="296.66666666666669" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="295.66666666666669" y="10.000000000000004" width="59.333333333333314" height="59.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
                                         <state key="normal" title="Delete" image="Delete">
@@ -303,7 +301,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-Cw-3Zc">
-                                        <rect key="frame" x="355.33333333333331" y="10" width="55" height="55"/>
+                                        <rect key="frame" x="355" y="10.000000000000004" width="59" height="59.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="titleEdgeInsets" minX="-55" minY="0.0" maxX="0.0" maxY="6"/>
                                         <state key="normal" title="Clear" image="Clear">
@@ -314,7 +312,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-dH-g71" userLabel="PickerContainer">
-                                        <rect key="frame" x="0.0" y="102" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="106.33333333333326" width="414" height="30"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfg-do-dx3" customClass="OrientablePickerView" customModule="MapDraw" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
@@ -327,54 +325,54 @@ Click "Upload" to edit a camera roll photo.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cu-at-U89" userLabel="Equal Spacer">
-                                        <rect key="frame" x="0.0" y="0.0" width="3.6666666666666665" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLu-cc-iEW" userLabel="Equal Spacer">
-                                        <rect key="frame" x="58.666666666666664" y="0.0" width="3.6666666666666643" height="65"/>
+                                        <rect key="frame" x="59" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QN-y3-wYu" userLabel="Equal Spacer">
-                                        <rect key="frame" x="117.33333333333333" y="0.0" width="3.6666666666666714" height="65"/>
+                                        <rect key="frame" x="118.33333333333333" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txr-gP-61z" userLabel="Equal Spacer">
-                                        <rect key="frame" x="176" y="0.0" width="3.6666666666666572" height="65"/>
+                                        <rect key="frame" x="177.33333333333334" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-28-bYx" userLabel="Equal Spacer">
-                                        <rect key="frame" x="234.66666666666666" y="0.0" width="3.3333333333333428" height="65"/>
+                                        <rect key="frame" x="236.66666666666666" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8A-s0-XR1" userLabel="Equal Spacer">
-                                        <rect key="frame" x="293" y="0.0" width="3.6666666666666856" height="65"/>
+                                        <rect key="frame" x="295.66666666666669" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-TI-56u" userLabel="Equal Spacer">
-                                        <rect key="frame" x="351.66666666666669" y="0.0" width="3.6666666666666856" height="65"/>
+                                        <rect key="frame" x="355" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-lV-Ws8" userLabel="Equal Spacer">
-                                        <rect key="frame" x="410.33333333333331" y="0.0" width="3.6666666666666856" height="65"/>
+                                        <rect key="frame" x="414" y="0.0" width="0.0" height="69.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vue-3w-GfO" userLabel="Equal Spacer Vertical">
-                                        <rect key="frame" x="0.0" y="65" width="414" height="13.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="69.333333333333258" width="414" height="13.333333333333329"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13.5" id="wh0-WY-w8h"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-al-uni" userLabel="Equal Spacer Vertical">
-                                        <rect key="frame" x="0.0" y="88.333333333333371" width="414" height="13.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="92.666666666666629" width="414" height="13.666666666666671"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-yI-Zxg" userLabel="Equal Spacer Vertical">
-                                        <rect key="frame" x="0.0" y="132" width="414" height="13.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="136.33333333333326" width="414" height="13.333333333333343"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-63-cSf" customClass="ColorSlider" customModule="MapDraw" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="78.333333333333371" width="398" height="11"/>
+                                        <rect key="frame" x="8" y="82.666666666666629" width="398" height="11"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="9fI-AK-xHN"/>
                                         </constraints>
@@ -466,6 +464,7 @@ Click "Upload" to edit a camera roll photo.</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Vl-ZI-7jz" firstAttribute="trailing" secondItem="uJs-TP-GLl" secondAttribute="leading" id="0MD-4l-ax2"/>
@@ -516,7 +515,6 @@ Click "Upload" to edit a camera roll photo.</string>
                             <constraint firstItem="lhJ-P5-uiJ" firstAttribute="trailing" secondItem="7rb-iX-kdH" secondAttribute="trailing" id="xYX-HN-KNR"/>
                             <constraint firstItem="9Vl-ZI-7jz" firstAttribute="trailing" secondItem="lhJ-P5-uiJ" secondAttribute="leading" id="yPR-Rq-Nw2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="background" destination="d0X-Mn-4oD" id="nYl-d7-F3D"/>
