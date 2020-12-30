@@ -51,7 +51,7 @@ extension Canvas: Canvasing {
         pinLabel = label
         
         if let selectedPin = selectedPin,
-            let index = pins.index(of: selectedPin) {
+            let index = pins.firstIndex(of: selectedPin) {
             pins[index].label = label
         }
     }
@@ -60,13 +60,13 @@ extension Canvas: Canvasing {
         drawColor = color
         
         if let selectedLine = selectedLine,
-            let index = lines.index(of: selectedLine) {
+            let index = lines.firstIndex(of: selectedLine) {
             lines[index].color = color
         } else if let selectedPin = selectedPin,
-            let index = pins.index(of: selectedPin) {
+            let index = pins.firstIndex(of: selectedPin) {
             pins[index].color = color
         } else if let selectedText = selectedText,
-            let index = texts.index(of: selectedText) {
+            let index = texts.firstIndex(of: selectedText) {
             texts[index].color = color
         }
     }
@@ -81,7 +81,7 @@ extension Canvas: Canvasing {
     
     func deleteSelected() {
         if let selectedPin = selectedPin,
-            let index = pins.index(of: selectedPin) {
+            let index = pins.firstIndex(of: selectedPin) {
             
             pins.remove(at: index)
             
@@ -89,7 +89,7 @@ extension Canvas: Canvasing {
         }
         
         if let selectedLine = selectedLine,
-            let index = lines.index(of: selectedLine){
+            let index = lines.firstIndex(of: selectedLine){
             
             lines.remove(at: index)
             
@@ -97,7 +97,7 @@ extension Canvas: Canvasing {
         }
         
         if let selectedText = selectedText,
-            let index = texts.index(of: selectedText){
+            let index = texts.firstIndex(of: selectedText){
             
             texts.remove(at: index)
             
